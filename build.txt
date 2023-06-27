@@ -1,0 +1,3 @@
+displayName = Ten Shadows
+author = Phamility
+version = 0.1
