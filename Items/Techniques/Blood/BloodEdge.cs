@@ -49,7 +49,7 @@ namespace TenShadows.Items.Techniques.Blood
       //     Item.useAmmo = AmmoID.Arrow;
             Item.autoReuse = true;
           //  Item.shoot = ModContent.ProjectileType<NueFriendlyFeather>();
-          // COCK TEST
+          // COCK TEST 2
         }
         public int positive;
 
