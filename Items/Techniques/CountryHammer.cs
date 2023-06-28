@@ -29,7 +29,7 @@ namespace TenShadows.Items.Techniques
         {
             Item.CloneDefaults(ItemID.SnowmanCannon);
             Item.useAmmo = AmmoID.None;
-            Item.damage = 13;
+            Item.damage = 11;
             Item.width = 36;
            // Item.mana = 8;
             Item.height = 32;
@@ -42,7 +42,7 @@ namespace TenShadows.Items.Techniques
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.UseSound = SoundID.Item1;
 
-          //  Item.noMelee = true;
+            Item.noMelee = true;
                   Item.shootSpeed = 4f;
           Item.shoot = ProjectileID.NailFriendly;
       //     Item.useAmmo = AmmoID.Arrow;
@@ -134,7 +134,7 @@ namespace TenShadows.Items.Techniques
             {
                 Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.
 
-                    Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<Nail>(), ((damage/2)), 1, player.whoAmI);
+                    Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<Nail>(), ((damage)), 1, player.whoAmI);
                 
             }
             return false;

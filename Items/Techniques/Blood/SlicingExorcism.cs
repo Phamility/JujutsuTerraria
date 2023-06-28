@@ -86,9 +86,9 @@ namespace TenShadows.Items.Techniques.Blood
                 player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " used up too much blood!"), losslife, 0);
             }
 
-            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 50; //This gets the direction of the flame projectile, makes its length to 1 by normalizing it. It then multiplies it by 54 (the item width) to get the position of the tip of the flamethrower.
+            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 3; //This gets the direction of the flame projectile, makes its length to 1 by normalizing it. It then multiplies it by 54 (the item width) to get the position of the tip of the flamethrower.
             position += muzzleOffset;
-            Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<BloodWheelProj>(), (damage), 1, player.whoAmI);
+            Projectile.NewProjectile(source, position.X, position.Y - 4, velocity.X, velocity.Y, ModContent.ProjectileType<BloodWheelProj>(), (damage), 1, player.whoAmI);
 
 
             return false;

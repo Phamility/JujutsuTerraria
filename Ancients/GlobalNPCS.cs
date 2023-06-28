@@ -143,6 +143,8 @@ namespace TenShadows.Ancients
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<FlowingRed>(), 4));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<BlazingCourage>(), 3));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Bottomless>(), 3));
 
 
                 npcLoot.Add(notExpertRule);
@@ -180,6 +182,7 @@ namespace TenShadows.Ancients
             {
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<CountryHammer>(), 3));
 
                 npcLoot.Add(notExpertRule);
             }
@@ -209,6 +212,8 @@ namespace TenShadows.Ancients
             if (item.type == ItemID.EyeOfCthulhuBossBag)
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FlowingRed>(), 3));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BlazingCourage>(), 3));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bottomless>(), 3));
 
 
             }
@@ -224,6 +229,7 @@ namespace TenShadows.Ancients
             }
             if (item.type == ItemID.KingSlimeBossBag)
             {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CountryHammer>(), 3));
 
 
             }

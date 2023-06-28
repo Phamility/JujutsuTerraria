@@ -83,7 +83,7 @@ namespace TenShadows.Tiles
                 }
 
             } 
-            ZoneChance = 50 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger;
+            ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger;
             ZoneDamage = 5 + BlackFlashDamageBooster;
             //   Player.wingTimeMax += 30 * FlightBuff.Wearing;
             if (Player.HasBuff<FlightBuff>())

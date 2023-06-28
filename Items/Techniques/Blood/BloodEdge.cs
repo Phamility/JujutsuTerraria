@@ -23,7 +23,7 @@ namespace TenShadows.Items.Techniques.Blood
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Blood Edge");
-            Tooltip.SetDefault("Imbue your sword with blood, increasing its power!");
+            Tooltip.SetDefault("A lethal blade composed of its wielder's blood");
         }
    
         public override void SetDefaults()
