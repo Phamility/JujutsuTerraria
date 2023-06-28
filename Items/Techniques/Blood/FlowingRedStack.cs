@@ -68,8 +68,8 @@ namespace TenShadows.Items.Techniques.Blood
                                                 //  Item.healLife = 25; // While we change the actual healing value in GetHealLife, Item.healLife still needs to be higher than 0 for the item to be considered a healing item
                                                 //  Item.potion = false; // Makes it so this item applies potion sickness on use and allows it to be used with quick heal
                                                 //   Item.damage = 9;
-            Item.width = 28;
-            Item.height = 31;
+            Item.width = 24;
+            Item.height = 26;
 
             Item.useTime = 40;
             Item.useAnimation = 40;
