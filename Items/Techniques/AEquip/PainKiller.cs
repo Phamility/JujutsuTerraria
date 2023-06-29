@@ -63,7 +63,7 @@ namespace TenShadows.Items.Techniques.AEquip
         {
                 if(player.statLife <= 50)
             {
-                player.lifeRegen += 15;
+                player.lifeRegen += 20;
             }
 
         }

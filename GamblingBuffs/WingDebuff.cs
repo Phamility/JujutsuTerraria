@@ -79,7 +79,7 @@ namespace TenShadows.GamblingBuffs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Failure's Life");
-            Description.SetDefault("Decreases max life by 250!");
+            Description.SetDefault("Decreases max health by 250!");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff

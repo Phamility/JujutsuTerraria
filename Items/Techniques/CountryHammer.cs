@@ -29,13 +29,13 @@ namespace TenShadows.Items.Techniques
         {
             Item.CloneDefaults(ItemID.SnowmanCannon);
             Item.useAmmo = AmmoID.None;
-            Item.damage = 11;
+            Item.damage = 9;
             Item.width = 36;
            // Item.mana = 8;
             Item.height = 32;
            // Item.healLife = -4;
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.useTime = 23;
+            Item.useAnimation = 23;
            Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
             Item.knockBack = 4;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
@@ -59,6 +59,10 @@ namespace TenShadows.Items.Techniques
         {
             damage += ExampleDamagePlayer.ModPlayer(player).exampleDamageAdd;
             damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
+            if (player.GetModPlayer<MPArmors>().NobaraHeadOn == true)
+            {
+                damage *= 1.55f;
+            }
         }
         public override void ModifyWeaponCrit(Player player, ref float crit)
         {
@@ -67,6 +71,7 @@ namespace TenShadows.Items.Techniques
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
+
             // Get the vanilla damage tooltip
             TooltipLine tt = tooltips.FirstOrDefault(x => x.Name == "Damage" && x.Mod == "Terraria");
             if (tt != null)
@@ -82,14 +87,33 @@ namespace TenShadows.Items.Techniques
             TooltipLine COCK = tooltips.FirstOrDefault(x => x.Name == "CritChance" && x.Mod == "Terraria");
             tooltips.Remove(COCK);
             Player player = Main.LocalPlayer;
+            TooltipLine NailCock;
+            if (player.GetModPlayer<MPArmors>().NobaraHeadOn)
+            {
+             NailCock = new TooltipLine(Mod, "Ten Shadows: Cost", $"Fires 1-4 nails per swing") { OverrideColor = Color.White };
+
+            }
+            else
+            {
+                 NailCock = new TooltipLine(Mod, "Ten Shadows: Cost", $"Fires 1-3 nails per swing") { OverrideColor = Color.White };
+
+            }
             TooltipLine BLACKFLASHCHANCE = new TooltipLine(Mod, "Ten Shadows: Cost", $"{player.GetModPlayer<MP>().ZoneChance}% black flash chance") { OverrideColor = Color.White };
             if (Item.favorited == true)
             {
+
                 tooltips.Insert(4, BLACKFLASHCHANCE);
+                tooltips.RemoveAt(5);
+                tooltips.Insert(5, NailCock);
+
             }
             else
             {
                 tooltips.Insert(2, BLACKFLASHCHANCE);
+                tooltips.RemoveAt(3);
+                tooltips.Insert(3, NailCock);
+
+
             }
 
         }
@@ -119,6 +143,14 @@ namespace TenShadows.Items.Techniques
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
+            int OneMore;
+            if ((player.GetModPlayer<MPArmors>().NobaraHeadOn)){
+                OneMore = 1;
+            }
+            else
+            {
+                OneMore = 0;
+            }
             if (player.direction == 1)
             {
                 positive = 1;
@@ -129,7 +161,7 @@ namespace TenShadows.Items.Techniques
 
             }
 
-            int numberProjectiles = Main.rand.Next(1, 4) ;
+            int numberProjectiles = Main.rand.Next(1, 4 + OneMore);
             for (int i = 0; i < numberProjectiles; i++)
             {
                 Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.

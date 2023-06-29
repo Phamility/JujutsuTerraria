@@ -90,7 +90,7 @@ namespace TenShadows.Items.Techniques
         }
         public override void UseStyle(Player player, Rectangle heldItemFrame)
         {
-            player.itemLocation -= new Vector2(3 * player.direction, 3);
+            player.itemLocation -= new Vector2(6 * player.direction, 3);
         }
 
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)

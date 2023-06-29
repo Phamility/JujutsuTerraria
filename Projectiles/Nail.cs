@@ -15,6 +15,7 @@ using TenShadows.Ancients;
 using TenShadows.Items.Shadows;
 using TenShadows.Items.Techniques;
 using TenShadows.Tiles;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TenShadows.Projectiles
 {
@@ -57,9 +58,9 @@ namespace TenShadows.Projectiles
             // Only determines the damage type
             //	projectile.minion = true;
             // Amount of slots this minion occupies from the total minion slots available to the player (more on that later)
-           Projectile.penetrate = 1;
+
             // Needed so the minion doesn't despawn on collision with enemies or tiles
-          //  Projectile.timeLeft = 120; 
+            //  Projectile.timeLeft = 120; 
             Projectile.Opacity = 1;
             Projectile.aiStyle = 1;
             AIType = ProjectileID.Bullet; // Act exactly like default Bullet
@@ -82,11 +83,13 @@ namespace TenShadows.Projectiles
         {
             return true;
         }
-  
+
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-       
+
+        //    target.immune[ModContent.ProjectileType<Nail>()] = 10;
+
             Player player = Main.player[Projectile.owner];
             if (crit)
             {
@@ -134,16 +137,33 @@ namespace TenShadows.Projectiles
 
                 CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage * 2, true, false);
             }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    int dustType = DustID.Silver;
+                    var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, dustType);
+
+                    dust.velocity.X += Main.rand.NextFloat(-0.3f, 0.3f);
+                    dust.velocity.Y += Main.rand.NextFloat(-0.3f, 0.3f);
+
+                    dust.scale *= 1f + Main.rand.NextFloat(-0.03f, 0.03f);
+                }
+            }
+       
+            
 
 
-        
-    }
+
+        }
         float xspeed;
        private int timer = 0;
         private bool once;
         public override void AI()
         {
-            if(once == false)
+
+
+            if (once == false)
             {
                 once = true;
                 Projectile.velocity.X *= 2;

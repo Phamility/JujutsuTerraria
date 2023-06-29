@@ -79,7 +79,7 @@ namespace TenShadows.Items.Techniques.Blood
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             int losslife;
-            losslife = Main.rand.Next(7, 10);
+            losslife = Main.rand.Next(5, 8);
             player.statLife -= losslife;
             if (player.statLife <= 0)
             {
@@ -117,7 +117,7 @@ namespace TenShadows.Items.Techniques.Blood
                 // Change the tooltip text
                 tt.Text = damageValue + " cursed damage";
             }
-            TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs 7-9 life per use") { OverrideColor = Color.Red };
+            TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs 5-7 life per use") { OverrideColor = Color.Red };
 
 
             tooltips.Insert(1, tooltip);

@@ -147,7 +147,7 @@ namespace TenShadows.Items.Techniques
             if (InnateNumber == 5)
             {
                 player.AddBuff(ModContent.BuffType<HealthBuff>(), 41 * 60);
-                Main.NewText(pretext + "They rolled an increase in max life by 250!", Color.LimeGreen);
+                Main.NewText(pretext + "They rolled an increase in max health by 250!", Color.LimeGreen);
             }
             if (InnateNumber == 6)
             {
@@ -344,7 +344,7 @@ namespace TenShadows.Items.Techniques
             if (InnateNumber == 5)
             {
                 player.AddBuff(ModContent.BuffType<HealthDebuff>(), 41 * 60);
-                Main.NewText(pretext + "They rolled a decrease in max life by 250!", Color.Red);
+                Main.NewText(pretext + "They rolled a decrease in max health by 250!", Color.Red);
             }
             if (InnateNumber == 6)
             {

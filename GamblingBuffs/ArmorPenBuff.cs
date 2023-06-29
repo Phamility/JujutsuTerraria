@@ -100,7 +100,7 @@ namespace TenShadows.GamblingBuffs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Gambler's Life");
-            Description.SetDefault("Increases max life by 250!");
+            Description.SetDefault("Increases max health by 250!");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff

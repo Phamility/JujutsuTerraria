@@ -11,6 +11,7 @@ using TenShadows.Items.Techniques.Blood;
 using TenShadows.Items.Techniques.AEquip;
 using Microsoft.Xna.Framework;
 using TenShadows.Buffs;
+using TenShadows.Armor;
 
 namespace TenShadows.Ancients
 {
@@ -161,6 +162,7 @@ namespace TenShadows.Ancients
                 leadingConditionRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<WrappedCleaver>(), 4));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<EyeEye>(), 4));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<PiercingBlood>(), 4));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<NobaraHead>(), 3));
 
 
                 notExpertRule.OnSuccess(leadingConditionRule);
@@ -173,6 +175,7 @@ namespace TenShadows.Ancients
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<WrappedCleaver>(), 4));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<EyeEye>(), 4));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<PiercingBlood>(), 4));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<NobaraHead>(), 3));
 
 
                 npcLoot.Add(notExpertRule);
@@ -222,6 +225,7 @@ namespace TenShadows.Ancients
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<WrappedCleaver>(), 3));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EyeEye>(), 3));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PiercingBlood>(), 2));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<NobaraHead>(), 3));
 
 
 

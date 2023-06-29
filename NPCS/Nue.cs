@@ -72,7 +72,7 @@ namespace TenShadows.NPCS
             }
             NPC.HitSound = SoundID.DD2_LightningAuraZap;
             NPC.DeathSound = SoundID.Thunder;
-            NPC.knockBackResist = 0.15f;
+            NPC.knockBackResist = 0f;
             NPC.aiStyle = 14; // Fighter AI, important to choose the aiStyle that matches the NPCID that we want to mimic
                               //  NPC.noTileCollide = true;
             AIType = NPCID.GiantFlyingFox; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
@@ -299,7 +299,7 @@ namespace TenShadows.NPCS
             // npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<MinionBossPetItem>(), 4));
             // All our drops here are based on "not expert", meaning we use .OnSuccess() to add them into the rule, which then gets added
             LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
-            notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<NueFeather>(), 1, 25, 40));
+            notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<NueFeather>(), 1, 28, 38));
             notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<NueLucky>(), 3));
             notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<NueEye>(), 3));
 

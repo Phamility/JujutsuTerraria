@@ -33,7 +33,7 @@ namespace TenShadows.Items.Accessories.Eyes
             // Fly speed: 9
             // Acceleration multiplier: 2.5
             DisplayName.SetDefault("The Nebulated Eye");
-            Tooltip.SetDefault("When equipped, increase maximum mana by 60 and reduce mana usage by 15%");
+            Tooltip.SetDefault("When equipped, increase mana by 60 and reduce mana usage by 15%");
         }
 
         public override void SetDefaults()
