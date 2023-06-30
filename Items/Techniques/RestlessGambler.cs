@@ -397,6 +397,8 @@ namespace TenShadows.Items.Techniques
             Item.width = 26;
            // Item.mana = 100;
             Item.height = 30;
+            Item.value = Item.sellPrice(gold: 3); // How many coins the item is worth
+
             Cost = 40;
             Item.useTime = 30;
             Item.useAnimation = 30;

@@ -19,6 +19,7 @@ using System.Drawing.Imaging;
 using TenShadows.Items.Materials;
 using TenShadows.Ancients;
 using TenShadows.Armor;
+using TenShadows.Items.Techniques.ARestrictions;
 
 namespace TenShadows.Tiles
 {
@@ -95,7 +96,7 @@ namespace TenShadows.Tiles
 
             } 
             ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger + ZoneBody;
-            ZoneDamage = 5 + BlackFlashDamageBooster;
+            ZoneDamage = 4 + BlackFlashDamageBooster;
             //   Player.wingTimeMax += 30 * FlightBuff.Wearing;
             if (Player.HasBuff<FlightBuff>())
                 {
@@ -124,6 +125,8 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
             return new[] {
                 new Item(ModContent.ItemType<DivineDog>()),
                 new Item(ModContent.ItemType<CursedEnergy>(), 100),
+                new Item(ModContent.ItemType<StandardBV>()),
+
 
 
             };

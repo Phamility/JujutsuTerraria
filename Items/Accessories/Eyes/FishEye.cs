@@ -39,7 +39,7 @@ namespace TenShadows.Items.Accessories.Eyes
         {
             Item.width = 24;
             Item.height = 26;
-            Item.value = 10000;
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.rare = ItemRarityID.Orange;
             Item.accessory = true;
 

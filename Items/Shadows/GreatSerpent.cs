@@ -15,6 +15,7 @@ using static Terraria.ModLoader.PlayerDrawLayer;
 using TenShadows.Ancients;
 using System.Collections.Generic;
 using System.Linq;
+using Terraria.Utilities;
 
 
 namespace TenShadows.Items.Shadows
@@ -63,6 +64,30 @@ namespace TenShadows.Items.Shadows
             {
                 Reduction = 0;
             }
+        }
+        public override int ChoosePrefix(UnifiedRandom rand)
+        {
+            var prefixchooser = new WeightedRandom<int>();
+            prefixchooser.Add(PrefixID.Broken, 2);
+            prefixchooser.Add(PrefixID.Damaged, 2);
+            prefixchooser.Add(PrefixID.Slow, 2);
+            prefixchooser.Add(PrefixID.Annoying, 2);
+            prefixchooser.Add(PrefixID.Quick, 2);
+            prefixchooser.Add(PrefixID.Deadly, 2);
+            prefixchooser.Add(PrefixID.Demonic, 2);
+            prefixchooser.Add(PrefixID.Godly, 2);
+            prefixchooser.Add(PrefixID.Ruthless, 2);
+            prefixchooser.Add(PrefixID.Unpleasant, 2);
+            prefixchooser.Add(PrefixID.Hurtful, 2);
+
+            prefixchooser.Add(PrefixID.Rapid, 2);
+            prefixchooser.Add(PrefixID.Unreal, 2);
+            int choice = prefixchooser;
+            if ((Item.damage > 0) && Item.maxStack == 1)
+            {
+                return choice;
+            }
+            return -1;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
@@ -222,7 +247,7 @@ namespace TenShadows.Items.Shadows
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true; // So the item's animation doesn't do damage
             Item.knockBack = 2; // A high knockback. Vanilla Flamethrower uses 0.3f for a weak knockback.
-            Item.value = Item.sellPrice(gold: 9); // How many coins the item is worth
+            Item.value = Item.sellPrice(gold: 5); // How many coins the item is worth
             Item.rare = ItemRarityID.Pink; // Sets the item's rarity.
             Item.UseSound = SoundID.Zombie32    ;
             Item.autoReuse = true;

@@ -23,7 +23,7 @@ namespace TenShadows.Buffs
         }
         public override void Update(Player player, ref int buffIndex)
         {
-            int damage = 8;
+            int damage = 11;
             int type = ModContent.ProjectileType<SummonedNue>();
 
             if (player.ownedProjectileCounts[ModContent.ProjectileType<SummonedNue>()] <= 0)

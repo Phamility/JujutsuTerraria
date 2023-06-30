@@ -141,12 +141,9 @@ namespace TenShadows.Projectiles
 
                 CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage * 2, true, false);
             }
-            SoundEngine.PlaySound(SoundID.NPCDeath43, Projectile.position);
-            int buffType = BuffID.Confused;
+         
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
-            int timeToAdd = 3 * 60; //This makes it 5 seconds, one second is 60 ticks
-            target.AddBuff(buffType, timeToAdd);
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
             for (int i = 0; i < 10; i++)
             {

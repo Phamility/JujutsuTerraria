@@ -49,7 +49,8 @@ namespace TenShadows.Items.Shadows
             Item.useTime = 40;
             Item.useAnimation = 40;
             Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
-                                                   //  Item.knockBack = 3;
+            Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+                                                  //  Item.knockBack = 3;
             Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
             Item.noMelee = true;
             //      item.shootSpeed = 4f;

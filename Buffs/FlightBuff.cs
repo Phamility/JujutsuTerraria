@@ -20,9 +20,16 @@ namespace TenShadows.Buffs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Nue's Wing Reinforcement");
-            Description.SetDefault("Increases flight time!\nEffects are amplified for Nue-type Wings!");
+            Description.SetDefault("Increases movement speed and flight time!\nFlight effects are amplified for Nue-type Wings!");
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
+        }
+        public override void Update(Player player, ref int buffIndex)
+        {
+            player.moveSpeed *= 1.08f;
+            player.maxRunSpeed *= 1.08f;
+            player.accRunSpeed *= 1.08f;
+            player.runAcceleration *= 1.08f;
         }
 
     }

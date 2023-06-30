@@ -42,12 +42,13 @@ namespace TenShadows.Items.Techniques
             Item.knockBack = 4;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
-          //  Item.UseSound = SoundID.Item102;
+            //  Item.UseSound = SoundID.Item102;
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
 
-          //  Item.noMelee = true;
+            //  Item.noMelee = true;
             //      item.shootSpeed = 4f;
-        //    Item.shoot = ProjectileID.WoodenArrowFriendly;
-      //     Item.useAmmo = AmmoID.Arrow;
+            //    Item.shoot = ProjectileID.WoodenArrowFriendly;
+            //     Item.useAmmo = AmmoID.Arrow;
             Item.autoReuse = true;
           //  Item.shoot = ModContent.ProjectileType<NueFriendlyFeather>();
 

@@ -43,6 +43,7 @@ namespace TenShadows.Items.Shadows
             Item.useAnimation = 40;
             Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
             Item.UseSound = SoundID.Grass; // What sound should play when using the item
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
                                                   //  Item.knockBack = 3;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
                                            //  Item.DamageType = DamageClass.Magic;

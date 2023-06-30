@@ -178,7 +178,7 @@ namespace TenShadows.Items.Techniques
         }
         public override void UpdateInventory(Player player)
         {
-            Cost = 3;
+            Cost = 5;
 
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {

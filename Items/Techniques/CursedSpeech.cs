@@ -42,9 +42,10 @@ namespace TenShadows.Items.Techniques
             Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.UseSound = SoundID.Zombie82;
+            Item.value = Item.sellPrice(gold: 3); // How many coins the item is worth
 
-          //  Item.noMelee = true;
-                  Item.shootSpeed = 4f;
+            //  Item.noMelee = true;
+            Item.shootSpeed = 4f;
       //     Item.useAmmo = AmmoID.Arrow;
             Item.autoReuse = true;
            Item.shoot = ModContent.ProjectileType<SpeechProj>();

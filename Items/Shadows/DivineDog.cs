@@ -75,7 +75,7 @@ namespace TenShadows.Items.Shadows
         }
         public override void ModifyWeaponCrit(Player player, ref float crit)
         {
-            crit += ExampleDamagePlayer.ModPlayer(player).exampleCrit;
+            crit = 0;
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)

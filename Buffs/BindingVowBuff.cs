@@ -18,7 +18,7 @@ namespace TenShadows.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Binding Vow: Unleashed");
+            DisplayName.SetDefault("Domain: Unleashed");
             Description.SetDefault("Damage increased by 15%"); Main.debuff[Type] = true;
 
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world

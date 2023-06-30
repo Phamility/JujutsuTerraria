@@ -8,10 +8,10 @@ using TenShadows.Items.Techniques;
 using TenShadows.Projectiles;
 using TenShadows.Items.Accessories.Eyes;
 using TenShadows.Items.Techniques.Blood;
-using TenShadows.Items.Techniques.AEquip;
 using Microsoft.Xna.Framework;
 using TenShadows.Buffs;
 using TenShadows.Armor;
+using TenShadows.Items.Techniques.ARestrictions;
 
 namespace TenShadows.Ancients
 {
@@ -44,7 +44,6 @@ namespace TenShadows.Ancients
             if (npc.type == NPCID.AngryBones || npc.type == NPCID.DarkCaster || npc.type == NPCID.CursedSkull
                 || npc.type == NPCID.Skeleton || npc.type == NPCID.AngryBonesBig || npc.type == NPCID.AngryBonesBigHelmet || npc.type == NPCID.AngryBonesBigMuscle)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HeavenlyCursed>(), 80, 1));
 
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HeavenlyPhysical>(), 80, 1));
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 50, 70, 100));

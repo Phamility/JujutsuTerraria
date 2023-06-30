@@ -57,6 +57,8 @@ namespace TenShadows.Items.Shadows
             Item.rare = ItemRarityID.Yellow;
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.sentry = true;
+            Item.value = Item.sellPrice(gold: 7); // How many coins the item is worth
+
             Item.crit = 0;
             Item.UseSound = SoundID.Zombie42;
             Item.noMelee = true;

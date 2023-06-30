@@ -221,7 +221,8 @@ namespace TenShadows.Items.Shadows
             Item.width = 30;
             Item.height = 30;
             Cost = 20;
- 
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
+
             Item.useTime = 40;
             Item.useAnimation = 40;
             Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)

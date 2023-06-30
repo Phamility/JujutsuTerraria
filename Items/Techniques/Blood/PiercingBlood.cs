@@ -30,7 +30,7 @@ namespace TenShadows.Items.Techniques.Blood
         {
             Item.CloneDefaults(ItemID.PulseBow);
 
-            Item.damage = 32;
+            Item.damage = 33;
             Item.width = 18;
             // Item.mana = 8;
             Item.height = 44;

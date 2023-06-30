@@ -19,8 +19,8 @@ namespace TenShadows.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Heavenly Restriction");
-            Description.SetDefault("Cursed, melee and ranged damage increased by 12%\nMovement speed increased by 5%\nDefense increased by 2\nCan't use cursed energy, mana, or minions"); Main.debuff[Type] = true;
+            DisplayName.SetDefault("Physical Heavenly Restriction");
+            Description.SetDefault("Cursed, melee and ranged damage increased by 12%\nMovement speed increased by 10%\nDefense increased by 3\nCan't use cursed energy, mana, or minions"); Main.debuff[Type] = true;
 
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
@@ -32,7 +32,11 @@ namespace TenShadows.Buffs
             player.GetDamage(DamageClass.Ranged) += 0.12f;
             player.GetDamage<CursedDamage>() += 0.12f;
 
-            player.moveSpeed += .05f;
+            player.moveSpeed *= 1.1f;
+            player.maxRunSpeed *= 1.1f;
+            player.accRunSpeed *= 1.1f;
+            player.runAcceleration *= 1.1f;
+
             player.statDefense += 2;
             player.statMana = 0;
             player.statManaMax2 = 0;

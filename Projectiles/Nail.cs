@@ -139,7 +139,7 @@ namespace TenShadows.Projectiles
             }
             else
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < Main.rand.Next(1, 4); i++)
                 {
                     int dustType = DustID.Silver;
                     var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, dustType);

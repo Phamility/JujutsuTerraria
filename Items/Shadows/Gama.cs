@@ -14,6 +14,7 @@ using TenShadows.Items.Materials;
 using TenShadows.Tiles;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using TenShadows.Ancients;
+using Terraria.Utilities;
 
 
 namespace TenShadows.Items.Shadows
@@ -65,6 +66,7 @@ namespace TenShadows.Items.Shadows
            // Item.buffType = ModContent.BuffType<SerpentBuff>();
             //  Item.knockBack = 3;
             Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
+            Item.value = Item.sellPrice(gold: 3); // How many coins the item is worth
                                            //  Item.DamageType = DamageClass.Magic;
             Item.noMelee = true;
             //      item.shootSpeed = 4f;
@@ -72,6 +74,30 @@ namespace TenShadows.Items.Shadows
             Item.shoot = ModContent.ProjectileType<CursedBubble>();
 
 
+        }
+        public override int ChoosePrefix(UnifiedRandom rand)
+        {
+            var prefixchooser = new WeightedRandom<int>();
+            prefixchooser.Add(PrefixID.Broken, 2);
+            prefixchooser.Add(PrefixID.Damaged, 2);
+            prefixchooser.Add(PrefixID.Slow, 2);
+            prefixchooser.Add(PrefixID.Annoying, 2);
+            prefixchooser.Add(PrefixID.Quick, 2);
+            prefixchooser.Add(PrefixID.Deadly, 2);
+            prefixchooser.Add(PrefixID.Demonic, 2);
+            prefixchooser.Add(PrefixID.Godly, 2);
+            prefixchooser.Add(PrefixID.Ruthless, 2);
+            prefixchooser.Add(PrefixID.Unpleasant, 2);
+            prefixchooser.Add(PrefixID.Hurtful, 2);
+
+            prefixchooser.Add(PrefixID.Rapid, 2);
+            prefixchooser.Add(PrefixID.Unreal, 2);
+            int choice = prefixchooser;
+            if ((Item.damage > 0) && Item.maxStack == 1)
+            {
+                return choice;
+            }
+            return -1;
         }
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {

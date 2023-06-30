@@ -35,6 +35,7 @@ namespace TenShadows.Ancients
             if (source is EntitySource_ItemUse_WithAmmo use && use.Item.type == ModContent.ItemType<PiercingBlood>())
             {
                 AMSHOT = true;
+                projectile.DamageType = ModContent.GetInstance<CursedDamage>();
                 // Projectile was spawned from using a YourItem weapon
                 // set a bool variable in the class to true here, then check it in ModifyHitNPC
             }

@@ -34,13 +34,14 @@ namespace TenShadows.Items.Techniques
            // Item.mana = 8;
             Item.height = 32;
            // Item.healLife = -4;
-            Item.useTime = 23;
-            Item.useAnimation = 23;
+            Item.useTime = 24;
+            Item.useAnimation = 24;
            Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
             Item.knockBack = 4;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.UseSound = SoundID.Item1;
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
 
             Item.noMelee = true;
                   Item.shootSpeed = 4f;

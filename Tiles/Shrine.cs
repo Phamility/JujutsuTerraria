@@ -29,7 +29,7 @@ namespace TenShadows.Tiles
             Item.DefaultToPlaceableTile(ModContent.TileType<ShrineTile>());
             Item.width = 34; // The item texture's width
             Item.height = 34; // The item texture's height
-            Item.value = 150;
+            Item.value = 0;
             Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
         }
 

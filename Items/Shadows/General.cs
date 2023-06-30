@@ -20,7 +20,7 @@ namespace TenShadows.Items.Shadows
             Item.DefaultToPlaceableTile(ModContent.TileType<GeneralTile>());
             Item.width = 44; // The item texture's width
             Item.height = 50; // The item texture's height
-            Item.value = 150;
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
             Item.maxStack = 99;
 

@@ -40,7 +40,7 @@ namespace TenShadows.Items.Techniques.AEquip
             // Item.Prefix(-1);
             Item.width = 28;
             Item.height = 25;
-            Item.value = 100000;
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
             Item.shoot = ModContent.ProjectileType<IceProj>();

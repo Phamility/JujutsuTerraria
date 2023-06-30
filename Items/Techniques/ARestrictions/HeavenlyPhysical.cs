@@ -20,7 +20,7 @@ using TenShadows.Projectiles;
 using TenShadows.Items.Materials;
 using rail;
 
-namespace TenShadows.Items.Techniques.AEquip
+namespace TenShadows.Items.Techniques.ARestrictions
 {
     public class HeavenlyPhysical : ModItem
     {
@@ -32,20 +32,31 @@ namespace TenShadows.Items.Techniques.AEquip
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("Heavenly Restriction | Physical");
-            Tooltip.SetDefault("Boost cursed, melee, and ranged damage by 10%, movement speed by 5%, and defense by 2\nHowever, you are unable to utilize cursed energy, mana, and minions");
+            DisplayName.SetDefault("Physical Heavenly Restriction");
+            Tooltip.SetDefault("12% cursed, melee and ranged damage\n10% movement speed\n3 defense\nHowever, you are unable to utilize cursed energy, mana, and minions\nCounts as a binding vow");
         }
 
         public override void SetDefaults()
         {
             Item.width = 30;
             Item.height = 34;
-            Item.value = 10000;
+            Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
 
         }
+        public override bool CanEquipAccessory(Player player, int slot, bool modded)
+        {
 
+            if (modded)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.AddBuff(ModContent.BuffType<HeavenlyBuff>(), 2);

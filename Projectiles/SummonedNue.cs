@@ -229,7 +229,7 @@ namespace TenShadows.Projectiles
         private void Movement(bool foundTarget, float distanceFromTarget, Vector2 targetCenter, float distanceToIdlePosition, Vector2 vectorToIdlePosition)
         {
             // Default movement parameters (here for attacking)
-            float speed = 8f;
+            float speed = 10f;
             float inertia = 20f;
 
             if (foundTarget)
@@ -251,13 +251,13 @@ namespace TenShadows.Projectiles
                 if (distanceToIdlePosition > 600f)
                 {
                     // Speed up the minion if it's away from the player
-                    speed = 12f;
+                    speed = 15f;
                     inertia = 60f;
                 }
                 else
                 {
                     // Slow down the minion if closer to the player
-                    speed = 4f;
+                    speed = 5f;
                     inertia = 80f;
                 }
 

@@ -19,7 +19,7 @@ namespace TenShadows.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Binding Vow: Restrained");
+            DisplayName.SetDefault("Domain: Restrained");
             Description.SetDefault("Damaged reduced by 15%");
             Main.debuff[Type] = true;
             Main.buffNoSave[Type] = true; // This buff won't save when you exit the world

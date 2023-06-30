@@ -38,7 +38,7 @@ namespace TenShadows.Items.Accessories
         {
             Item.width = 26;
             Item.height = 32;
-            Item.value = 10000;
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
           //  Item.expert = true;

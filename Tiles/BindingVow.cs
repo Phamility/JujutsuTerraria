@@ -11,8 +11,8 @@ namespace TenShadows.Tiles
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Binding Vow");
-            Tooltip.SetDefault("Players within this tile's range have their damage increased by 15%\nPlayers outside of this tile's range have their damage reduced by 15%\nOnly one binding vow may be placed in the world");
+            DisplayName.SetDefault("Domain");
+            Tooltip.SetDefault("Players within this tile's range have their damage increased by 15%\nPlayers outside of this tile's range have their damage reduced by 15%\nOnly one domain may be placed in the world");
         }
         public override void SetDefaults()
         {
@@ -20,7 +20,7 @@ namespace TenShadows.Tiles
             Item.DefaultToPlaceableTile(ModContent.TileType<BindingVowTile>());
             Item.width = 26; // The item texture's width
             Item.height = 38; // The item texture's height
-            Item.value = 150;
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
             Item.maxStack = 99;
 

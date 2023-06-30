@@ -14,6 +14,7 @@ using Terraria.ID;
 using TenShadows.Projectiles;
 using TenShadows.Items.Materials;
 using TenShadows.Ancients;
+using Terraria.Utilities;
 
 
 namespace TenShadows.Items.Shadows
@@ -52,9 +53,35 @@ namespace TenShadows.Items.Shadows
             Item.UseSound = SoundID.NPCDeath43; // What sound should play when using the item
             Item.noMelee = true;
             //      item.shootSpeed = 4f;
+            Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<OxProjectile>();
 
+        }
+        public override int ChoosePrefix(UnifiedRandom rand)
+        {
+            var prefixchooser = new WeightedRandom<int>();
+            prefixchooser.Add(PrefixID.Broken, 2);
+            prefixchooser.Add(PrefixID.Damaged, 2);
+            prefixchooser.Add(PrefixID.Slow, 2);
+            prefixchooser.Add(PrefixID.Annoying, 2);
+            prefixchooser.Add(PrefixID.Quick, 2);
+            prefixchooser.Add(PrefixID.Deadly, 2);
+            prefixchooser.Add(PrefixID.Demonic, 2);
+            prefixchooser.Add(PrefixID.Godly, 2);
+            prefixchooser.Add(PrefixID.Ruthless, 2);
+            prefixchooser.Add(PrefixID.Unpleasant, 2);
+            prefixchooser.Add(PrefixID.Hurtful, 2);
+
+            prefixchooser.Add(PrefixID.Rapid, 2);
+            prefixchooser.Add(PrefixID.Unreal, 2);
+            int choice = prefixchooser;
+            if ((Item.damage > 0) && Item.maxStack == 1)
+            {
+                return choice;
+            }
+            return -1;
         }
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {
