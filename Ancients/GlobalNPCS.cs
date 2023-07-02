@@ -12,11 +12,124 @@ using Microsoft.Xna.Framework;
 using TenShadows.Buffs;
 using TenShadows.Armor;
 using TenShadows.Items.Techniques.ARestrictions;
+using static Terraria.ModLoader.PlayerDrawLayer;
+using System;
+using System.Runtime.InteropServices;
 
 namespace TenShadows.Ancients
 {
     public class GlobalNPCS : GlobalNPC
     {
+        private static int EyeCD;
+        private static int SlimeCD;
+
+
+        public override void AI(NPC npc)
+        {
+            int Mode;
+            if(Main.masterMode == true)
+            {
+                Mode = 3;
+            } else if (Main.expertMode == true)
+            {
+                Mode = 2;
+            }
+            else
+            {
+                Mode = 1;
+            }
+            //EOC Boss Buff
+            if (npc.type == NPCID.EyeofCthulhu)
+            {
+                int EyeHealth;
+                if(Mode == 3)
+                {
+                    EyeHealth = 3016;
+                } else
+                if (Mode == 2)
+                {
+                    EyeHealth = 2366;
+                } else
+                {
+                    EyeHealth = 1400;
+                }
+                if(npc.life <= EyeHealth)
+                {
+                        if (Main.netMode == NetmodeID.MultiplayerClient)
+                        {
+                            return;
+                        }
+                        if((npc.velocity.Y > 11 || npc.velocity.Y < -11 || npc.velocity.X > 11 || npc.velocity.X < -11) && (EyeCD >= 20) && (NPC.CountNPCS(NPCID.ServantofCthulhu) < 32))
+                        {
+                            var entitySource = npc.GetSource_FromAI();
+                            int type = NPCID.ServantofCthulhu;
+                            NPC minionNPC = NPC.NewNPCDirect(entitySource, (int)npc.Center.X, (int)npc.Center.Y, type, npc.whoAmI);
+                        EyeCD = 0;
+
+                    }
+                    else
+                    {
+                        EyeCD += 1;
+
+                    }
+                }
+            }
+            if (npc.type == NPCID.KingSlime)
+            {
+                int SlimeHealth;
+                if (Mode == 3)
+                {
+                    SlimeHealth = 1428;
+                }
+                else
+                if (Mode == 2)
+                {
+                    SlimeHealth = 1120;
+                }
+                else
+                {
+                    SlimeHealth = 800;
+                }
+                if (npc.life <= SlimeHealth)
+                {
+                    int SlimeRage = 240;
+                    if(npc.life <= SlimeHealth / 3)
+                    {
+                        SlimeRage = 60;
+                    }
+                    if (Main.netMode == NetmodeID.MultiplayerClient)
+                    {
+
+                        return;
+                    }
+                    if (SlimeCD >= SlimeRage)
+                    {
+                        var entitySource = npc.GetSource_FromAI();
+                        int type = NPCID.BlueSlime;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if ((NPC.CountNPCS(NPCID.BlueSlime) < 30)){
+                                Player player = Main.player[npc.target];
+
+                                int positive;
+                                if (Main.rand.Next(1, 3) == 2) { positive = 1; } else { positive = -1; }
+                                Vector2 position2 = new Vector2(player.position.X + (Main.rand.Next(300, 600) * positive), player.position.Y - Main.rand.Next(400, 600));
+
+                                NPC minionNPC = NPC.NewNPCDirect(entitySource, (int)position2.X, (int)position2.Y, type, npc.whoAmI);
+
+                            }
+                        }
+                        SlimeCD = 0;
+                    }
+                    else
+                    {
+
+                        SlimeCD += 1;
+
+                    }
+                }
+            }
+        }
 
         public override void DrawEffects(NPC npc, ref Color drawColor)
         {

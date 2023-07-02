@@ -39,7 +39,7 @@ namespace TenShadows.Items.Techniques.ARestrictions;
             // Fly speed: 9
             // Acceleration multiplier: 2.5
             DisplayName.SetDefault("Binding Vow: Speed");
-            Tooltip.SetDefault("20% movement speed\nHowever, defense is reduced by 4");
+            Tooltip.SetDefault("12% movement speed\nHowever, defense is reduced by 4");
         }
 
         public override void SetDefaults()
@@ -81,9 +81,9 @@ namespace TenShadows.Items.Techniques.ARestrictions;
     public override void UpdateAccessory(Player player, bool hideVisual)
         {
     //   player.moveSpeed *= 1.2f;
-        player.maxRunSpeed *= 1.2f;
+        player.maxRunSpeed *= 1.12f;
       //  player.accRunSpeed *= 1.2f;
-        player.runAcceleration *= 1.2f; 
+        player.runAcceleration *= 1.12f; 
         player.statDefense -= 4;
 
         }

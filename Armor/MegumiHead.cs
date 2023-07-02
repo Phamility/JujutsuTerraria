@@ -20,6 +20,8 @@ namespace TenShadows.Armor
 
             DisplayName.SetDefault("Fushiguro Megumi");
             Tooltip.SetDefault("1% increased cursed damage");
+            ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
+
         }
 
 

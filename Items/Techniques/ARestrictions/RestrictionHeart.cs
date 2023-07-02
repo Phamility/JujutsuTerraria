@@ -38,7 +38,7 @@ namespace TenShadows.Items.Techniques.ARestrictions;
             // Fly speed: 9
             // Acceleration multiplier: 2.5
             DisplayName.SetDefault("Binding Vow: Health");
-            Tooltip.SetDefault("50 max health\nHowever, movement speed is reduced by 20%");
+            Tooltip.SetDefault("50 max health\nHowever, movement speed is reduced by 12%");
         }
 
         public override void SetDefaults()
@@ -78,9 +78,9 @@ namespace TenShadows.Items.Techniques.ARestrictions;
     public override void UpdateAccessory(Player player, bool hideVisual)
         {
       // player.moveSpeed *= .8f;
-        player.maxRunSpeed *= .83f;
-        player.accRunSpeed *= .83f;
-        player.runAcceleration *= .83f; 
+        player.maxRunSpeed *= .88f;
+        player.accRunSpeed *= .88f;
+        player.runAcceleration *= .88f; 
         player.statLifeMax2 += 50;
 
         }

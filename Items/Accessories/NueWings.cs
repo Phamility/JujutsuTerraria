@@ -34,7 +34,7 @@ namespace TenShadows.Items.Accessories
             // Acceleration multiplier: 2.5
             DisplayName.SetDefault("Nue's Wings");
             Tooltip.SetDefault("Allows flight and slow fall");
-            ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(20, 2f, 1f);
+            ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(17, 2f, 1f);
         }
 
         public override void SetDefaults()
