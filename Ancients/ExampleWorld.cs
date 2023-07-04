@@ -23,12 +23,14 @@ namespace TenShadows.Ancients
     {
         public int HowManyIceFormations;
         public int HowManyFingers;
+        public int HowManyPicks;
 
 
         public override void PostWorldGen()
         {
             HowManyIceFormations = 0;
             HowManyFingers = 0;
+            HowManyPicks = 0;
             for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
             {
 
@@ -80,6 +82,8 @@ namespace TenShadows.Ancients
                     Main.tile[chest.x, chest.y].TileFrameX == 12 * 36 ||
                     Main.tile[chest.x, chest.y].TileFrameX == 32 * 36 ||
                     Main.tile[chest.x, chest.y].TileFrameX == 4 * 36 ||
+                    Main.tile[chest.x, chest.y].TileFrameX == 50 * 36||
+                    Main.tile[chest.x, chest.y].TileFrameX == 51 * 36||
 
                     Main.tile[chest.x, chest.y].TileFrameX == 17 * 36))
                 {
@@ -113,6 +117,34 @@ namespace TenShadows.Ancients
                     }
                 }
 
+
+
+            }
+            for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
+            {
+
+
+                Chest chest = Main.chest[chestIndex];
+                int[] itemsToPlaceInChests4 = { Mod.Find<ModItem>("RestrictionMine").Type };
+                // int IceFormationNum = Main.rand.Next(23, 51);
+                int IceFormationNum = 1;
+
+                if (chest != null && Main.tile[chest.x, chest.y].TileType == TileID.Containers && Main.tile[chest.x, chest.y].TileFrameX == 1 * 36)
+                {
+                    if (Main.rand.Next(1, 101) <= 35 || HowManyIceFormations < 2)
+                    {
+                        HowManyPicks++;
+                        for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
+                            if (chest.item[inventoryIndex].type == 0)
+                            {
+
+                                chest.item[inventoryIndex].SetDefaults(itemsToPlaceInChests4[0]);
+                                chest.item[inventoryIndex].stack = IceFormationNum;
+
+                                break;
+                            }
+                    }
+                }
 
 
             }

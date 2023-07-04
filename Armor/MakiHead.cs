@@ -45,14 +45,17 @@ namespace TenShadows.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = "Enhances 'Heavenly Restriction'"; // This is the setbonus tooltip
-   
+            player.GetModPlayer<MPArmors>().MakiHeadOn = true;
+            player.GetModPlayer<MPArmors>().MakiDamageNumber = 16;
+                player.GetModPlayer<MPArmors>().MakiDefenseNumber = 4;
+                player.GetModPlayer<MPArmors>().MakiMoveNumber = 8;
             player.GetModPlayer<MPArmors>().MakiHeadOn = true;
 
 
         }
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage<CursedDamage>() += (5 / 100);
+            player.GetDamage<CursedDamage>() += .05f;
 
         }
         public override void AddRecipes()

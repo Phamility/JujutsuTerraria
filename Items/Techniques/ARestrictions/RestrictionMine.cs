@@ -24,11 +24,10 @@ using TenShadows.Projectiles;
 using TenShadows.Items.Materials;
 using rail;
 using TenShadows.Ancients;
-using TenShadows.Items.Techniques.Blood;
 using Terraria.Utilities;
 
 namespace TenShadows.Items.Techniques.ARestrictions;
-    public class RestrictionBoots : ModItem
+    public class RestrictionMine : ModItem
     {
         // To see how this config option was added, see ExampleModConfig.cs
 
@@ -38,8 +37,8 @@ namespace TenShadows.Items.Techniques.ARestrictions;
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("Binding Vow: Speed");
-            Tooltip.SetDefault("12% movement speed\nHowever, defense is reduced by 4");
+            DisplayName.SetDefault("Binding Vow: Mine");
+            Tooltip.SetDefault("Increased mining speed\nHowever, health is reduced by 50");
         }
 
         public override void SetDefaults()
@@ -50,15 +49,7 @@ namespace TenShadows.Items.Techniques.ARestrictions;
             Item.rare = ItemRarityID.Blue;
             Item.accessory = true;
         Item.prefix = 0;
-
-
-    }
-    public override void AddRecipes()
-    {
-        CreateRecipe()
-            .AddIngredient<StandardBV>(1)
-            .Register();
-    }
+        }
     public override bool? PrefixChance(int pre, UnifiedRandom rand)
     {
         if (pre == -1)
@@ -67,6 +58,7 @@ namespace TenShadows.Items.Techniques.ARestrictions;
         }
         return false;
     }
+
     public override bool CanEquipAccessory(Player player, int slot, bool modded)
     {
 
@@ -80,11 +72,10 @@ namespace TenShadows.Items.Techniques.ARestrictions;
     }
     public override void UpdateAccessory(Player player, bool hideVisual)
         {
-    //   player.moveSpeed *= 1.2f;
-        player.maxRunSpeed *= 1.12f;
-       player.accRunSpeed *= 1.12f;
-    //    player.runAcceleration *= 1.12f; 
-        player.statDefense -= 4;
+        // player.moveSpeed *= .8f;
+        player.pickSpeed -= 3;
+
+        player.statLifeMax2 -= 50;
 
         }
 

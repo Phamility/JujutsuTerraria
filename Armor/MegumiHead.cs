@@ -47,7 +47,7 @@ namespace TenShadows.Armor
         }
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage<CursedDamage>() += (1 / 100);
+            player.GetDamage<CursedDamage>() += .01f;
 
         }
         public override void AddRecipes()

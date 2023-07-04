@@ -34,8 +34,8 @@ namespace TenShadows.Items.Techniques.ARestrictions
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("Physical Heavenly Restriction");
-            Tooltip.SetDefault("8% cursed, melee and ranged damage\n4% movement speed\n2 defense\nHowever, you are unable to utilize cursed energy, mana, and minions\nCounts as a binding vow");
+            DisplayName.SetDefault("Heavenly Restriction");
+            Tooltip.SetDefault("However, you are unable to utilize cursed energy, mana, and minions\nCounts as a binding vow");
         }
 
         public override void SetDefaults()
@@ -63,15 +63,15 @@ namespace TenShadows.Items.Techniques.ARestrictions
             if (Item.favorited) { AddMore = 2; } else { AddMore = 0; }
             Player player = Main.LocalPlayer;
             TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"{player.GetModPlayer<MPArmors>().MakiDamageNumber}% cursed, melee, and ranged damage") { OverrideColor = Color.White };
-            tooltips.Insert(1 + AddMore, tooltip);
+            tooltips.Insert(2 + AddMore, tooltip);
 
                 TooltipLine Cock = new TooltipLine(Mod, "Ten Shadows: Cost", $"{player.GetModPlayer<MPArmors>().MakiMoveNumber}% movement speed") { OverrideColor = Color.White };
-                tooltips.Insert(2 + AddMore, Cock);
+                tooltips.Insert(3 + AddMore, Cock);
            
           
             
                 TooltipLine Cock2 = new TooltipLine(Mod, "Ten Shadows: Cost", $"{player.GetModPlayer<MPArmors>().MakiDefenseNumber} defense") { OverrideColor = Color.White };
-                tooltips.Insert(3 + AddMore, Cock);
+                tooltips.Insert(4 + AddMore, Cock2);
 
 
         }

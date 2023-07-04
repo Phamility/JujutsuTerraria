@@ -69,10 +69,21 @@ namespace TenShadows.Tiles
         }
         public int ZoneBody;
         public bool ZoneBodyWorn;
+        public bool ZoneYujiWorn;
+        public int ZoneYuji;
+
         public override void PostUpdateEquips()
         
         
         {
+            if (ZoneYujiWorn)
+            {
+                ZoneYuji = 2;
+            }
+            else
+            {
+                ZoneYuji = 0;
+            }
             if (UniformLegs.BlackFlashBody == true && ZoneBodyWorn == true)
             {
                 ZoneBody = 1;
@@ -95,7 +106,7 @@ namespace TenShadows.Tiles
                 }
 
             } 
-            ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger + ZoneBody;
+            ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger + ZoneBody + ZoneYuji; 
             ZoneDamage = 4 + BlackFlashDamageBooster;
             //   Player.wingTimeMax += 30 * FlightBuff.Wearing;
             if (Player.HasBuff<FlightBuff>())
@@ -137,6 +148,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
             ZoneEffectChance = 0;
             ZoneDuration = 5;
             NueMaskOn = false;
+            ZoneYujiWorn = false;
 
 
             if (NPC.downedMoonlord)

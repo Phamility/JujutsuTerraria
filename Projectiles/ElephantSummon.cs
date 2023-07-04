@@ -11,6 +11,7 @@ using Terraria.ModLoader;
 using static Humanizer.In;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using TenShadows.Ancients;
+using System.Collections.Generic;
 
 namespace TenShadows.Projectiles
 {
@@ -61,7 +62,7 @@ namespace TenShadows.Projectiles
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
             Projectile.penetrate = -1;
             Projectile.timeLeft = Projectile.SentryLifeTime;
-
+            Projectile.hide = true;
         }
 
         // Here you can decide if your minion breaks things like grass or pots
@@ -80,6 +81,11 @@ namespace TenShadows.Projectiles
             Player player = Main.player[Projectile.owner];
 
         }
+        public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
+        {
+            behindNPCs.Add(index);
+        }
+
         private int timerlife;
         private int fucker;
         // The AI of this minion is split into multiple methods to avoid bloat. This method just passes values between calls actual parts of the AI.
