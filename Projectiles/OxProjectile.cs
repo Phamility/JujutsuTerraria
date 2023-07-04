@@ -63,6 +63,8 @@ namespace TenShadows.Projectiles
         public int positive;
         public sealed override void SetDefaults()
         {
+            Projectile.usesIDStaticNPCImmunity = true;
+            Projectile.idStaticNPCHitCooldown = 8;
             //Projectile.scale = 3;
             xspeed = 10 * PiercingOx.positive;
             Projectile.spriteDirection = PiercingOx.positive;

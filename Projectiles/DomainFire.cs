@@ -30,8 +30,8 @@ namespace TenShadows.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Volanic Domain");
-         //    Main.projFrames[Projectile.type] = 1;
-           Main.projPet[Projectile.type] = true;
+            Main.projFrames[Projectile.type] = 1;
+           Main.projPet[Projectile.type] = false;
 
 
 
@@ -43,7 +43,8 @@ namespace TenShadows.Projectiles
             Projectile.width = 522;
   
             Projectile.damage = 20;
-
+            Projectile.usesIDStaticNPCImmunity = true;
+            Projectile.idStaticNPCHitCooldown = 10;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
 
             Projectile.height = 522;
@@ -53,11 +54,12 @@ namespace TenShadows.Projectiles
             Projectile.friendly = true;
             Projectile.hostile = false;
 
-           Projectile.penetrate = 1 ;
+           Projectile.penetrate = -1 ;
             Projectile.Opacity = 0f;
-            Projectile.scale = 0;
+            Projectile.scale = 1;
             Projectile.hide = true;
         }
+     
 
         public override bool? CanCutTiles()
         {
@@ -69,19 +71,46 @@ namespace TenShadows.Projectiles
             get => (int)Projectile.ai[1];
             set => Projectile.ai[1] = value;
         }
+ 
+        public override bool? CanHitNPC(NPC target)
+        {
+            if (target.friendly == true || target.immune[Projectile.owner] == 5) { return false; }
+            else
+            {
+                return true;
+            }
+        }
+        public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
+        {
+            float radius = 522/2;
+            return Projectile.Center.DistanceSQ(targetHitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale;
+        }
+        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        {
+            target.immune[Projectile.owner] = 5;
+
+        }
+        public override bool? CanDamage()
+        {
+            return true;
+        }
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
+            			target.immune[Projectile.owner] = 5;
+
             target.AddBuff(BuffID.OnFire3, 60 * 10);
             target.AddBuff(BuffID.ShadowFlame, 60 * 10);
             TargetWhoAmI = target.whoAmI;
         }
-   
+
         public override bool MinionContactDamage()
         {
             return true;
         }
+     
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
         {
+            Main.instance.DrawCacheProjsBehindNPCsAndTiles.Add(index);
             int npcIndex = TargetWhoAmI;
             if (npcIndex >= 0 && npcIndex < 200 && Main.npc[npcIndex].active)
             {
@@ -99,6 +128,7 @@ namespace TenShadows.Projectiles
             behindNPCsAndTiles.Add(index);
 
         }
+ 
 
         public override void AI()
         {
@@ -110,17 +140,13 @@ namespace TenShadows.Projectiles
                 {
                     Projectile.Opacity += .04f;
                 }
-                if (Projectile.Opacity < 1)
-                {
-                    Projectile.scale += .03f;
-                }
-                Projectile.Center = player.Center - new Vector2 (260, 180);
+ 
+                Projectile.Center = player.Center;
             }
             else
             {
                 Projectile.Opacity -= .15f;
-                Projectile.scale -= .15f;
-                if(Projectile.Opacity <=0 && Projectile.scale <= 0)
+                if(Projectile.Opacity <=0)
                 {
                     Projectile.active = false;
                 }

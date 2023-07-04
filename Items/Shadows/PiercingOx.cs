@@ -43,6 +43,7 @@ namespace TenShadows.Items.Shadows
             Cost = 20;
             Item.width = 30;
             Item.height = 28;
+
             Item.crit = 8;
             Item.useTime = 100;
             Item.useAnimation = 100;

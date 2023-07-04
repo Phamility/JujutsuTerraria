@@ -43,7 +43,7 @@ namespace TenShadows.Items.Techniques.Domains
             Item.height = 36;
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
-            Item.damage = 20;
+            Item.damage = 36;
             Cost = 35;
             Item.useTime = 10;
             Item.useAnimation = 10;
@@ -58,15 +58,7 @@ namespace TenShadows.Items.Techniques.Domains
             Item.shoot = ModContent.ProjectileType<DomainFire>();
             Item.channel = true;
         }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
 
-            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-
-
-            return false;
-
-        }
         public override void ModifyWeaponCrit(Player player, ref float crit)
         {
 

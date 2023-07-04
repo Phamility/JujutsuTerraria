@@ -40,6 +40,7 @@ namespace TenShadows.Projectiles
 
         public sealed override void SetDefaults()
         {
+            Projectile.usesLocalNPCImmunity = true;
             Projectile.width = 18;
             Projectile.height = 24;
             Projectile.tileCollide = false; // Makes the minion go through tiles freely
