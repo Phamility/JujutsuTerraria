@@ -19,7 +19,7 @@ namespace TenShadows.Armor
         {
 
             DisplayName.SetDefault("Zenin Maki");
-            Tooltip.SetDefault("6% increased cursed damage");
+            Tooltip.SetDefault("5% increased cursed damage");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
           // Don't draw the head at all. Used by Space Creature Mask
             // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat
@@ -33,8 +33,8 @@ namespace TenShadows.Armor
             Item.width = 28; // Width of the item
             Item.height = 26; // Height of the item
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
-            Item.rare = ItemRarityID.Blue; // The rarity of the item
-            Item.defense = 1; // The amount of defense the item will give when equipped
+            Item.rare = ItemRarityID.Green; // The rarity of the item
+            Item.defense = 4; // The amount of defense the item will give when equipped
         }
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
@@ -44,20 +44,27 @@ namespace TenShadows.Armor
         // UpdateArmorSet allows you to give set bonuses to the armor.
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Increased speed!"; // This is the setbonus tooltip
-            player.moveSpeed *= 2f;
-            player.maxRunSpeed *= 2;
-            player.accRunSpeed *= 2;
-            player.runAcceleration *= 2;
+            player.setBonus = "Enhances 'Heavenly Restriction'"; // This is the setbonus tooltip
+   
+            player.GetModPlayer<MPArmors>().MakiHeadOn = true;
+
 
         }
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage<CursedDamage>() += (6 / 100);
+            player.GetDamage<CursedDamage>() += (5 / 100);
 
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<CursedEnergy>(200)
+                              .AddIngredient(ItemID.Bone, 25)
 
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+                .AddTile<ShrineTile>()
+                .Register();
+        }
+            // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 
-    }
+        }
 }

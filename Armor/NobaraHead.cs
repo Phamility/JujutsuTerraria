@@ -50,7 +50,21 @@ namespace TenShadows.Armor
             player.GetDamage<CursedDamage>() += (3 / 100);
 
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<CursedEnergy>(120)
+                              .AddIngredient(ItemID.CrimtaneBar, 12)
 
+                .AddTile<ShrineTile>()
+                .Register();
+            CreateRecipe()
+    .AddIngredient<CursedEnergy>(120)
+                  .AddIngredient(ItemID.DemoniteBar, 12)
+
+    .AddTile<ShrineTile>()
+    .Register();
+        }
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 
     }

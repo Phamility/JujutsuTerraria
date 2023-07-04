@@ -58,8 +58,13 @@ namespace TenShadows.Armor
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
     {
-        TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"{CursedStatIncrease}% increased cursed damage") { OverrideColor = Color.White };
-        tooltips.Insert(3, tooltip);
+            int AddMore = 0;
+            if (Item.favorited) { AddMore = 2; } else
+            {
+                AddMore = 0;
+            }
+            TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"{CursedStatIncrease}% increased cursed damage") { OverrideColor = Color.White };
+        tooltips.Insert(3 + AddMore, tooltip);
             if (BlackFlashBody == true)
             {
                 TooltipLine Cock = new TooltipLine(Mod, "Ten Shadows: Cost", $"1% increased black flash chance") { OverrideColor = Color.White };

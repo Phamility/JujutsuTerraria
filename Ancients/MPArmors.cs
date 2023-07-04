@@ -25,11 +25,20 @@ namespace TenShadows.Ancients
     public class MPArmors : ModPlayer
     {
         public bool NobaraHeadOn;
+        public bool MakiHeadOn;
+        public int MakiDamageNumber;
+        public int MakiMoveNumber;
+        public int MakiDefenseNumber;
+
 
 
         public override void ResetEffects()
         {
             NobaraHeadOn = false;
+            MakiHeadOn = false;
+            MakiDamageNumber = 8;
+            MakiMoveNumber = 4;
+            MakiDefenseNumber = 2;
         }
     }
 }

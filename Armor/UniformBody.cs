@@ -74,22 +74,24 @@ namespace TenShadows.Armor
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
+            int AddMore = 0;
+            if (Item.favorited) { AddMore = 2; } else { AddMore = 0; }
             TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"{CursedStatIncrease}% increased cursed damage") { OverrideColor = Color.White };
-            tooltips.Insert(3, tooltip);
+            tooltips.Insert(3 + AddMore, tooltip);
             if (UniformBodyDefense >= 15)
             {
                 TooltipLine Cock = new TooltipLine(Mod, "Ten Shadows: Cost", $"Increases max health by 40") { OverrideColor = Color.White };
-                tooltips.Insert(4, Cock);
+                tooltips.Insert(4 + AddMore, Cock);
             }
             else if (UniformBodyDefense >= 6)
             {
                 TooltipLine Cock = new TooltipLine(Mod, "Ten Shadows: Cost", $"Increases max health by 20") { OverrideColor = Color.White };
-                tooltips.Insert(4, Cock);
+                tooltips.Insert(4 + AddMore, Cock);
             }
             if (UniformBodyDefense >= 10)
             {
                 TooltipLine Cock = new TooltipLine(Mod, "Ten Shadows: Cost", $"Increases armor penetration by 3") { OverrideColor = Color.White };
-                tooltips.Insert(5, Cock);
+                tooltips.Insert(5 + AddMore, Cock);
             }
 
 
