@@ -23,14 +23,14 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace TenShadows.Projectiles
 {
-    public class DomainFire : ModProjectile
+    public class DomainInfinity : ModProjectile
     {
         int rspeed;
         int yspeed;
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Volanic Domain");
+            DisplayName.SetDefault("Infinite Domain");
             Main.projFrames[Projectile.type] = 1;
            Main.projPet[Projectile.type] = false;
 
@@ -41,13 +41,13 @@ namespace TenShadows.Projectiles
         private int lockedin;
         public sealed override void SetDefaults()
         {
-            Projectile.width = 522;
+            Projectile.width = 825;
   
             Projectile.usesIDStaticNPCImmunity = true;
-            Projectile.idStaticNPCHitCooldown = 10;
+            Projectile.idStaticNPCHitCooldown = 7;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
 
-            Projectile.height = 522;
+            Projectile.height = 825;
             Projectile.tileCollide = false;
            Projectile.ignoreWater = true;
 
@@ -82,7 +82,7 @@ namespace TenShadows.Projectiles
         }
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
-            float radius = 522/2;
+            float radius = 825/2;
             return Projectile.Center.DistanceSQ(targetHitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale;
         }
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
@@ -98,8 +98,7 @@ namespace TenShadows.Projectiles
         {
             			target.immune[Projectile.owner] = 5;
 
-            target.AddBuff(BuffID.OnFire3, 60 * 10);
-            target.AddBuff(BuffID.ShadowFlame, 60 * 10);
+
             TargetWhoAmI = target.whoAmI;
         }
 
@@ -145,13 +144,13 @@ namespace TenShadows.Projectiles
 
                 if (Wacko <= .85)
                 {
-                    Wacko += .008f;
+                    Wacko += .025f;
                     Projectile.Opacity += .005f;
                 }
-              if (Projectile.scale <= 1)
+                if (Projectile.scale <= 1)
                 {
-                    Projectile.scale += .01f;
-                } 
+                    Projectile.scale += .03f;
+                }
 
                 Projectile.Center = player.Center;
             }
@@ -160,10 +159,10 @@ namespace TenShadows.Projectiles
 
                 Projectile.Center = player.Center;
 
-                Projectile.scale -= .1f;
-                Wacko -= .045f;
+                Projectile.scale -= .08f;
+                Wacko -= .052f;
                 Projectile.Opacity -= .1f;
-                if(Projectile.scale <= 0)
+                if (Projectile.scale <= 0)
                 {
                     Projectile.active = false;
                 }

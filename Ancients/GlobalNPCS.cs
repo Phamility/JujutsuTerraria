@@ -15,6 +15,7 @@ using TenShadows.Items.Techniques.ARestrictions;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using System;
 using System.Runtime.InteropServices;
+using TenShadows.Items.Techniques.Domains;
 
 namespace TenShadows.Ancients
 {
@@ -248,6 +249,7 @@ namespace TenShadows.Ancients
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<RestlessGambler>(), 5));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<BloodEdge>(), 5));
 
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<DEFire>(), 5));
 
                 npcLoot.Add(notExpertRule);
             }
@@ -319,6 +321,7 @@ namespace TenShadows.Ancients
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<RestlessGambler>(), 4));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BloodEdge>(), 4));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DEFire>(), 4));
 
 
             }

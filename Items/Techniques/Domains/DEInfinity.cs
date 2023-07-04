@@ -17,12 +17,12 @@ using static Humanizer.In;
 
 namespace TenShadows.Items.Techniques.Domains
 {
-    public class DEFire : ModItem
+    public class DEInfinity : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Coffin of the Iron Mountain");
-            Tooltip.SetDefault("Conjure the power of Hell.");
+            DisplayName.SetDefault("Unlimited Void");
+            Tooltip.SetDefault("Conjure the power of the Void.");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)
@@ -43,20 +43,20 @@ namespace TenShadows.Items.Techniques.Domains
             Item.height = 36;
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
-            Item.damage = 32;
-            Cost = 35;
-            Item.useTime = 30;
-            Item.useAnimation = 30;
+            Item.damage = 299;
+            Cost = 999;
+            Item.useTime = 60;
+            Item.useAnimation = 60;
           Item.useStyle = ItemUseStyleID.HiddenAnimation; // How you use the item (swinging, holding out, etc.)
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
-            Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
+            Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
             Item.noMelee = true;
             Item.knockBack = 0;
             Item.noUseGraphic = true;
 
             Item.shootSpeed = 1;
-            Item.shoot = ModContent.ProjectileType<DomainFire>();
+            Item.shoot = ModContent.ProjectileType<DomainInfinity>();
             Item.channel = true;
         }
 
@@ -155,7 +155,7 @@ namespace TenShadows.Items.Techniques.Domains
         }
         public override void UpdateInventory(Player player)
         {
-            Cost = 35;
+            Cost = 999;
 
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
@@ -189,7 +189,7 @@ namespace TenShadows.Items.Techniques.Domains
         { 
             bool Condition1;
             bool Condition2 = false;
-            Cost = 35;
+            Cost = 999;
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
                 Reduction = Cost - 1;

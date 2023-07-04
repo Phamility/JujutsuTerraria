@@ -16,6 +16,7 @@ using static Terraria.ModLoader.PlayerDrawLayer;
 using TenShadows.Ancients;
 using TenShadows.Buffs;
 using TenShadows.Tiles;
+using System.Collections.Generic;
 
 namespace TenShadows.Projectiles
 {
@@ -89,10 +90,16 @@ namespace TenShadows.Projectiles
             Projectile.penetrate = -1;
             //  Projectile.DamageType = DamageClass.Magic;
             Projectile.Opacity = 0; Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
-
+            Projectile.hide = true;
 
             Projectile.timeLeft = 480;
             // Needed so the minion doesn't despawn on collision with enemies or tiles
+
+        }
+        public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
+        {
+
+            Main.instance.DrawCacheProjsBehindNPCsAndTiles.Add(index);
 
         }
         public override bool? CanCutTiles()
