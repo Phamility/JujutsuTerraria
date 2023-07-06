@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     // This class stores necessary player info for our custom damage class, such as damage multipliers, additions to knockback and crit, and our custom resource that governs the usage of the weapons of this damage class.
     public class ExampleDamagePlayer : ModPlayer

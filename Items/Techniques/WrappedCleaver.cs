@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +12,19 @@ using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 
 using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 using rail;
-using TenShadows.Ancients;
+using JujutsuTerraria.Ancients;
 using Steamworks;
 using Terraria.Utilities;
 
-namespace TenShadows.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques
 {
     public class WrappedCleaver : ModItem
     {

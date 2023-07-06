@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
-using TenShadows.Items.Techniques.AEquip;
-using TenShadows.Items.Techniques.ARestrictions;
+using JujutsuTerraria.Items.Techniques.AEquip;
+using JujutsuTerraria.Items.Techniques.ARestrictions;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     public class ExampleModWingSlot : ModAccessorySlot
     {
@@ -49,7 +49,7 @@ namespace TenShadows.Ancients
 
         // Icon textures. Nominal image size is 32x32. Will be centered on the slot.
         //   public override string FunctionalTexture => "Terraria/Images/Item_" + ItemID.ShadowKey;
-        public override string FunctionalTexture => "TenShadows/Items/ARestrictions/StandardBV";
+        public override string FunctionalTexture => "JujutsuTerraria/Items/ARestrictions/StandardBV";
 
         // Can be used to modify stuff while the Mouse is hovering over the slot.
         public override void OnMouseHover(AccessorySlotType context)

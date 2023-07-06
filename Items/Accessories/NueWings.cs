@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,10 +16,10 @@ using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 
-namespace TenShadows.Items.Accessories
+namespace JujutsuTerraria.Items.Accessories
 {
     [AutoloadEquip(EquipType.Wings)]
     public class NueWings : ModItem

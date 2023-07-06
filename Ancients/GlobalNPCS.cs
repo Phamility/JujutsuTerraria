@@ -3,21 +3,21 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System.Linq;
-using TenShadows.Items.Materials;
-using TenShadows.Items.Techniques;
-using TenShadows.Projectiles;
-using TenShadows.Items.Accessories.Eyes;
-using TenShadows.Items.Techniques.Blood;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Items.Techniques;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Accessories.Eyes;
+using JujutsuTerraria.Items.Techniques.Blood;
 using Microsoft.Xna.Framework;
-using TenShadows.Buffs;
-using TenShadows.Armor;
-using TenShadows.Items.Techniques.ARestrictions;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Armor;
+using JujutsuTerraria.Items.Techniques.ARestrictions;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using System;
 using System.Runtime.InteropServices;
-using TenShadows.Items.Techniques.Domains;
+using JujutsuTerraria.Items.Techniques.Domains;
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     public class GlobalNPCS : GlobalNPC
     {

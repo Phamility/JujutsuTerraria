@@ -1,5 +1,5 @@
 ﻿
-using System; using TenShadows.Buffs; 
+using System; using JujutsuTerraria.Buffs; 
 using Terraria;
 using System.IO;
 using Terraria.ID;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace TenShadows.Misc2
+namespace JujutsuTerraria.Misc2
 {
     class MP2 : ModPlayer
     {

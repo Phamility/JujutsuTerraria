@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,12 +16,12 @@ using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Projectiles;
-using TenShadows.Items.Techniques.ARestrictions;
-using TenShadows.Tiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Techniques.ARestrictions;
+using JujutsuTerraria.Tiles;
+using JujutsuTerraria.Items.Materials;
 
-namespace TenShadows.Items.Techniques.ARestrictions
+namespace JujutsuTerraria.Items.Techniques.ARestrictions
 {
     public class StandardBV : ModItem
     {

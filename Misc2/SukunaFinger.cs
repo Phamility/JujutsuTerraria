@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
-using TenShadows.NPCS;
-using TenShadows.Items.Accessories;
-using TenShadows.Items.Accessories.Eyes;
+using JujutsuTerraria.NPCS;
+using JujutsuTerraria.Items.Accessories;
+using JujutsuTerraria.Items.Accessories.Eyes;
 
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
@@ -20,12 +20,12 @@ using Terraria;
 
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 using rail;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 
-namespace TenShadows.Misc2
+namespace JujutsuTerraria.Misc2
 {
     public class SukunaFinger : ModItem
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using TenShadows.Buffs;
-using TenShadows.Buffs;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,19 +15,19 @@ using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 
 using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 using rail;
-using TenShadows.Ancients;
-using TenShadows.Items.Techniques.Blood;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Items.Techniques.Blood;
 using Terraria.Utilities;
 
-namespace TenShadows.Items.Techniques.ARestrictions;
+namespace JujutsuTerraria.Items.Techniques.ARestrictions;
     public class RestrictionBoots : ModItem
     {
         // To see how this config option was added, see ExampleModConfig.cs

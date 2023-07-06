@@ -1,5 +1,5 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +16,13 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 using rail;
 using Terraria.Utilities;
-using TenShadows.Ancients;
+using JujutsuTerraria.Ancients;
 
-namespace TenShadows.Items.Techniques.ARestrictions
+namespace JujutsuTerraria.Items.Techniques.ARestrictions
 {
     public class HeavenlyPhysical : ModItem
     {

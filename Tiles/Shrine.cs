@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Items.Materials;
 
 using Terraria;
 using Terraria.Audio;
@@ -13,7 +13,7 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.Utilities;
 
-namespace TenShadows.Tiles
+namespace JujutsuTerraria.Tiles
 {
     public class Shrine : ModItem
     {

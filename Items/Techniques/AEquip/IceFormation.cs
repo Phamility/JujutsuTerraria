@@ -1,5 +1,5 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,10 +16,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 
-namespace TenShadows.Items.Techniques.AEquip
+namespace JujutsuTerraria.Items.Techniques.AEquip
 {
     public class IceFormation : ModItem
     {

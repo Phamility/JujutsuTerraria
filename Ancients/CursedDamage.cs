@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     public class CursedDamage : DamageClass
     {

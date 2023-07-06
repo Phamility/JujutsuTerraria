@@ -1,18 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Items.Materials;
 using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using Terraria.Localization;
 using Terraria.ID;
 
-using TenShadows.Items;
+using JujutsuTerraria.Items;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 using Terraria;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     // Showcases using Mod.Call of other mods to facilitate mod integration/compatibility/support
     // Mod.Call is explained here https://github.com/tModLoader/tModLoader/wiki/Expert-Cross-Mod-Content#call-aka-modcall-intermediate
@@ -20,7 +20,7 @@ namespace TenShadows.Ancients
 
     // You need to look for resources the mod developers provide regarding how they want you to add mod compatibility
     // This can be their homepage, workshop page, wiki, github, discord, other contacts etc.
-    // If the mod is open source, you can visit its code distribution platform (usually GitHub) and look for "Call" in its Mod class
+    // If the mod is open source, you can visit its code distribution platform (usually GitHub) and look for "Call" in its 
     public class ModIntegrationsSystem : ModSystem
     {
         public static RecipeGroup ExampleRecipeGroup;

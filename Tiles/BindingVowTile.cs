@@ -8,10 +8,10 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
-using TenShadows.Items.Shadows;
-using System; using TenShadows.Buffs;
+using JujutsuTerraria.Items.Shadows;
+using System; using JujutsuTerraria.Buffs;
 
-namespace TenShadows.Tiles
+namespace JujutsuTerraria.Tiles
 {
     public class BindingVowTile : ModTile
     {

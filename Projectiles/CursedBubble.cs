@@ -10,11 +10,11 @@ using System.Linq;
 using Terraria.ModLoader.IO;
 using System.Text;
 using System.Threading.Tasks;
-using TenShadows.Ancients;
-using TenShadows.Buffs;
-using TenShadows.Tiles;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Tiles;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     public class CursedBubble : ModProjectile
     {

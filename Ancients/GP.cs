@@ -1,12 +1,12 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TenShadows.GamblingBuffs;
-using TenShadows.Items.Shadows;
-using TenShadows.Projectiles;
+using JujutsuTerraria.GamblingBuffs;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Projectiles;
 using Terraria.GameContent;
 using Terraria.Localization;
 using Terraria.Enums;
@@ -17,15 +17,15 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using System.Numerics;
-using TenShadows.Items.Techniques;
+using JujutsuTerraria.Items.Techniques;
 using System.Drawing.Imaging;
-using TenShadows.Items.Materials;
-using TenShadows.Ancients;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Ancients;
 using Terraria.DataStructures;
-using TenShadows.Items.Techniques.Blood;
-using TenShadows.Tiles;
+using JujutsuTerraria.Items.Techniques.Blood;
+using JujutsuTerraria.Tiles;
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     public class GP : GlobalProjectile
     {

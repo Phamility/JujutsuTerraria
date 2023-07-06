@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +7,7 @@ using Terraria.ID;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ModLoader;
-using TenShadows.NPCS;
+using JujutsuTerraria.NPCS;
 using ReLogic.Content;
 using ReLogic.Utilities;
 using Microsoft.Xna.Framework;
@@ -21,9 +21,9 @@ using Terraria.Localization;
 using Terraria.ModLoader.Core;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 
-namespace TenShadows.Items.Materials
+namespace JujutsuTerraria.Items.Materials
 {
     public class NueSummon : ModItem
     {

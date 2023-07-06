@@ -1,5 +1,5 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +11,11 @@ using Terraria.DataStructures;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
-using TenShadows.Tiles;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Tiles;
 using Terraria.Localization;
-using TenShadows.Ancients;
+using JujutsuTerraria.Ancients;
 using Mono.Cecil;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using System.Threading;
@@ -27,7 +27,7 @@ using Terraria.Utilities;
 
 
 
-namespace TenShadows.Armor
+namespace JujutsuTerraria.Armor
 {
     // The AutoloadEquip attribute automatically attaches an equip texture to this item.
     // Providing the EquipType.Body value here will result in TML expecting X_Arms.png, X_Body.png and X_FemaleBody.png sprite-sheet files to be placed next to the item's main texture.

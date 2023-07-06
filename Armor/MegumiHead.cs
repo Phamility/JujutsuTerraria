@@ -1,14 +1,14 @@
 ﻿using Mono.Cecil;
-using TenShadows.Buffs;
-using TenShadows.Items.Materials;
-using TenShadows.Tiles;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Ancients;
-namespace TenShadows.Armor
+using JujutsuTerraria.Ancients;
+namespace JujutsuTerraria.Armor
 {
     // The AutoloadEquip attribute automatically attaches an equip texture to this item.
     // Providing the EquipType.Body value here will result in TML expecting X_Arms.png, X_Body.png and X_FemaleBody.png sprite-sheet files to be placed next to the item's main texture.

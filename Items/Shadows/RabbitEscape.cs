@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +8,12 @@ using Terraria.DataStructures;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
-using TenShadows.Tiles;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Tiles;
 
 
-namespace TenShadows.Items.Shadows
+namespace JujutsuTerraria.Items.Shadows
 {
     public class RabbitEscape : ModItem
     {

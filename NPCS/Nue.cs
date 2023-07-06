@@ -1,5 +1,5 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +17,15 @@ using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 using IL.Terraria.GameContent.UI.ResourceSets;
-using TenShadows.Items.Accessories;
-using TenShadows.Items.Accessories.Eyes;
-using TenShadows.Ancients;
-using TenShadows.Ancients;
+using JujutsuTerraria.Items.Accessories;
+using JujutsuTerraria.Items.Accessories.Eyes;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Ancients;
 
-namespace TenShadows.NPCS
+namespace JujutsuTerraria.NPCS
 {
     [AutoloadBossHead]
     public class Nue : ModNPC

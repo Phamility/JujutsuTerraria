@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
-using System; using TenShadows.Buffs;
+using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace TenShadows.Tiles {
+namespace JujutsuTerraria.Tiles {
     // Simple 3x3 tile that can be placed on a wall
     public class Trophy : ModTile
     {

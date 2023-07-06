@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +10,12 @@ using Terraria.DataStructures;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
-using TenShadows.Ancients;
-using TenShadows.Tiles;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Tiles;
 
-namespace TenShadows.Buffs
+namespace JujutsuTerraria.Buffs
 {
     public class ZoneBuff : ModBuff
     {

@@ -11,7 +11,7 @@ using Terraria.ModLoader.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     public class NueLightningFriendly : ModProjectile
     {

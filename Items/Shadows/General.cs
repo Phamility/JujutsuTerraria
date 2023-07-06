@@ -1,10 +1,10 @@
-﻿using TenShadows.Items.Materials;
-using TenShadows.Tiles;
+﻿using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TenShadows.Items.Shadows
+namespace JujutsuTerraria.Items.Shadows
 {
     public class General : ModItem
     {

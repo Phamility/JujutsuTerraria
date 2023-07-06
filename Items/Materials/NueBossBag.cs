@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
-using TenShadows.NPCS;
-using TenShadows.Items.Accessories;
-using TenShadows.Misc2;
-using TenShadows.Items.Accessories.Eyes;
+using JujutsuTerraria.NPCS;
+using JujutsuTerraria.Items.Accessories;
+using JujutsuTerraria.Misc2;
+using JujutsuTerraria.Items.Accessories.Eyes;
 
-namespace TenShadows.Items.Materials
+namespace JujutsuTerraria.Items.Materials
 {
     public class NueBossBag : ModItem
     {

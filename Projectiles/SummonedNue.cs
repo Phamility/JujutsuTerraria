@@ -1,15 +1,15 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 
 using Microsoft.Xna.Framework;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Items.Materials;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TenShadows.Ancients;
+using JujutsuTerraria.Ancients;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     // This file contains all the code necessary for a minion
     // - ModItem - the weapon which you use to summon the minion with

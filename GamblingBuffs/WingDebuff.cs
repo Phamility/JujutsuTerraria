@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +10,9 @@ using Terraria.DataStructures;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
-namespace TenShadows.GamblingBuffs
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
+namespace JujutsuTerraria.GamblingBuffs
 {
     public class WingDebuff : ModBuff
     {

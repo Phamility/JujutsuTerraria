@@ -1,5 +1,5 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +10,10 @@ using Terraria;
 using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 
-namespace TenShadows.Items.Techniques.Blood
+namespace JujutsuTerraria.Items.Techniques.Blood
 {
     public class FlowingRed : ModItem
     {

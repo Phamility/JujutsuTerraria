@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     // Acts as a container for "downed boss" flags.
     // Set a flag like this in your bosses OnKill hook:

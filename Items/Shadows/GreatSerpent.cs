@@ -1,24 +1,24 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Mono.Cecil;
-using TenShadows.Items.Materials;
-using TenShadows.Items.Shadows;
-using TenShadows.Tiles;
-using TenShadows.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Tiles;
+using JujutsuTerraria.Projectiles;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Humanizer.In;
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Ancients;
+using JujutsuTerraria.Ancients;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria.Utilities;
 
 
-namespace TenShadows.Items.Shadows
+namespace JujutsuTerraria.Items.Shadows
 {
     // Flamethrowers have some special characteristics, such as shooting several projectiles in one click, and only consuming ammo on the first projectile
     // The most important characteristics, however, are explained in the FlamethrowerProjectile code.

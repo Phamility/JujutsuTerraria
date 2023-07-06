@@ -1,12 +1,12 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TenShadows.GamblingBuffs;
-using TenShadows.Items.Shadows;
-using TenShadows.Projectiles;
+using JujutsuTerraria.GamblingBuffs;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Projectiles;
 using Terraria.GameContent;
 using Terraria.Localization;
 using Terraria.Enums;
@@ -14,14 +14,14 @@ using Terraria.Enums;
 using Terraria;
 using Terraria.ModLoader;
 using System.Numerics;
-using TenShadows.Items.Techniques;
+using JujutsuTerraria.Items.Techniques;
 using System.Drawing.Imaging;
-using TenShadows.Items.Materials;
-using TenShadows.Ancients;
-using TenShadows.Armor;
-using TenShadows.Items.Techniques.ARestrictions;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Armor;
+using JujutsuTerraria.Items.Techniques.ARestrictions;
 
-namespace TenShadows.Tiles
+namespace JujutsuTerraria.Tiles
 {
     public class MP : ModPlayer
     {

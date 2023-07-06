@@ -1,5 +1,9 @@
-Ten Shadows is a medium sized mod inspired by Jujutsu Kaisen. It introduces the shaman class, a class that revolves around burning through cursed energy, utilizing restrictions and exchanges, and juggling buffs to maximize damage!
+Jujutsu Terraria is a medium sized mod featuring an abundance of weapons, accessories, and concepts inspired by the series Jujutsu Kaisen! It introduces the shaman class, a class that revolves around burning through cursed energy, utilizing restrictions and exchanges, and juggling buffs to maximize damage!
 
-This mod features an abundance of weapons, accessories, and concepts inspired by Jujutsu Kaisen! A large chunk of the items in this mod use Jujutsu Kaisen's 'Cursed Techniques' and 'Cursed Tools' as a base. However, some things revolve around concepts in the fictional universe such as "Heavenly Restriction," "Black Flash," "Sukuna's Fingers," and "Binding Vows."
+A large chunk of the items in this mod use Jujutsu Kaisen's 'Cursed Techniques' and 'Cursed Tools' as a base. However, some things revolve around concepts in the fictional universe such as "Domain Expansions," "Heavenly Restriction," "Black Flash," "Sukuna's Fingers,"and "Binding Vows."
 
-While most cursed techniques have one or two items associated with them, there is one that has signicifantly more emphasis. That being the "Ten Shadows Technique." In this mod, there are 10 silhouettes the player can acquire throughout the game. And whether it be summoning a minion, providing a temporary buff, or inflicting a debuff, each of the ten silhouettes possess a unique way in benefitting the player.
+While most cursed techniques have one or two items associated with them, there is one that has signicifantly more emphasis. That being the "Ten Shadows Technique." There are 10 silhouettes the player can acquire throughout the game. And whether it be summoning a minion, providing a temporary buff, or inflicting a debuff, each of the ten silhouettes possess a unique way in benefitting the player.
+
+Features:
+1 Boss
+4 Domain Expansions

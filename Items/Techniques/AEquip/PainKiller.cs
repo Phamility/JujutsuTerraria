@@ -1,7 +1,7 @@
 ﻿using System;
-using TenShadows.Buffs;
-using TenShadows.Buffs;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,17 +15,17 @@ using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 
 using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
 using rail;
-using TenShadows.Ancients;
+using JujutsuTerraria.Ancients;
 
-namespace TenShadows.Items.Techniques.AEquip
+namespace JujutsuTerraria.Items.Techniques.AEquip
 {
     public class PainKiller : ModItem
     {

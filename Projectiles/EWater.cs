@@ -1,11 +1,11 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Mono.Cecil;
-using TenShadows.Items.Materials;
-using TenShadows.Items.Shadows;
-using TenShadows.Tiles;
-using TenShadows.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Tiles;
+using JujutsuTerraria.Projectiles;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -13,7 +13,7 @@ using Terraria.ModLoader;
 using static Humanizer.In;
 using static Terraria.ModLoader.PlayerDrawLayer;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     // The unique behaviors of Flamethrower projectiles are shown in this class.
     // Simply put, the projectile is actually not drawn and what the player sees is just dust spawning to give the look of a stream of flames.

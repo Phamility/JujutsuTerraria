@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
 
-namespace TenShadows.Tiles
+namespace JujutsuTerraria.Tiles
 {
     public class TrophyItem : ModItem
     {

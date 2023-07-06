@@ -1,15 +1,15 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 
 using Microsoft.Xna.Framework;
-using TenShadows.Items.Materials;
-using TenShadows.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Projectiles;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.PlayerDrawLayer;
 
-namespace TenShadows.Buffs
+namespace JujutsuTerraria.Buffs
 {
     public class ElephantBuff : ModBuff
     {

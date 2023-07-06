@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +9,11 @@ using Terraria;
 using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
-using TenShadows.Ancients;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Ancients;
 
-namespace TenShadows.Buffs
+namespace JujutsuTerraria.Buffs
 {
     public class HeavenlyBuff : ModBuff
     {

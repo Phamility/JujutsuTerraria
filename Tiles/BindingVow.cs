@@ -1,10 +1,10 @@
-﻿using TenShadows.Buffs;
-using TenShadows.Items.Materials;
+﻿using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TenShadows.Tiles
+namespace JujutsuTerraria.Tiles
 {
     public class BindingVow : ModItem
     {

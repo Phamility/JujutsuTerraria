@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +16,9 @@ using Terraria.ModLoader;
 using IL.Terraria.GameContent.Personalities;
 using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Projectiles;
+using JujutsuTerraria.Projectiles;
 
-namespace TenShadows.Items.Materials
+namespace JujutsuTerraria.Items.Materials
 {
     public class Horn : ModItem
     {

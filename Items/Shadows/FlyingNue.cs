@@ -1,18 +1,18 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 
 using Microsoft.Xna.Framework;
-using TenShadows.Items.Materials;
+using JujutsuTerraria.Items.Materials;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
-using TenShadows.Tiles;
+using JujutsuTerraria.Tiles;
 using Terraria.ModLoader;
 using System.Transactions;
 
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TenShadows.Items.Shadows
+namespace JujutsuTerraria.Items.Shadows
 {
     public class FlyingNue : ModItem
     {

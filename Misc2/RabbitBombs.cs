@@ -1,5 +1,5 @@
 ﻿using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +9,12 @@ using Terraria.DataStructures;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using TenShadows.Projectiles;
-using TenShadows.Items.Materials;
-using TenShadows.Items.Shadows;
-using TenShadows.Tiles;
+using JujutsuTerraria.Projectiles;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Tiles;
 
-namespace TenShadows.Misc2
+namespace JujutsuTerraria.Misc2
 {
     public class RabbitBombs : ModItem
     {

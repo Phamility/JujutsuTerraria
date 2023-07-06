@@ -17,7 +17,7 @@ using Terraria.WorldBuilding;
 using static Terraria.ModLoader.ModContent;
 
 
-namespace TenShadows.Ancients
+namespace JujutsuTerraria.Ancients
 {
     public class ExampleWorld : ModSystem
     {

@@ -10,15 +10,15 @@ using System.Linq;
 using Terraria.ModLoader.IO;
 using System.Text;
 using System.Threading.Tasks;
-using TenShadows.Items.Shadows;
+using JujutsuTerraria.Items.Shadows;
 
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Ancients;
-using TenShadows.Buffs;
-using TenShadows.Tiles;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Buffs;
+using JujutsuTerraria.Tiles;
 using System.Collections.Generic;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     public class OxProjectile : ModProjectile
     {
@@ -99,7 +99,7 @@ namespace TenShadows.Projectiles
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
         {
 
-            Main.instance.DrawCacheProjsBehindNPCsAndTiles.Add(index);
+            Main.instance.DrawCacheProjsBehindNPCs.Add(index);
 
         }
         public override bool? CanCutTiles()

@@ -10,9 +10,9 @@ using System.Linq;
 using Terraria.ModLoader.IO;
 using System.Text;
 using System.Threading.Tasks;
-using TenShadows.NPCS;
+using JujutsuTerraria.NPCS;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     public class NueLightning : ModProjectile
     {

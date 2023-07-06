@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,19 +9,22 @@ using Microsoft.Xna.Framework.Graphics;
 
 using Terraria.Audio;
 using Terraria;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
 using Terraria.ID;
 using Terraria.ModLoader;
 //using static Terraria.ModLoader.ModContent;
 
-using TenShadows.Ancients;
-using TenShadows.Items.Shadows;
-using TenShadows.Items.Techniques;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Items.Techniques;
 using Terraria.GameContent;
 using ReLogic.Content;
 using System.Transactions;
 using static System.Formats.Asn1.AsnWriter;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     public class DomainInfinity : ModProjectile
     {
@@ -117,14 +120,33 @@ namespace TenShadows.Projectiles
         }
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
         {
-            Main.instance.DrawCacheProjsBehindNPCsAndTiles.Add(index);
+            Main.instance.DrawCacheProjsBehindNPCs.Add(index);
         }
 
 
         public float Wacko;
+        public int timer=0;
         bool once = false;
         public override void AI()
         {
+            Player player = Main.player[Projectile.owner];
+            player.GetModPlayer<MPArmors>().DomainActive = true;
+            Player Local = Main.LocalPlayer;
+            timer++;
+
+            if (Main.netMode != NetmodeID.Server && !Filters.Scene["Shockwave"].IsActive())
+            {
+                Main.NewText("ZoneActive");
+                Filters.Scene.Activate("Shockwave", player.Center).GetShader().UseColor(3, 5, 15).UseTargetPosition(player.Center);
+            }
+            if (Main.netMode != NetmodeID.Server && Filters.Scene["Shockwave"].IsActive())
+            {
+                Main.NewText("ZoneIncreasing");
+
+                float progress = (timer) / 60f; // Will range from -3 to 3, 0 being the point where the bomb explodes.
+                Filters.Scene["Shockwave"].GetShader().UseProgress(progress).UseOpacity(100 * (1 - progress / 3f));
+            }
+
             Projectile.Size = new Vector2(820, 820) * Projectile.scale; 
            if (once == false)
             {
@@ -157,11 +179,19 @@ namespace TenShadows.Projectiles
 
             Lighting.AddLight(Projectile.Center, Color.White.ToVector3() * 0.78f);
 
-            Player player = Main.player[Projectile.owner];
-            player.GetModPlayer<MPArmors>().DomainActive = true;
+
+
             // If the player channels the weapon, do something. This check only works if item.channel is true for the weapon.
             if (player.channel)
             {
+                Vector2 center = new Vector2((int)player.position.X, (int)player.position.Y);
+                const float range = 16 * 25;  // 20 tiles
+                float radius = 820 / 2;
+                if(Projectile.Center.DistanceSQ(Local.Hitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale)
+                {
+                    Local.AddBuff(BuffID.NebulaUpDmg1, 60 * 5);
+
+                }
 
                 if (Wacko <= .85)
                 {
@@ -183,6 +213,10 @@ namespace TenShadows.Projectiles
                 Wacko -= .052f;
                 if (Projectile.scale <= 0)
                 {
+                    if (Main.netMode != NetmodeID.Server && Filters.Scene["Shockwave"].IsActive())
+                    {
+                        Filters.Scene["Shockwave"].Deactivate();
+                    }
                     Projectile.active = false;
                 }
 

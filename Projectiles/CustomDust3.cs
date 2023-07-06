@@ -1,20 +1,20 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using System;
-using TenShadows.Buffs;
+using JujutsuTerraria.Buffs;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Mono.Cecil;
-using TenShadows.Items.Materials;
-using TenShadows.Items.Shadows;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Items.Shadows;
 using Terraria.DataStructures;
 using Terraria.ID;
 
 using static Humanizer.In;
 using static Terraria.ModLoader.PlayerDrawLayer;
-using TenShadows.Ancients;
+using JujutsuTerraria.Ancients;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     public class CustomDust3 : ModDust
     {

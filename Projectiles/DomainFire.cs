@@ -1,4 +1,4 @@
-﻿using System; using TenShadows.Buffs;
+﻿using System; using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +13,15 @@ using Terraria.ID;
 using Terraria.ModLoader;
 //using static Terraria.ModLoader.ModContent;
 
-using TenShadows.Ancients;
-using TenShadows.Items.Shadows;
-using TenShadows.Items.Techniques;
+using JujutsuTerraria.Ancients;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Items.Techniques;
 using Terraria.GameContent;
 using ReLogic.Content;
 using System.Transactions;
 using static System.Formats.Asn1.AsnWriter;
 
-namespace TenShadows.Projectiles
+namespace JujutsuTerraria.Projectiles
 {
     public class DomainFire : ModProjectile
     {
@@ -121,7 +121,7 @@ namespace TenShadows.Projectiles
         }
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
         {
-            Main.instance.DrawCacheProjsBehindNPCsAndTiles.Add(index);
+            Main.instance.DrawCacheProjsBehindNPCs.Add(index);
         }
 
 
@@ -165,10 +165,17 @@ namespace TenShadows.Projectiles
 
             Player player = Main.player[Projectile.owner];
             player.GetModPlayer<MPArmors>().DomainActive = true;
+            Player Local = Main.LocalPlayer;
 
             // If the player channels the weapon, do something. This check only works if item.channel is true for the weapon.
             if (player.channel)
             {
+                Vector2 center = new Vector2((int)player.position.X, (int)player.position.Y);
+                const float range = 16 * 16;  // 20 tiles
+                if (Local.DistanceSQ(center) <= range * range)
+                {
+                    Local.AddBuff(BuffID.Inferno, 60 * 5);
+                }
 
                 if (Wacko <= .85)
                 {

@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
 
-namespace TenShadows.Tiles
+namespace JujutsuTerraria.Tiles
 {
     public class ShrineTile : ModTile
     {
