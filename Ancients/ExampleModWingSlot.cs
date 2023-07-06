@@ -7,11 +7,6 @@ using Terraria.ModLoader;
 
 namespace TenShadows.Ancients
 {
-    public class ExampleModAccessorySlot1 : ModAccessorySlot
-    {
-        // If the class is empty, everything will default to a basic vanilla slot.
-    }
-
     public class ExampleModWingSlot : ModAccessorySlot
     {
         public override bool CanAcceptItem(Item checkItem, AccessorySlotType context)
@@ -20,6 +15,7 @@ namespace TenShadows.Ancients
                 checkItem.type == ModContent.ItemType<RestrictionDamage>() ||
                 checkItem.type == ModContent.ItemType<RestrictionBoots>() ||
                 checkItem.type == ModContent.ItemType<RestrictionHeart>() ||
+                   checkItem.type == ModContent.ItemType<RestrictionMine>() ||
                 checkItem.type == ModContent.ItemType<HeavenlyPhysical>()) // if is Wing, then can go in slot
                 return true;
 
@@ -33,6 +29,8 @@ namespace TenShadows.Ancients
                 item.type == ModContent.ItemType<RestrictionDamage>() ||
                 item.type == ModContent.ItemType<RestrictionBoots>() ||
                 item.type == ModContent.ItemType<RestrictionHeart>() ||
+
+                item.type == ModContent.ItemType<RestrictionMine>() ||
                 item.type == ModContent.ItemType<HeavenlyPhysical>()) // If is Wing, then we want to prioritize it to go in to our slot.
                 return true;
 

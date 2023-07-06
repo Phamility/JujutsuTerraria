@@ -17,12 +17,12 @@ using static Humanizer.In;
 
 namespace TenShadows.Items.Techniques.Domains
 {
-    public class DEInfinity : ModItem
+    public class DEOcean : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Unlimited Void");
-            Tooltip.SetDefault("Conjure the power of the Void.");
+            DisplayName.SetDefault("Horizon of the Captivating Skandha");
+            Tooltip.SetDefault("Conjure the power of the Ocean.");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)
@@ -38,28 +38,28 @@ namespace TenShadows.Items.Techniques.Domains
             //  Item.healLife = 25; // While we change the actual healing value in GetHealLife, Item.healLife still needs to be higher than 0 for the item to be considered a healing item
             //  Item.potion = false; // Makes it so this item applies potion sickness on use and allows it to be used with quick heal
             //   Item.damage = 9;
-            Item.UseSound = SoundID.DD2_EtherianPortalOpen;
+            Item.UseSound = SoundID.Item170;
             Item.width = 36;
             Item.height = 36;
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
-            Item.damage = 269;
-            Cost = 999;
+            Item.damage = 15;
+            Cost = 15;
             Item.useTime = 60;
             Item.useAnimation = 60;
           Item.useStyle = ItemUseStyleID.HiddenAnimation; // How you use the item (swinging, holding out, etc.)
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
-            Item.rare = ItemRarityID.Red; // The color that the item's name will be in-game.
+            Item.rare = ItemRarityID.Blue; // The color that the item's name will be in-game.
             Item.noMelee = true;
             Item.knockBack = 0;
             Item.noUseGraphic = true;
 
             Item.shootSpeed = 1;
-            Item.shoot = ModContent.ProjectileType<DomainInfinity>();
+            Item.shoot = ModContent.ProjectileType<DomainOcean>();
             Item.channel = true;
         }
-
+        //DEAL WITH  COSTS
         public override void ModifyWeaponCrit(Player player, ref float crit)
         {
 
@@ -90,13 +90,7 @@ namespace TenShadows.Items.Techniques.Domains
             TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs {Cost - Reduction} cursed energy") { OverrideColor = Color.DodgerBlue };
 
             tooltips.Insert(1, tooltip);
-         if(player.GetModPlayer<MPArmors>().GojoHeadOn == false)
-            {
-                TooltipLine tooltip2 = new TooltipLine(Mod, "Ten Shadows: Cost", $"Unable to use") { OverrideColor = Color.Red };
-
-                tooltips.Insert(1, tooltip2);
-            }
-
+         
             
 
 
@@ -161,7 +155,7 @@ namespace TenShadows.Items.Techniques.Domains
         }
         public override void UpdateInventory(Player player)
         {
-            Cost = 999;
+            Cost = 15;
 
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
@@ -195,7 +189,7 @@ namespace TenShadows.Items.Techniques.Domains
         { 
             bool Condition1;
             bool Condition2 = false;
-            Cost = 999;
+            Cost = 15;
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
                 Reduction = Cost - 1;
@@ -241,8 +235,8 @@ namespace TenShadows.Items.Techniques.Domains
 
             }
 
-            if (Condition1 == true && (Condition2 == true) && player.GetModPlayer<MPArmors>().GojoHeadOn == true && player.ownedProjectileCounts[ModContent.ProjectileType<DomainInfinity>()] == 0
-                                && player.ownedProjectileCounts[ModContent.ProjectileType<DomainJungle>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainFire>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainOcean>()] == 0)
+            if (Condition1 == true && (Condition2 == true) && player.ownedProjectileCounts[ModContent.ProjectileType<DomainOcean>()] == 0
+                                && player.ownedProjectileCounts[ModContent.ProjectileType<DomainJungle>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainInfinity>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainFire>()] == 0)
             {
                 return true;
             }

@@ -23,14 +23,14 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace TenShadows.Projectiles
 {
-    public class DomainInfinity : ModProjectile
+    public class DomainOcean : ModProjectile
     {
         int rspeed;
         int yspeed;
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Infinite Domain");
+            DisplayName.SetDefault("Tide Domain");
             Main.projFrames[Projectile.type] = 1;
            Main.projPet[Projectile.type] = false;
 
@@ -41,13 +41,13 @@ namespace TenShadows.Projectiles
         private int lockedin;
         public sealed override void SetDefaults()
         {
-            Projectile.width = 820;
+            Projectile.width = 343;
   
             Projectile.usesIDStaticNPCImmunity = true;
-            Projectile.idStaticNPCHitCooldown = 10;
+            Projectile.idStaticNPCHitCooldown = 18;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
 
-            Projectile.height = 820;
+            Projectile.height = 343;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = false;
 
@@ -82,7 +82,7 @@ namespace TenShadows.Projectiles
         }
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
-            float radius = 820 / 2;
+            float radius = 343/2;
             return Projectile.Center.DistanceSQ(targetHitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale;
         }
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
@@ -98,10 +98,14 @@ namespace TenShadows.Projectiles
         {
             			target.immune[Projectile.owner] = 5;
 
-
+            target.AddBuff(BuffID.Slow, 60 * 10);
             TargetWhoAmI = target.whoAmI;
         }
 
+        public override void OnHitPlayer(Player target, int damage, bool crit)
+        {
+            target.AddBuff(BuffID.Swiftness, 60 * 5);
+        }
         public override bool PreDraw(ref Color lightColor)
         {
             Main.instance.LoadProjectile(Projectile.type);
@@ -125,7 +129,7 @@ namespace TenShadows.Projectiles
         bool once = false;
         public override void AI()
         {
-            Projectile.Size = new Vector2(820, 820) * Projectile.scale; 
+            Projectile.Size = new Vector2(343, 343) * Projectile.scale; 
            if (once == false)
             {
                 Wacko = 0;
@@ -134,16 +138,16 @@ namespace TenShadows.Projectiles
                 Projectile.Opacity = 0;
                 
             }
-            if (Main.rand.Next(1, 8) == 2)
+            if (Main.rand.Next(1, 14) == 2)
             {
-                var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GolfPaticle);
+                var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Sand);
                 if (Main.rand.Next(1, 3) == 2)
                 {
-                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.BoneTorch);
+                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GlowingMushroom);
                 }
                 else
                 {
-                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PortalBolt);
+                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.ManaRegeneration);
 
 
 
@@ -155,22 +159,23 @@ namespace TenShadows.Projectiles
                 }
             }
 
-            Lighting.AddLight(Projectile.Center, Color.White.ToVector3() * 0.78f);
+            Lighting.AddLight(Projectile.Center, Color.Blue.ToVector3() * 0.78f);
 
             Player player = Main.player[Projectile.owner];
             player.GetModPlayer<MPArmors>().DomainActive = true;
+
             // If the player channels the weapon, do something. This check only works if item.channel is true for the weapon.
             if (player.channel)
             {
 
                 if (Wacko <= .85)
                 {
-                    Wacko += .025f;
+                    Wacko += .006f;
                 }
-                if (Projectile.scale <= 1)
+              if (Projectile.scale <= 1)
                 {
-                    Projectile.scale += .03f;
-                }
+                    Projectile.scale += .0075f;
+                } 
 
                 Projectile.Center = player.Center;
             }
@@ -179,9 +184,9 @@ namespace TenShadows.Projectiles
 
                 Projectile.Center = player.Center;
 
-                Projectile.scale -= .08f;
-                Wacko -= .052f;
-                if (Projectile.scale <= 0)
+                Projectile.scale -= .1f;
+                Wacko -= .045f;
+                if(Projectile.scale <= 0)
                 {
                     Projectile.active = false;
                 }

@@ -242,6 +242,14 @@ namespace TenShadows.Ancients
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Horn>(), 5));
 
             }
+            if (npc.type == NPCID.MoonLordCore)
+            {
+                LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<DEInfinity>(), 5));
+    
+                npcLoot.Add(notExpertRule);
+            }
             if (npc.type == NPCID.WallofFlesh)
             {
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
@@ -260,6 +268,15 @@ namespace TenShadows.Ancients
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<FlowingRed>(), 4));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<BlazingCourage>(), 3));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Bottomless>(), 3));
+
+
+                npcLoot.Add(notExpertRule);
+            }
+            if (npc.type == NPCID.QueenBee)
+            {
+                LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<DEJungle>(), 3));
 
 
                 npcLoot.Add(notExpertRule);
@@ -316,12 +333,24 @@ namespace TenShadows.Ancients
 
             }
 
-            // In addition to this code, we also do similar code in Common/GlobalNPCs/ExampleNPCLoot.cs to edit the boss loot for non-expert drops. Remember to do both if your edits should affect non-expert drops as well.
+            if (item.type == ItemID.MoonLordBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DEInfinity>(), 4));
+
+
+
+            }
             if (item.type == ItemID.WallOfFleshBossBag)
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<RestlessGambler>(), 4));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BloodEdge>(), 4));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DEFire>(), 4));
+
+
+            }
+            if (item.type == ItemID.QueenBeeBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DEJungle>(), 3));
 
 
             }

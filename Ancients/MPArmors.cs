@@ -26,6 +26,11 @@ namespace TenShadows.Ancients
     {
         public bool NobaraHeadOn;
         public bool MakiHeadOn;
+
+        public bool GojoHeadOn;
+
+        public bool DomainActive;
+
         public int MakiDamageNumber;
         public int MakiMoveNumber;
         public int MakiDefenseNumber;
@@ -34,8 +39,11 @@ namespace TenShadows.Ancients
 
         public override void ResetEffects()
         {
+            DomainActive = false;
             NobaraHeadOn = false;
             MakiHeadOn = false;
+            GojoHeadOn = false;
+
             MakiDamageNumber = 8;
             MakiMoveNumber = 4;
             MakiDefenseNumber = 2;

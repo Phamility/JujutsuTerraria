@@ -43,10 +43,10 @@ namespace TenShadows.Items.Techniques.Domains
             Item.height = 36;
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
-            Item.damage = 32;
+            Item.damage = 28;
             Cost = 35;
-            Item.useTime = 30;
-            Item.useAnimation = 30;
+            Item.useTime = 60;
+            Item.useAnimation = 60;
           Item.useStyle = ItemUseStyleID.HiddenAnimation; // How you use the item (swinging, holding out, etc.)
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
@@ -235,7 +235,8 @@ namespace TenShadows.Items.Techniques.Domains
 
             }
 
-            if (Condition1 == true && (Condition2 == true))
+            if (Condition1 == true && (Condition2 == true) && player.ownedProjectileCounts[ModContent.ProjectileType<DomainFire>()] == 0
+                && player.ownedProjectileCounts[ModContent.ProjectileType<DomainJungle>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainInfinity>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainOcean>()] == 0)
             {
                 return true;
             }

@@ -38,7 +38,7 @@ namespace TenShadows.Items.Techniques.ARestrictions;
             // Fly speed: 9
             // Acceleration multiplier: 2.5
             DisplayName.SetDefault("Binding Vow: Mine");
-            Tooltip.SetDefault("Increased mining speed\nHowever, health is reduced by 50");
+            Tooltip.SetDefault("Increased mining speed\nHowever, damaged is reduced by 80%");
         }
 
         public override void SetDefaults()
@@ -73,12 +73,12 @@ namespace TenShadows.Items.Techniques.ARestrictions;
     public override void UpdateAccessory(Player player, bool hideVisual)
         {
         // player.moveSpeed *= .8f;
-        player.pickSpeed -= 3;
+        player.pickSpeed -= 2;
 
-        player.statLifeMax2 -= 50;
-
-        }
-
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        player.GetDamage(DamageClass.Generic) -= 0.80f;
 
     }
+
+    // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+
+}

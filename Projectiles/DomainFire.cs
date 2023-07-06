@@ -44,12 +44,12 @@ namespace TenShadows.Projectiles
             Projectile.width = 522;
   
             Projectile.usesIDStaticNPCImmunity = true;
-            Projectile.idStaticNPCHitCooldown = 10;
+            Projectile.idStaticNPCHitCooldown = 12;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
 
             Projectile.height = 522;
             Projectile.tileCollide = false;
-           Projectile.ignoreWater = true;
+            Projectile.ignoreWater = false;
 
             Projectile.friendly = true;
             Projectile.hostile = false;
@@ -102,7 +102,10 @@ namespace TenShadows.Projectiles
             target.AddBuff(BuffID.ShadowFlame, 60 * 10);
             TargetWhoAmI = target.whoAmI;
         }
-
+        public override void OnHitPlayer(Player target, int damage, bool crit)
+        {
+            target.AddBuff(BuffID.Inferno, 60 * 5);        
+        }
         public override bool PreDraw(ref Color lightColor)
         {
             Main.instance.LoadProjectile(Projectile.type);
@@ -133,24 +136,47 @@ namespace TenShadows.Projectiles
                 once = true;
                 Projectile.scale = 0;
                 Projectile.Opacity = 0;
-                
+
+
             }
+            if (Main.rand.Next(1, 8) == 2)
+            {
+                var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Ash);
+                if (Main.rand.Next(1, 3) == 2)
+                {
+                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Lava);
+                }
+                else
+                {
+                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Torch);
+
+
+
+
+                    dust.velocity.X += Main.rand.NextFloat(-0.3f, 0.3f);
+                    dust.velocity.Y += Main.rand.NextFloat(-0.3f, 0.3f);
+
+                    dust.scale *= 1f + Main.rand.NextFloat(-0.03f, 0.03f);
+                }
+            }
+
 
             Lighting.AddLight(Projectile.Center, Color.OrangeRed.ToVector3() * 0.78f);
 
             Player player = Main.player[Projectile.owner];
+            player.GetModPlayer<MPArmors>().DomainActive = true;
+
             // If the player channels the weapon, do something. This check only works if item.channel is true for the weapon.
             if (player.channel)
             {
 
                 if (Wacko <= .85)
                 {
-                    Wacko += .008f;
-                    Projectile.Opacity += .005f;
+                    Wacko += .0096f;
                 }
               if (Projectile.scale <= 1)
                 {
-                    Projectile.scale += .01f;
+                    Projectile.scale += .012f;
                 } 
 
                 Projectile.Center = player.Center;
@@ -162,7 +188,6 @@ namespace TenShadows.Projectiles
 
                 Projectile.scale -= .1f;
                 Wacko -= .045f;
-                Projectile.Opacity -= .1f;
                 if(Projectile.scale <= 0)
                 {
                     Projectile.active = false;

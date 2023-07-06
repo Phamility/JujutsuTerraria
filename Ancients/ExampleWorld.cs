@@ -24,6 +24,7 @@ namespace TenShadows.Ancients
         public int HowManyIceFormations;
         public int HowManyFingers;
         public int HowManyPicks;
+        public int HowManyOceans;
 
 
         public override void PostWorldGen()
@@ -31,6 +32,7 @@ namespace TenShadows.Ancients
             HowManyIceFormations = 0;
             HowManyFingers = 0;
             HowManyPicks = 0;
+            HowManyOceans = 0;
             for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
             {
 
@@ -131,9 +133,37 @@ namespace TenShadows.Ancients
 
                 if (chest != null && Main.tile[chest.x, chest.y].TileType == TileID.Containers && Main.tile[chest.x, chest.y].TileFrameX == 1 * 36)
                 {
-                    if (Main.rand.Next(1, 101) <= 35 || HowManyIceFormations < 2)
+                    if (Main.rand.Next(1, 101) <= 20 || HowManyPicks < 2)
                     {
                         HowManyPicks++;
+                        for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
+                            if (chest.item[inventoryIndex].type == 0)
+                            {
+
+                                chest.item[inventoryIndex].SetDefaults(itemsToPlaceInChests4[0]);
+                                chest.item[inventoryIndex].stack = IceFormationNum;
+
+                                break;
+                            }
+                    }
+                }
+
+
+            }
+            for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
+            {
+
+
+                Chest chest = Main.chest[chestIndex];
+                int[] itemsToPlaceInChests4 = { Mod.Find<ModItem>("DEOcean").Type };
+                // int IceFormationNum = Main.rand.Next(23, 51);
+                int IceFormationNum = 1;
+
+                if (chest != null && Main.tile[chest.x, chest.y].TileType == TileID.Containers && Main.tile[chest.x, chest.y].TileFrameX == 1 * 36)
+                {
+                    if (Main.rand.Next(1, 101) <= 20 || HowManyOceans < 2)
+                    {
+                        HowManyOceans++;
                         for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
                             if (chest.item[inventoryIndex].type == 0)
                             {
