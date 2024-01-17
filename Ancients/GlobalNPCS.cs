@@ -272,6 +272,16 @@ namespace JujutsuTerraria.Ancients
 
                 npcLoot.Add(notExpertRule);
             }
+            if (npc.type == NPCID.QueenSlimeBoss)
+            {
+                LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<DESimple>(), 3));
+
+
+
+                npcLoot.Add(notExpertRule);
+            }
             if (npc.type == NPCID.QueenBee)
             {
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
@@ -318,6 +328,14 @@ namespace JujutsuTerraria.Ancients
 
                 npcLoot.Add(notExpertRule);
             }
+            if (npc.type == NPCID.Plantera)
+            {
+                LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<AmplifiedShred>(), 5));
+
+                npcLoot.Add(notExpertRule);
+            }
 
         }
     }
@@ -336,6 +354,20 @@ namespace JujutsuTerraria.Ancients
             if (item.type == ItemID.MoonLordBossBag)
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DEInfinity>(), 4));
+
+
+
+            }
+            if (item.type == ItemID.PlanteraBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AmplifiedShred>(), 4));
+
+
+
+            }
+            if (item.type == ItemID.QueenSlimeBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DESimple>(), 2));
 
 
 

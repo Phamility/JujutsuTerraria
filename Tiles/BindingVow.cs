@@ -11,7 +11,7 @@ namespace JujutsuTerraria.Tiles
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Domain");
+            DisplayName.SetDefault("Binding Barrier");
             Tooltip.SetDefault("Players within this tile's range have their damage increased by 15%\nPlayers outside of this tile's range have their damage reduced by 15%\nOnly one domain may be placed in the world");
         }
         public override void SetDefaults()

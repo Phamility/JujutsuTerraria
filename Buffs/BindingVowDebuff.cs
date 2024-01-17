@@ -19,7 +19,7 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Domain: Restrained");
+            DisplayName.SetDefault("Barrier: Restrained");
             Description.SetDefault("Damaged reduced by 15%");
             Main.debuff[Type] = true;
             Main.buffNoSave[Type] = true; // This buff won't save when you exit the world

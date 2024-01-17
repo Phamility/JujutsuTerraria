@@ -9,9 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 using Terraria.Audio;
 using Terraria;
-using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
-using Terraria.ID;
 using Terraria.ID;
 using Terraria.ModLoader;
 //using static Terraria.ModLoader.ModContent;
@@ -26,14 +23,14 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace JujutsuTerraria.Projectiles
 {
-    public class DomainInfinity : ModProjectile
+    public class DomainSimple : ModProjectile
     {
         int rspeed;
         int yspeed;
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Infinite Domain");
+            DisplayName.SetDefault("Simple Domain");
             Main.projFrames[Projectile.type] = 1;
            Main.projPet[Projectile.type] = false;
 
@@ -44,13 +41,13 @@ namespace JujutsuTerraria.Projectiles
         private int lockedin;
         public sealed override void SetDefaults()
         {
-            Projectile.width = 820;
+            Projectile.width = 250;
   
             Projectile.usesIDStaticNPCImmunity = true;
-            Projectile.idStaticNPCHitCooldown = 10;
+            Projectile.idStaticNPCHitCooldown = 18;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
 
-            Projectile.height = 820;
+            Projectile.height = 250;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = false;
 
@@ -85,7 +82,7 @@ namespace JujutsuTerraria.Projectiles
         }
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
-            float radius = 820 / 2;
+            float radius = 250/2;
             return Projectile.Center.DistanceSQ(targetHitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale;
         }
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
@@ -97,14 +94,9 @@ namespace JujutsuTerraria.Projectiles
         {
             return true;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            			target.immune[Projectile.owner] = 5;
 
 
-            TargetWhoAmI = target.whoAmI;
-        }
-
+  
         public override bool PreDraw(ref Color lightColor)
         {
             Main.instance.LoadProjectile(Projectile.type);
@@ -125,29 +117,12 @@ namespace JujutsuTerraria.Projectiles
 
 
         public float Wacko;
-        public int timer=0;
         bool once = false;
+        public float channeltime;
+
         public override void AI()
         {
-            Player player = Main.player[Projectile.owner];
-            player.GetModPlayer<MPArmors>().DomainActive = true;
-            Player Local = Main.LocalPlayer;
-            timer++;
-
-            if (Main.netMode != NetmodeID.Server && !Filters.Scene["Shockwave"].IsActive())
-            {
-                //Main.NewText("ZoneActive");
-                Filters.Scene.Activate("Shockwave", player.Center).GetShader().UseColor(3, 5, 15).UseTargetPosition(player.Center);
-            }
-            if (Main.netMode != NetmodeID.Server && Filters.Scene["Shockwave"].IsActive())
-            {
-              //  Main.NewText("ZoneIncreasing");
-
-                float progress = (timer) / 60f; // Will range from -3 to 3, 0 being the point where the bomb explodes.
-                Filters.Scene["Shockwave"].GetShader().UseProgress(progress).UseOpacity(100 * (1 - progress / 3f));
-            }
-
-            Projectile.Size = new Vector2(820, 820) * Projectile.scale; 
+            Projectile.Size = new Vector2(250, 250) * Projectile.scale; 
            if (once == false)
             {
                 Wacko = 0;
@@ -156,16 +131,16 @@ namespace JujutsuTerraria.Projectiles
                 Projectile.Opacity = 0;
                 
             }
-            if (Main.rand.Next(1, 8) == 2)
+            if (Main.rand.Next(1, 14) == 2)
             {
-                var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GolfPaticle);
+                var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.WhiteTorch);
                 if (Main.rand.Next(1, 3) == 2)
                 {
-                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.BoneTorch);
+                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.UltraBrightTorch);
                 }
                 else
                 {
-                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PortalBolt);
+                    dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.WhiteTorch);
 
 
 
@@ -179,28 +154,29 @@ namespace JujutsuTerraria.Projectiles
 
             Lighting.AddLight(Projectile.Center, Color.White.ToVector3() * 0.78f);
 
-
+            Player player = Main.player[Projectile.owner];
+            player.GetModPlayer<MPArmors>().DomainActive = true;
+            Player Local = Main.LocalPlayer;
 
             // If the player channels the weapon, do something. This check only works if item.channel is true for the weapon.
-            if (player.channel)
+            if (player.channel && channeltime <= 90)
             {
+                player.immune = true;
+                player.immuneTime = 2;
+                channeltime++;
                 Vector2 center = new Vector2((int)player.position.X, (int)player.position.Y);
-                const float range = 16 * 25;  // 20 tiles
-                float radius = 820 / 2;
-                if(Projectile.Center.DistanceSQ(Local.Hitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale)
+                const float range = 16 * 11;  // 20 tiles
+                if (Local.DistanceSQ(center) <= range * range)
                 {
-                    Local.AddBuff(BuffID.NebulaUpDmg1, 60 * 5);
-
                 }
-
                 if (Wacko <= .85)
                 {
-                    Wacko += .025f;
+                    Wacko += .012f;
                 }
-                if (Projectile.scale <= 1)
+              if (Projectile.scale <= 1)
                 {
-                    Projectile.scale += .03f;
-                }
+                    Projectile.scale += .0500f;
+                } 
 
                 Projectile.Center = player.Center;
             }
@@ -210,13 +186,9 @@ namespace JujutsuTerraria.Projectiles
                 Projectile.Center = player.Center;
 
                 Projectile.scale -= .08f;
-                Wacko -= .052f;
-                if (Projectile.scale <= 0)
+                Wacko -= .090f;
+                if(Projectile.scale <= 0)
                 {
-                    if (Main.netMode != NetmodeID.Server && Filters.Scene["Shockwave"].IsActive())
-                    {
-                        Filters.Scene["Shockwave"].Deactivate();
-                    }
                     Projectile.active = false;
                 }
 

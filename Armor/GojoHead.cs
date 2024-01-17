@@ -41,7 +41,7 @@ namespace JujutsuTerraria.Armor
         // UpdateArmorSet allows you to give set bonuses to the armor.
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Grants the usage of 'Limitless,' 'Hollow Purple,' and 'Unlimited Void'"; // This is the setbonus tooltip
+            player.setBonus = "Grants the usage of 'Unlimited Void'"; // This is the setbonus tooltip
             player.GetModPlayer<MPArmors>().GojoHeadOn = true;
         }
         public override void UpdateEquip(Player player)

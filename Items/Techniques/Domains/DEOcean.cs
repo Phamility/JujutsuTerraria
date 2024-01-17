@@ -22,7 +22,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Horizon of the Captivating Skandha");
-            Tooltip.SetDefault("Conjure the power of the Ocean.");
+            Tooltip.SetDefault("Conjure the power of the Ocean.\nTemporarily provide Swiftness");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)

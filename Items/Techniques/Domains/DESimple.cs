@@ -17,12 +17,12 @@ using static Humanizer.In;
 
 namespace JujutsuTerraria.Items.Techniques.Domains
 {
-    public class DEJungle : ModItem
+    public class DESimple : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Shining Sea of Flowers");
-            Tooltip.SetDefault("Conjure the power of the Jungle.\nTemporarily provide Dryad's Blessing");
+            DisplayName.SetDefault("Simple Domain");
+            Tooltip.SetDefault("Briefly become invulnerable.\n1 minute cooldown");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)
@@ -38,25 +38,25 @@ namespace JujutsuTerraria.Items.Techniques.Domains
             //  Item.healLife = 25; // While we change the actual healing value in GetHealLife, Item.healLife still needs to be higher than 0 for the item to be considered a healing item
             //  Item.potion = false; // Makes it so this item applies potion sickness on use and allows it to be used with quick heal
             //   Item.damage = 9;
-            Item.UseSound = SoundID.DeerclopsRubbleAttack;
+            Item.UseSound = SoundID.Zombie83;
             Item.width = 36;
             Item.height = 36;
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
-            Item.damage = 20;
-            Cost = 25;
+            Item.damage = 0;
+            Cost = 50;
             Item.useTime = 60;
             Item.useAnimation = 60;
           Item.useStyle = ItemUseStyleID.HiddenAnimation; // How you use the item (swinging, holding out, etc.)
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
-            Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
+            Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
             Item.noMelee = true;
             Item.knockBack = 0;
             Item.noUseGraphic = true;
 
             Item.shootSpeed = 1;
-            Item.shoot = ModContent.ProjectileType<DomainJungle>();
+            Item.shoot = ModContent.ProjectileType<DomainSimple>();
             Item.channel = true;
         }
         //DEAL WITH  COSTS
@@ -99,7 +99,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 
-
+            player.AddBuff(ModContent.BuffType<SimpleDebuff>(), 1 * 60 * 60);
             position.X = player.position.X;
             position.Y = player.position.Y;
 
@@ -155,7 +155,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
         }
         public override void UpdateInventory(Player player)
         {
-            Cost = 25;
+            Cost = 50;
 
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
@@ -189,7 +189,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
         { 
             bool Condition1;
             bool Condition2 = false;
-            Cost = 25;
+            Cost = 50;
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
                 Reduction = Cost - 1;
@@ -208,7 +208,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
             {
                 Reduction = 0;
             }
-            if (player.HasBuff<HeavenlyBuff>())
+            if (player.HasBuff<SimpleDebuff>() || player.HasBuff<HeavenlyBuff>())
             {
 
                 Condition1 = false;
@@ -235,9 +235,11 @@ namespace JujutsuTerraria.Items.Techniques.Domains
 
             }
 
-            if (Condition1 == true && (Condition2 == true) && player.ownedProjectileCounts[ModContent.ProjectileType<DomainJungle>()] == 0
-                                && player.ownedProjectileCounts[ModContent.ProjectileType<DomainFire>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainInfinity>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainOcean>()] == 0)
+            if (Condition1 == true && (Condition2 == true) && player.ownedProjectileCounts[ModContent.ProjectileType<DomainSimple>()] == 0
+                                && player.ownedProjectileCounts[ModContent.ProjectileType<DomainJungle>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainInfinity>()] == 0 && player.ownedProjectileCounts[ModContent.ProjectileType<DomainFire>()] == 0)
             {
+                player.AddBuff(ModContent.BuffType<SimpleDebuff>(), 1 * 5 * 60);
+
                 return true;
             }
             else

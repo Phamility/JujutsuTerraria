@@ -24,6 +24,7 @@ using JujutsuTerraria.Ancients;
 using Terraria.DataStructures;
 using JujutsuTerraria.Items.Techniques.Blood;
 using JujutsuTerraria.Tiles;
+using System.Runtime.Intrinsics.X86;
 
 namespace JujutsuTerraria.Ancients
 {
@@ -32,7 +33,8 @@ namespace JujutsuTerraria.Ancients
         public static bool AMSHOT = false;
         public override void OnSpawn(Projectile projectile, IEntitySource source)
         {
-            if (source is EntitySource_ItemUse_WithAmmo use && use.Item.type == ModContent.ItemType<PiercingBlood>())
+    
+                if (source is EntitySource_ItemUse_WithAmmo use && use.Item.type == ModContent.ItemType<PiercingBlood>())
             {
                 AMSHOT = true;
                 projectile.DamageType = ModContent.GetInstance<CursedDamage>();
@@ -43,7 +45,7 @@ namespace JujutsuTerraria.Ancients
         public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
         {
             Player player = Main.player[projectile.owner];
-            if(crit && projectile.arrow && AMSHOT)
+            if(crit && (projectile.arrow) && AMSHOT)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;

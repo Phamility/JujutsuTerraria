@@ -20,6 +20,7 @@ using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Ancients;
 using JujutsuTerraria.Armor;
 using JujutsuTerraria.Items.Techniques.ARestrictions;
+using JujutsuTerraria.Items.Accessories;
 
 namespace JujutsuTerraria.Tiles
 {
@@ -71,11 +72,21 @@ namespace JujutsuTerraria.Tiles
         public bool ZoneBodyWorn;
         public bool ZoneYujiWorn;
         public int ZoneYuji;
+        public int PandaBrass;
+        public bool PandaBrassWorn;
 
         public override void PostUpdateEquips()
         
         
         {
+            if (PandaBrassWorn)
+            {
+                PandaBrass = 1;
+            }
+            else
+            {
+                PandaBrass = 0;
+            }
             if (ZoneYujiWorn)
             {
                 ZoneYuji = 2;
@@ -106,7 +117,7 @@ namespace JujutsuTerraria.Tiles
                 }
 
             } 
-            ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger + ZoneBody + ZoneYuji; 
+            ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger + ZoneBody + ZoneYuji + PandaBrass; 
             ZoneDamage = 4 + BlackFlashDamageBooster;
             //   Player.wingTimeMax += 30 * FlightBuff.Wearing;
             if (Player.HasBuff<FlightBuff>())
@@ -149,6 +160,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
             ZoneDuration = 5;
             NueMaskOn = false;
             ZoneYujiWorn = false;
+            PandaBrassWorn = false;
 
 
             if (NPC.downedMoonlord)

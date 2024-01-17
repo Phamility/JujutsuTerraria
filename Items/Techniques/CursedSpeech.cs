@@ -37,7 +37,7 @@ namespace JujutsuTerraria.Items.Techniques
            // Item.healLife = -4;
             Item.useTime = 20;
             Item.useAnimation = 20;
-           Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+           Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
             Item.knockBack = 4;
             Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
@@ -244,11 +244,7 @@ namespace JujutsuTerraria.Items.Techniques
             }
             return -1;
         }
-        public override Vector2? HoldoutOffset()
-        // HoldoutOffset has to return a Vector2 because it needs two values (an X and Y value) to move your flamethrower sprite. Think of it as moving a point on a cartesian plane.
-        {
-            return new Vector2(-2, -2); // If your own flamethrower is being held wrong, edit these values. You can test out holdout offsets using Modder's Toolkit.
-        }
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 
