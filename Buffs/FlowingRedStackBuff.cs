@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Buffs
         {
             player.GetDamage<CursedDamage>() += 0.25f;
 
-            player.lifeRegen -= 8;
+            player.lifeRegen -= 10;
 
         }
 

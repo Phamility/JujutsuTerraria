@@ -41,9 +41,15 @@ namespace JujutsuTerraria.Ancients
                 // Projectile was spawned from using a YourItem weapon
                 // set a bool variable in the class to true here, then check it in ModifyHitNPC
             }
+            else
+            {
+                AMSHOT = false;
+            }
+ 
         }
         public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
         {
+           
             Player player = Main.player[projectile.owner];
             if(crit && (projectile.arrow) && AMSHOT)
             {

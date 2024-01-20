@@ -89,9 +89,9 @@ namespace JujutsuTerraria.Items.Accessories
             CreateRecipe()
                 .AddIngredient<NueWings>(1)
                                 .AddIngredient<CursedEnergy>(300)
-                                              .AddIngredient(ItemID.SoulofFlight, 15)
+                                              .AddIngredient(ItemID.SoulofFlight, 5)
 
-       .AddIngredient(ItemID.Ectoplasm, 10)
+       .AddIngredient(ItemID.Ectoplasm, 5)
 
         .AddTile<ShrineTile>()
                 .SortBefore(Main.recipe.First(recipe => recipe.createItem.wingSlot != -1)) // Places this recipe before any wing so every wing stays together in the crafting menu.

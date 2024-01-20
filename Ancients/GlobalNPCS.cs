@@ -16,6 +16,8 @@ using static Terraria.ModLoader.PlayerDrawLayer;
 using System;
 using System.Runtime.InteropServices;
 using JujutsuTerraria.Items.Techniques.Domains;
+using JujutsuTerraria.Items.Shadows;
+using JujutsuTerraria.Items.Techniques.AEquip;
 
 namespace JujutsuTerraria.Ancients
 {
@@ -174,6 +176,8 @@ namespace JujutsuTerraria.Ancients
             if (npc.type == NPCID.Zombie || npc.type == NPCID.DemonEye)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 50, 30, 60));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PainKiller>(), 100, 1));
+
                 Accounted = true;
 
             }
@@ -248,6 +252,14 @@ namespace JujutsuTerraria.Ancients
 
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<DEInfinity>(), 5));
     
+                npcLoot.Add(notExpertRule);
+            }
+            if (npc.type == NPCID.Deerclops)
+            {
+                LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<RoundDeer>(), 4));
+
                 npcLoot.Add(notExpertRule);
             }
             if (npc.type == NPCID.WallofFlesh)
@@ -354,6 +366,13 @@ namespace JujutsuTerraria.Ancients
             if (item.type == ItemID.MoonLordBossBag)
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DEInfinity>(), 4));
+
+
+
+            }
+            if (item.type == ItemID.DeerclopsBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<RoundDeer>(), 3));
 
 
 

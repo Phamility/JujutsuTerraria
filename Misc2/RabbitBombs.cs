@@ -29,8 +29,8 @@ namespace JujutsuTerraria.Misc2
                 .AddIngredient<RabbitEscape>(1)
                                 .AddIngredient<CursedEnergy>(350)
 
-                .AddIngredient(ItemID.ExplosiveBunny, 15)
-                .AddIngredient(ItemID.Ectoplasm, 15)
+                .AddIngredient(ItemID.ExplosiveBunny, 5)
+                .AddIngredient(ItemID.Ectoplasm, 5)
 
                 .AddTile<ShrineTile>()
                 .Register();

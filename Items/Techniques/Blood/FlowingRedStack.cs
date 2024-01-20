@@ -13,6 +13,7 @@ using Terraria.ID;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Tiles;
+using JujutsuTerraria.Items.Materials;
 
 namespace JujutsuTerraria.Items.Techniques.Blood
 {
@@ -56,8 +57,9 @@ namespace JujutsuTerraria.Items.Techniques.Blood
             CreateRecipe()
                 .AddIngredient<FlowingRed>(1)
                                 .AddIngredient<CursedEnergy>(350)
+                                .AddIngredient<BloodMat>(100)
 
-                .AddIngredient(ItemID.SoulofMight, 15)
+                .AddIngredient(ItemID.Ectoplasm, 5)
 
                 .AddTile<ShrineTile>()
                 .Register();

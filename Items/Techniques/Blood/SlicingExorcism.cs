@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         {
             Item.CloneDefaults(ItemID.PulseBow);
 
-            Item.damage = 34;
+            Item.damage = 20;
             Item.width = 28;
             // Item.mana = 8;
             Item.height = 30;
@@ -75,6 +75,18 @@ namespace JujutsuTerraria.Items.Techniques.Blood
                 return choice;
             }
             return -1;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<CursedEnergy>(200)
+                                .AddIngredient(ItemID.WaterBolt, 1)
+
+                .AddIngredient(ItemID.HellstoneBar, 10)
+
+                .AddTile<ShrineTile>()
+                .Register();
+   
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {

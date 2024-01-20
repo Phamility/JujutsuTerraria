@@ -20,6 +20,9 @@ using Terraria.GameContent;
 using ReLogic.Content;
 using System.Transactions;
 using static System.Formats.Asn1.AsnWriter;
+using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Items.Techniques.Domains;
+using System.Diagnostics.Metrics;
 
 namespace JujutsuTerraria.Projectiles
 {
@@ -122,10 +125,11 @@ namespace JujutsuTerraria.Projectiles
 
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            target.AddBuff(BuffID.DryadsWard, 60 * 5);
+            target.AddBuff(BuffID.DryadsWard, 60 * 10);
         }
 
         public float Wacko;
+        public int counter;
         bool once = false;
         public override void AI()
         {
@@ -167,25 +171,77 @@ namespace JujutsuTerraria.Projectiles
 
             if (player.channel)
             {
-
-                Vector2 center = new Vector2((int)player.position.X, (int)player.position.Y);
-                const float range = 16 * 13;  // 20 tiles
-                if (Local.DistanceSQ(center) <= range * range)
+                counter++;
+                if (counter >= 60)
                 {
-                    Local.AddBuff(BuffID.DryadsWard, 60 * 5);
+                    counter = 0;
+                    bool once = false;
+                    for (int i = 0; i < Main.InventorySlotsTotal; i++)
+                    {
+                        if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
+                        {
+                            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                            {
+                                player.inventory[DEJungle.InventoryNumber].stack -= DEJungle.Cost - DEJungle.Reduction;
+                                once = true;
+
+
+                            }
+                            else if (player.HasBuff(ModContent.BuffType<TwinEyesBuff>()))
+                            {
+                                player.inventory[DEJungle.InventoryNumber].stack -= DEJungle.Cost - DEJungle.Reduction;
+                                once = true;
+
+
+                            }
+                            else if (player.HasBuff(ModContent.BuffType<NueEyeBuff>()))
+                            {
+                                player.inventory[DEJungle.InventoryNumber].stack -= DEJungle.Cost - DEJungle.Reduction;
+                                once = true;
+
+
+                            }
+                            else
+                            {
+                                player.inventory[DEJungle.InventoryNumber].stack -= DEJungle.Cost - DEJungle.Reduction;
+                                once = true;
+
+                            }
+                        }
+                    }
                 }
 
-
-                if (Wacko <= .85)
+                if (player.inventory[DEJungle.InventoryNumber].stack < DEJungle.Cost - DEJungle.Reduction)
                 {
-                    Wacko += .008f;
+                    Projectile.Center = player.Center;
+
+                    Projectile.scale -= .1f;
+                    Wacko -= .045f;
+                    if (Projectile.scale <= 0)
+                    {
+                        Projectile.active = false;
+                    }
                 }
-              if (Projectile.scale <= 1)
+                else
                 {
-                    Projectile.scale += .01f;
-                } 
 
-                Projectile.Center = player.Center;
+                    Vector2 center = new Vector2((int)player.position.X, (int)player.position.Y);
+                    const float range = 16 * 12;  // 20 tiles
+                    if (Local.DistanceSQ(center) <= range * range)
+                    {
+                        Local.AddBuff(BuffID.DryadsWard, 60 * 10);
+                    }
+                    if (Wacko <= .85)
+                    {
+                        Wacko += .008f  ;
+                    }
+                    if (Projectile.scale <= 1)
+                    {
+                        Projectile.scale += .01f;
+                    }
+
+                    Projectile.Center = player.Center;
+                }
             }
             else
             {

@@ -18,13 +18,13 @@ using JujutsuTerraria.Tiles;
 
 namespace JujutsuTerraria.Items.Techniques
 {
-    public class SlaughterDemon : ModItem
+    public class DeadlySentencing : ModItem
 
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Slaughter Demon");
-            Tooltip.SetDefault("A simple combat knife that has a chance to inflict 'Poison'\nInflicted effects last 5 seconds");
+            DisplayName.SetDefault("Deadly Sentencing");
+            Tooltip.SetDefault("A LARGE gavel");
         }
    
         public override void SetDefaults()

@@ -23,7 +23,7 @@ namespace JujutsuTerraria.Items.Techniques
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Festering Life Blade");
-            Tooltip.SetDefault("Fires spider eggs per swing");
+            Tooltip.SetDefault("Fires spider eggs per swing\nA mix of life and death");
         }
    
         public override void SetDefaults()
@@ -44,7 +44,7 @@ namespace JujutsuTerraria.Items.Techniques
             Item.UseSound = SoundID.Item1;
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
 
-            Item.noMelee = true;
+            Item.noMelee = false;
                   Item.shootSpeed = 4f;
           Item.shoot = ProjectileID.SpiderEgg;
       //     Item.useAmmo = AmmoID.Arrow;

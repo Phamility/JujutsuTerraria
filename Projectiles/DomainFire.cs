@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System; 
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ using Terraria.GameContent;
 using ReLogic.Content;
 using System.Transactions;
 using static System.Formats.Asn1.AsnWriter;
+using JujutsuTerraria.Items.Techniques.Domains;
+using JujutsuTerraria.Items.Materials;
 
 namespace JujutsuTerraria.Projectiles
 {
@@ -104,7 +107,7 @@ namespace JujutsuTerraria.Projectiles
         }
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            target.AddBuff(BuffID.Inferno, 60 * 5);        
+            target.AddBuff(BuffID.Inferno, 60 * 10);        
         }
         public override bool PreDraw(ref Color lightColor)
         {
@@ -127,6 +130,7 @@ namespace JujutsuTerraria.Projectiles
 
         public float Wacko;
         bool once = false;
+        public int counter;
         public override void AI()
         {
             Projectile.Size = new Vector2(522, 522) * Projectile.scale; 
@@ -167,26 +171,81 @@ namespace JujutsuTerraria.Projectiles
             player.GetModPlayer<MPArmors>().DomainActive = true;
             Player Local = Main.LocalPlayer;
 
+
             // If the player channels the weapon, do something. This check only works if item.channel is true for the weapon.
             if (player.channel)
             {
-                Vector2 center = new Vector2((int)player.position.X, (int)player.position.Y);
-                const float range = 16 * 16;  // 20 tiles
-                if (Local.DistanceSQ(center) <= range * range)
+                counter++;
+                if (counter >= 60)
                 {
-                    Local.AddBuff(BuffID.Inferno, 60 * 5);
+                    counter = 0;
+                    bool once = false;
+                    for (int i = 0; i < Main.InventorySlotsTotal; i++)
+                    {
+                        if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
+                        {
+                            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                            {
+                                player.inventory[DEFire.InventoryNumber].stack -= DEFire.Cost - DEFire.Reduction;
+                                once = true;
+
+
+                            }
+                            else if (player.HasBuff(ModContent.BuffType<TwinEyesBuff>()))
+                            {
+                                player.inventory[DEFire.InventoryNumber].stack -= DEFire.Cost - DEFire.Reduction;
+                                once = true;
+
+
+                            }
+                            else if (player.HasBuff(ModContent.BuffType<NueEyeBuff>()))
+                            {
+                                player.inventory[DEFire.InventoryNumber].stack -= DEFire.Cost - DEFire.Reduction;
+                                once = true;
+
+
+                            }
+                            else
+                            {
+                                player.inventory[DEFire.InventoryNumber].stack -= DEFire.Cost - DEFire.Reduction;
+                                once = true;
+
+                            }
+                        }
+                    }
                 }
 
-                if (Wacko <= .85)
+                if (player.inventory[DEFire.InventoryNumber].stack < DEFire.Cost - DEFire.Reduction)
                 {
-                    Wacko += .0096f;
-                }
-              if (Projectile.scale <= 1)
-                {
-                    Projectile.scale += .012f;
-                } 
+                    Projectile.Center = player.Center;
 
-                Projectile.Center = player.Center;
+                    Projectile.scale -= .1f;
+                    Wacko -= .045f;
+                    if (Projectile.scale <= 0)
+                    {
+                        Projectile.active = false;
+                    }
+                }
+                else
+                {
+
+                    Vector2 center = new Vector2((int)player.position.X, (int)player.position.Y);
+                    const float range = 16 * 16;  // 20 tiles
+                    if (Local.DistanceSQ(center) <= range * range)
+                    {
+                        Local.AddBuff(BuffID.Inferno, 60 * 10);
+                    }
+                    if (Wacko <= .85)
+                    {
+                        Wacko += .0096f;
+                    }
+                    if (Projectile.scale <= 1)
+                    {
+                        Projectile.scale += .012f;
+                    }
+
+                    Projectile.Center = player.Center;
+                }
             }
             else
             {
@@ -195,7 +254,7 @@ namespace JujutsuTerraria.Projectiles
 
                 Projectile.scale -= .1f;
                 Wacko -= .045f;
-                if(Projectile.scale <= 0)
+                if (Projectile.scale <= 0)
                 {
                     Projectile.active = false;
                 }

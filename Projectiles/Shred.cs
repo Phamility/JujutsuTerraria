@@ -41,7 +41,7 @@ namespace JujutsuTerraria.Projectiles
             xspeed = 6.5f * CountryHammer.positive;
             Projectile.spriteDirection = CountryHammer.positive;
             lockedin = CountryHammer.positive;
-            Projectile.width = 120;
+            Projectile.width = 240;
             //projectile.aiStyle = 54;
             //aiType = NPCID.Raven;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
@@ -50,7 +50,7 @@ namespace JujutsuTerraria.Projectiles
             //   Projectile.velocity.X = yspeed;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
 
-            Projectile.height = 70;
+            Projectile.height = 138;
             // Makes the minion go through tiles freely
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;

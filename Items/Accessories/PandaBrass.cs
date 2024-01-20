@@ -18,6 +18,7 @@ using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Tiles;
+using JujutsuTerraria.Items.Techniques;
 
 namespace JujutsuTerraria.Items.Accessories
 {
@@ -29,7 +30,7 @@ namespace JujutsuTerraria.Items.Accessories
         {
             
             DisplayName.SetDefault("A Panda's Brass Knuckles");
-            Tooltip.SetDefault("Increases black flash chance by 1%");
+            Tooltip.SetDefault("Increases black flash damage");
         }
 
         public override void SetDefaults()
@@ -47,6 +48,21 @@ namespace JujutsuTerraria.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetModPlayer<MP>().PandaBrassWorn = true;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<CursedEnergy>(100)
+                .AddIngredient(ItemID.DemoniteBar, 10)
+
+                .AddTile<ShrineTile>()
+                .Register();
+            CreateRecipe()
+         .AddIngredient<CursedEnergy>(100)
+         .AddIngredient(ItemID.CrimtaneBar, 10)
+
+         .AddTile<ShrineTile>()
+         .Register();
         }
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 

@@ -26,10 +26,13 @@ namespace JujutsuTerraria.Buffs
         }
         public override void Update(Player player, ref int buffIndex)
         {
-            player.moveSpeed *= 1.08f;
-            player.maxRunSpeed *= 1.08f;
-            player.accRunSpeed *= 1.08f;
-            player.runAcceleration *= 1.08f;
+            player.moveSpeed *= 1.12f;
+            player.maxRunSpeed *= 1.12f;
+            player.accRunSpeed *= 1.12f;
+            player.runAcceleration *= 1.12f;
+
+
+
         }
 
     }

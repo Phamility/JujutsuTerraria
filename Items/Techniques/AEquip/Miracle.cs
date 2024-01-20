@@ -38,7 +38,7 @@ namespace JujutsuTerraria.Items.Techniques.AEquip
             // Fly speed: 9
             // Acceleration multiplier: 2.5
             DisplayName.SetDefault("Miracle");
-            Tooltip.SetDefault("While below 50 health, gain an unfathomable increase in life regeneration");
+            Tooltip.SetDefault("While below 60 health, gain an unfathomable increase in life regeneration");
         }
 
         public override void SetDefaults()
@@ -61,9 +61,9 @@ namespace JujutsuTerraria.Items.Techniques.AEquip
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-                if(player.statLife <= 50)
+                if(player.statLife <= 60)
             {
-                player.lifeRegen += 50;
+                player.lifeRegen += 60;
                 player.statLife += 1;
             }
 

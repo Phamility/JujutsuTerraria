@@ -50,15 +50,7 @@ namespace JujutsuTerraria.Items.Techniques.AEquip
             Item.accessory = true;
 
         }
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-                .AddIngredient<CursedEnergy>(100)
-                .AddIngredient(ItemID.BlackLens, 1)
 
-                .AddTile<ShrineTile>()
-                .Register();
-        }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
                 if(player.statLife <= 50)

@@ -21,7 +21,7 @@ using JujutsuTerraria.Tiles;
 
 namespace JujutsuTerraria.Items.Materials
 {
-    public class Blood : ModItem
+    public class BloodMat : ModItem
     {
         public override void SetStaticDefaults()
         {

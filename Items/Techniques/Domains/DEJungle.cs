@@ -44,7 +44,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
             Item.damage = 20;
-            Cost = 25;
+            Cost = 8;
             Item.useTime = 60;
             Item.useAnimation = 60;
           Item.useStyle = ItemUseStyleID.HiddenAnimation; // How you use the item (swinging, holding out, etc.)
@@ -155,7 +155,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
         }
         public override void UpdateInventory(Player player)
         {
-            Cost = 25;
+            Cost = 8;
 
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
@@ -182,14 +182,14 @@ namespace JujutsuTerraria.Items.Techniques.Domains
 
 
 
-        public int InventoryNumber;
-        public int Cost;
-        public int Reduction = 0;
+        public static int InventoryNumber;
+        public static int Cost;
+        public static int Reduction = 0;
         public override bool CanUseItem(Player player)
         { 
             bool Condition1;
             bool Condition2 = false;
-            Cost = 25;
+            Cost = 8;
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
                 Reduction = Cost - 1;

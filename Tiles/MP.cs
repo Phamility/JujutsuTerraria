@@ -81,7 +81,7 @@ namespace JujutsuTerraria.Tiles
         {
             if (PandaBrassWorn)
             {
-                PandaBrass = 1;
+                PandaBrass = 2;
             }
             else
             {
@@ -117,8 +117,8 @@ namespace JujutsuTerraria.Tiles
                 }
 
             } 
-            ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger + ZoneBody + ZoneYuji + PandaBrass; 
-            ZoneDamage = 4 + BlackFlashDamageBooster;
+            ZoneChance = 1 + ZoneChanceFactorRestless + ZoneEffectChance + ZoneChanceFactorTiger + ZoneBody + ZoneYuji; 
+            ZoneDamage = 4 + BlackFlashDamageBooster + PandaBrass;
             //   Player.wingTimeMax += 30 * FlightBuff.Wearing;
             if (Player.HasBuff<FlightBuff>())
                 {

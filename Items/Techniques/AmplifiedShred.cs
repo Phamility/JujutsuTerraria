@@ -29,7 +29,7 @@ namespace JujutsuTerraria.Items.Techniques
         {
             Item.CloneDefaults(ItemID.SnowmanCannon);
             Item.useAmmo = AmmoID.None;
-            Item.damage = 6;
+            Item.damage = 60;
             Item.width = 44;
            // Item.mana = 8;
             Item.height = 36;
@@ -42,7 +42,7 @@ namespace JujutsuTerraria.Items.Techniques
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.UseSound = SoundID.Item47;
             Item.value = Item.sellPrice(gold: 5); // How many coins the item is worth
-
+            Cost = 5;
             Item.noMelee = true;
                   Item.shootSpeed = 4f;
             Item.shoot = ModContent.ProjectileType<Shred>();
@@ -127,16 +127,16 @@ namespace JujutsuTerraria.Items.Techniques
             if (Item.favorited == true)
             {
 
-                tooltips.Insert(4, BLACKFLASHCHANCE);
-                tooltips.RemoveAt(5);
-                tooltips.Insert(5, NailCock);
+                tooltips.Insert(5, BLACKFLASHCHANCE);
+               // tooltips.RemoveAt(5);
+               // tooltips.Insert(5, NailCock);
 
             }
             else
             {
-                tooltips.Insert(2, BLACKFLASHCHANCE);
-                tooltips.RemoveAt(3);
-                tooltips.Insert(3, NailCock);
+                tooltips.Insert(3, BLACKFLASHCHANCE);
+               // tooltips.RemoveAt(3);
+              //  tooltips.Insert(4, NailCock);
 
 
             }

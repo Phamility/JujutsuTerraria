@@ -188,9 +188,9 @@ namespace JujutsuTerraria.Items.Techniques.Domains
 
 
 
-        public int InventoryNumber;
-        public int Cost;
-        public int Reduction = 0;
+        public static int InventoryNumber;
+        public static int Cost;
+        public static int Reduction = 0;
         public override bool CanUseItem(Player player)
         { 
             bool Condition1;
