@@ -22,7 +22,7 @@ namespace JujutsuTerraria.Items.Techniques
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cursed Speech");
-            Tooltip.SetDefault("Unleash a shocking wave that immobilizes enemies for 2.5 seconds\n45 second cooldown");
+            Tooltip.SetDefault("Unleash a shocking wave that immobilizes enemies for 2.5 seconds\n30 second cooldown");
         }
    
         public override void SetDefaults()
@@ -37,7 +37,7 @@ namespace JujutsuTerraria.Items.Techniques
            // Item.healLife = -4;
             Item.useTime = 20;
             Item.useAnimation = 20;
-           Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
+           Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
             Item.knockBack = 4;
             Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
@@ -80,17 +80,50 @@ namespace JujutsuTerraria.Items.Techniques
                 tt.Text = damageValue + " cursed damage";
             }
             TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs {Cost - Reduction} cursed energy") { OverrideColor = Color.DodgerBlue };
+            Player player = Main.LocalPlayer;
 
             tooltips.Insert(1, tooltip);
             TooltipLine COCK = tooltips.FirstOrDefault(x => x.Name == "CritChance" && x.Mod == "Terraria");
             tooltips.Remove(COCK);
+            TooltipLine NailCock;
+            if (player.GetModPlayer<MPArmors>().InumakiHeadOn == true)
+            {
+                NailCock = new TooltipLine(Mod, "Ten Shadows: Cost", $"5 second cooldown") { OverrideColor = Color.White };
+
+            }
+            else
+            {
+                NailCock = new TooltipLine(Mod, "Ten Shadows: Cost", $"30 second cooldown") { OverrideColor = Color.White };
+
+            }
+            if (Item.favorited == true)
+            {
+
+                tooltips.RemoveAt(6);
+                tooltips.Insert(6, NailCock);
+
+            }
+            else
+            {
+                tooltips.RemoveAt(4);
+                tooltips.Insert(4, NailCock);
+
+
+            }
 
         }
-  
+
         public override bool? UseItem(Player player)
         {
-            player.AddBuff(ModContent.BuffType<CursedDebuff>(), 60 * 45);
+            if (player.GetModPlayer<MPArmors>().InumakiHeadOn == true)
+            {
+                player.AddBuff(ModContent.BuffType<CursedDebuff>(), 5 * 60);
 
+            }
+            else
+            {
+                player.AddBuff(ModContent.BuffType<CursedDebuff>(), 60 * 30);
+            }
             bool once = false;
             for (int i = 0; i < Main.InventorySlotsTotal; i++)
             {

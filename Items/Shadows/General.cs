@@ -12,7 +12,7 @@ namespace JujutsuTerraria.Items.Shadows
         {
 
             DisplayName.SetDefault("General Wheel Silhouette");
-            Tooltip.SetDefault("Players incredibly close by gain 8% damage reduction and 8 armor piercing");
+            Tooltip.SetDefault("Players incredibly close by gain 6% damage reduction and 6 armor piercing");
         }
         public override void SetDefaults()
         {

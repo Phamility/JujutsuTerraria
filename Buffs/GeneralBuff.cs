@@ -19,7 +19,7 @@ namespace JujutsuTerraria.Buffs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Adapt and Counter");
-            Description.SetDefault("Reduces damage taken by 8%\nArmor penetration is increased by 8");
+            Description.SetDefault("Reduces damage taken by 6%\nArmor penetration is increased by 6");
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
             Main.debuff[Type] = true;
@@ -28,8 +28,8 @@ namespace JujutsuTerraria.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
 
-            player.GetArmorPenetration(DamageClass.Generic) += 8;
-            player.endurance += .08f;
+            player.GetArmorPenetration(DamageClass.Generic) += 6;
+            player.endurance += .06f;
 
 
 

@@ -125,7 +125,7 @@ namespace JujutsuTerraria.Items.Techniques
                 .AddIngredient<SlaughterDemon>(1)
                                 .AddIngredient<CursedEnergy>(350)
 
-                .AddIngredient(ItemID.SoulofMight, 15)
+                .AddIngredient(ItemID.HallowedBar, 12)
 
                 .AddTile<ShrineTile>()
                 .Register();

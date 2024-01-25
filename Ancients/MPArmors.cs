@@ -26,6 +26,10 @@ namespace JujutsuTerraria.Ancients
     {
         public bool NobaraHeadOn;
         public bool MakiHeadOn;
+        public bool InumakiHeadOn;
+        public bool MeiMeiHeadOn;
+
+
 
         public bool GojoHeadOn;
 
@@ -43,6 +47,9 @@ namespace JujutsuTerraria.Ancients
             NobaraHeadOn = false;
             MakiHeadOn = false;
             GojoHeadOn = false;
+            InumakiHeadOn = false;
+            MeiMeiHeadOn = false;
+
 
             MakiDamageNumber = 8;
             MakiMoveNumber = 4;

@@ -13,13 +13,13 @@ namespace JujutsuTerraria.Armor
     // The AutoloadEquip attribute automatically attaches an equip texture to this item.
     // Providing the EquipType.Body value here will result in TML expecting X_Arms.png, X_Body.png and X_FemaleBody.png sprite-sheet files to be placed next to the item's main texture.
     [AutoloadEquip(EquipType.Head)]
-    public class GojoHead : ModItem
+    public class MeiMeiHead : ModItem
     {
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Gojo Satoru");
-            Tooltip.SetDefault("18% increased cursed damage");
+            DisplayName.SetDefault("Mei Mei");
+            Tooltip.SetDefault("15% increased cursed damage");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
 
         }
@@ -27,11 +27,11 @@ namespace JujutsuTerraria.Armor
 
         public override void SetDefaults()
         {
-            Item.width = 30; // Width of the item
-            Item.height = 28; // Height of the item
+            Item.width = 24; // Width of the item
+            Item.height = 30; // Height of the item
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
-            Item.rare = ItemRarityID.Red; // The rarity of the item
-            Item.defense = 13; // The amount of defense the item will give when equipped
+            Item.rare = ItemRarityID.Pink; // The rarity of the item
+            Item.defense = 11; // The amount of defense the item will give when equipped
         }
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
@@ -41,22 +41,20 @@ namespace JujutsuTerraria.Armor
         // UpdateArmorSet allows you to give set bonuses to the armor.
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Grants the usage of 'Unlimited Void'"; // This is the setbonus tooltip
-            player.GetModPlayer<MPArmors>().GojoHeadOn = true;
+            player.setBonus = "Enhances 'Black Bird Manipulation'"; // This is the setbonus tooltip
+            player.GetModPlayer<MPArmors>().MeiMeiHeadOn = true;
+
         }
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage<CursedDamage>() += .18f;
+            player.GetDamage<CursedDamage>() += .15f;
 
         }
         public override void AddRecipes()
         {
             CreateRecipe()
                 .AddIngredient<CursedEnergy>(500)
-                              .AddIngredient(ItemID.FragmentNebula, 2)
-                              .AddIngredient(ItemID.FragmentSolar, 2)
-                              .AddIngredient(ItemID.FragmentStardust, 2)
-                              .AddIngredient(ItemID.FragmentSolar, 2)
+                              .AddIngredient(ItemID.BeetleHusk, 12)
 
                 .AddTile<ShrineTile>()
                 .Register();

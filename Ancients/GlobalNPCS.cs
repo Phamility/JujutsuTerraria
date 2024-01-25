@@ -18,6 +18,7 @@ using System.Runtime.InteropServices;
 using JujutsuTerraria.Items.Techniques.Domains;
 using JujutsuTerraria.Items.Shadows;
 using JujutsuTerraria.Items.Techniques.AEquip;
+using JujutsuTerraria.Misc2;
 
 namespace JujutsuTerraria.Ancients
 {
@@ -351,6 +352,7 @@ namespace JujutsuTerraria.Ancients
 
         }
     }
+    
     public class GlobalItems : GlobalItem
     {
 
@@ -360,6 +362,7 @@ namespace JujutsuTerraria.Ancients
         {
             if (ItemID.Sets.BossBag[item.type]) {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 1, 75, 125));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SukunaFinger>(), 10, 1));
 
             }
 

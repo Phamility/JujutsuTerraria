@@ -18,32 +18,32 @@ using JujutsuTerraria.Tiles;
 
 namespace JujutsuTerraria.Items.Techniques
 {
-    public class DeadlySentencing : ModItem
+    public class SOE : ModItem
 
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Deadly Sentencing");
-            Tooltip.SetDefault("A LARGE gavel");
+            DisplayName.SetDefault("Sword Of Extermination");
+            Tooltip.SetDefault("A specialized blade enveloped with positive energy\nHeals 2-4 health per swing");
         }
    
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.Cutlass);
 
-            Item.damage = 60;
-            Item.width = 120;
+            Item.damage = 76;
+            Item.width = 68;
            // Item.mana = 8;
-            Item.height = 120;
+            Item.height = 68;
            // Item.healLife = -4;
-           Item.useTime = 60;
-           Item.useAnimation = 60;
+           Item.useTime = 20;
+           Item.useAnimation = 20;
            // Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
-            Item.knockBack = 8;
-            Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
+            Item.knockBack = 3;
+            Item.rare = ItemRarityID.Lime; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             //  Item.UseSound = SoundID.Item102;
-            Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
+            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
 
             //  Item.noMelee = true;
             //      item.shootSpeed = 4f;
@@ -79,14 +79,31 @@ namespace JujutsuTerraria.Items.Techniques
             }
             return -1;
         }
+        public override void UseAnimation(Player player)
+        {
+            int cock;
+            cock = Main.rand.Next(2, 5);
+            player.statLife += cock;
+            
+            CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), Color.LightGreen, cock, true, false);
 
+        }
         public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
         {
-            if (Main.rand.Next(1, 5) == 2)
-            {
-                target.AddBuff(BuffID.BrokenArmor, 60 * 5);
+         
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<CursedEnergy>(400)
+                                              .AddIngredient(ItemID.Excalibur, 1)
 
-            }
+                              .AddIngredient(ItemID.SoulofLight, 6)
+                                                            .AddIngredient(ItemID.Ectoplasm, 6)
+
+                .AddTile<ShrineTile>()
+                .Register();
+
         }
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {
@@ -147,16 +164,6 @@ namespace JujutsuTerraria.Items.Techniques
         {
 
             crit = player.GetModPlayer<MP>().ZoneChance;
-        }
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-                .AddIngredient<CursedEnergy>(300)
-                              .AddIngredient(ItemID.SoulofNight, 6)
-
-                .AddTile<ShrineTile>()
-                .Register();
-
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {

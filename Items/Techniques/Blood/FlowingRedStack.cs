@@ -59,7 +59,8 @@ namespace JujutsuTerraria.Items.Techniques.Blood
                                 .AddIngredient<CursedEnergy>(350)
                                 .AddIngredient<BloodMat>(100)
 
-                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddIngredient(ItemID.SoulofMight, 15
+                )
 
                 .AddTile<ShrineTile>()
                 .Register();

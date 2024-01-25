@@ -19,7 +19,7 @@ namespace JujutsuTerraria.Items.Shadows
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bird Silhouette");
-            Tooltip.SetDefault("Slightly increases movement speed and flight time\nFlight effects are amplified for Nue-type Wings!\n1 minute duration");
+            Tooltip.SetDefault("Slightly increases movement speed and flight time\nFlight effects are amplified for Nue-type Wings!\n30 second duration");
             ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true; // This lets the player target anywhere on the whole screen while using a controller
             ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 
@@ -101,7 +101,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
 
 
                     }
@@ -109,7 +109,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
 
 
                     }
@@ -117,7 +117,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
 
 
                     }
@@ -125,7 +125,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
 
 
                     }

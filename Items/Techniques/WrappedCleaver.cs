@@ -49,7 +49,7 @@ namespace JujutsuTerraria.Items.Techniques
             Item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button.
 
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
-            Item.damage = 29; // The damage your item deals.
+            Item.damage = 26; // The damage your item deals.
             Item.knockBack = 5; // The force of knockback of the weapon. Maximum is 20
             Item.crit = 7; // The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
             Item.value = Item.buyPrice(gold: 3); // The value of the weapon in copper coins.

@@ -39,7 +39,7 @@ namespace JujutsuTerraria.Items.Shadows
         public override void SetDefaults()
         {
 
-            Item.damage = 42;
+            Item.damage = 40;
             Cost = 20;
             Item.width = 30;
             Item.height = 28;
