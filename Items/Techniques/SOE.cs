@@ -24,7 +24,7 @@ namespace JujutsuTerraria.Items.Techniques
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Sword Of Extermination");
-            Tooltip.SetDefault("A specialized blade enveloped with positive energy\nHeals 2-4 health per swing");
+            Tooltip.SetDefault("A specialized blade enveloped with positive energy\nHeals 3-7 health per swing");
         }
    
         public override void SetDefaults()
@@ -82,7 +82,7 @@ namespace JujutsuTerraria.Items.Techniques
         public override void UseAnimation(Player player)
         {
             int cock;
-            cock = Main.rand.Next(2, 5);
+            cock = Main.rand.Next(3, 8);
             player.statLife += cock;
             
             CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), Color.LimeGreen, cock, true, false);

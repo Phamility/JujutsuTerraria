@@ -29,7 +29,7 @@ namespace JujutsuTerraria.Items.Techniques
         public override void SetDefaults()
         {
 
-            Item.damage = 499;
+            Item.damage = 420;
             Item.width = 58;
             Item.height = 46;
             Cost = 20;
@@ -269,9 +269,130 @@ namespace JujutsuTerraria.Items.Techniques
         public int InventoryNumber;
         public int Cost;
         public int Reduction = 0;
+        private float PositionX;
+
+        private float PositionY;
+        private float SpeedX;
+        private float SpeedY;
+        private float SetNumber;
+       
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            if (player.direction == 1)
+           
+   
+                if ((player.GetModPlayer<MPArmors>().MeiMeiHeadOn))
+                {
+                    position.X = player.position.X;
+                    position.Y = player.position.Y;
+                    SetNumber = Main.rand.Next(1, 5);
+                    if (SetNumber == 1)
+                    {
+                        PositionX = player.position.X - 500;
+                        PositionY = player.position.Y - 500;
+                        SpeedX = 20;
+                        SpeedY = 20;
+                    }
+                    if (SetNumber == 2)
+                    {
+                        PositionX = player.position.X + 500;
+                        PositionY = player.position.Y - 500;
+                        SpeedX = -20;
+                        SpeedY = 20;
+                    }
+                    if (SetNumber == 3)
+                    {
+                        PositionX = player.position.X + 500;
+                        PositionY = player.position.Y + 500;
+                        SpeedX = -20;
+                        SpeedY = -20;
+                    }
+                    if (SetNumber == 4)
+                    {
+                        PositionX = player.position.X - 500;
+                        PositionY = player.position.Y + 500;
+                        SpeedX = 20;
+                        SpeedY = -20;
+                    }
+
+                    Projectile.NewProjectile(source, PositionX, PositionY, SpeedX, SpeedY, ModContent.ProjectileType<RavenProj2>(), ((damage)), 1, player.whoAmI);
+                if (Main.rand.Next(1, 3) == 2)
+                {
+                    position.X = player.position.X;
+                    position.Y = player.position.Y;
+                    SetNumber = Main.rand.Next(1, 5);
+                    if (SetNumber == 1)
+                    {
+                        PositionX = player.position.X - 500;
+                        PositionY = player.position.Y - 500;
+                        SpeedX = 20;
+                        SpeedY = 20;
+                    }
+                    if (SetNumber == 2)
+                    {
+                        PositionX = player.position.X + 500;
+                        PositionY = player.position.Y - 500;
+                        SpeedX = -20;
+                        SpeedY = 20;
+                    }
+                    if (SetNumber == 3)
+                    {
+                        PositionX = player.position.X + 500;
+                        PositionY = player.position.Y + 500;
+                        SpeedX = -20;
+                        SpeedY = -20;
+                    }
+                    if (SetNumber == 4)
+                    {
+                        PositionX = player.position.X - 500;
+                        PositionY = player.position.Y + 500;
+                        SpeedX = 20;
+                        SpeedY = -20;
+                    }
+
+                    Projectile.NewProjectile(source, PositionX, PositionY, SpeedX, SpeedY, ModContent.ProjectileType<RavenProj2>(), ((damage)), 1, player.whoAmI);
+                }
+                if (Main.rand.Next(1, 3) == 2)
+                {
+                    position.X = player.position.X;
+                    position.Y = player.position.Y;
+                    SetNumber = Main.rand.Next(1, 5);
+                    if (SetNumber == 1)
+                    {
+                        PositionX = player.position.X - 500;
+                        PositionY = player.position.Y - 500;
+                        SpeedX = 20;
+                        SpeedY = 20;
+                    }
+                    if (SetNumber == 2)
+                    {
+                        PositionX = player.position.X + 500;
+                        PositionY = player.position.Y - 500;
+                        SpeedX = -20;
+                        SpeedY = 20;
+                    }
+                    if (SetNumber == 3)
+                    {
+                        PositionX = player.position.X + 500;
+                        PositionY = player.position.Y + 500;
+                        SpeedX = -20;
+                        SpeedY = -20;
+                    }
+                    if (SetNumber == 4)
+                    {
+                        PositionX = player.position.X - 500;
+                        PositionY = player.position.Y + 500;
+                        SpeedX = 20;
+                        SpeedY = -20;
+                    }
+
+                    Projectile.NewProjectile(source, PositionX, PositionY, SpeedX, SpeedY, ModContent.ProjectileType<RavenProj2>(), ((damage)), 1, player.whoAmI);
+                }
+
+            }
+
+
+
+                if (player.direction == 1)
             {
                 positive = 1;
             }

@@ -5,8 +5,14 @@ A large chunk of the items in this mod use Jujutsu Kaisen's 'Cursed Techniques' 
 While most cursed techniques have one or two items associated with them, there is one that has signicifantly more emphasis. That being the "Ten Shadows Technique." There are 10 silhouettes the player can acquire throughout the game. And whether it be summoning a minion, providing a temporary buff, or inflicting a debuff, each of the ten silhouettes possess a unique way in benefitting the player.
 
 Features:
+1 New Class
 1 Boss
+1 Permanent Consumable
 4 Domain Expansions
+5 Binding Vows
+7 Armor Set Bonuses
+17 New Accessories
+21 New Weapons
 
-P.S. This was pretty rushed
+P.S. This was pretty rushed and I tried balancing best I could!
 

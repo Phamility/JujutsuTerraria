@@ -43,7 +43,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
             Item.height = 36;
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
-            Item.damage = 269;
+            Item.damage = 300;
             Cost = 999;
             Item.useTime = 60;
             Item.useAnimation = 60;

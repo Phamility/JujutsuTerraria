@@ -19,7 +19,7 @@ namespace JujutsuTerraria.Buffs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Six Eyes");
-            Description.SetDefault("All cursed energy usages are reduced down to 1\nReduces mana usage by 20%\nSee a lot"); Main.debuff[Type] = true;
+            Description.SetDefault("All cursed energy usages are reduced down to 1\nReduces mana usage by 20%\n3 defense\nSee a lot"); Main.debuff[Type] = true;
 
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
@@ -35,7 +35,7 @@ namespace JujutsuTerraria.Buffs
 
             player.CanSeeInvisibleBlocks = true;
 
-
+            player.statDefense += 3;
             player.manaCost -= .2f;
 
         }
