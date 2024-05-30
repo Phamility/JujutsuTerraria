@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         {
             Item.CloneDefaults(ItemID.PulseBow);
 
-            Item.damage = 20;
+            Item.damage = 40;
             Item.width = 28;
             // Item.mana = 8;
             Item.height = 30;

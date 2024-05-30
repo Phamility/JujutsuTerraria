@@ -85,7 +85,7 @@ namespace JujutsuTerraria.Items.Techniques
             cock = Main.rand.Next(2, 5);
             player.statLife += cock;
             
-            CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), Color.LightGreen, cock, true, false);
+            CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), Color.LimeGreen, cock, true, false);
 
         }
         public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)

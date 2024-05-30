@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Items.Techniques
         {
             Item.CloneDefaults(ItemID.SnowmanCannon);
             Item.useAmmo = AmmoID.None;
-            Item.damage = 42;
+            Item.damage = 37;
             Item.width = 44;
            // Item.mana = 8;
             Item.height = 36;

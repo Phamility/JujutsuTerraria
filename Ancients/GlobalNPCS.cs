@@ -161,6 +161,7 @@ namespace JujutsuTerraria.Ancients
             if (npc.type == NPCID.AngryBones || npc.type == NPCID.DarkCaster || npc.type == NPCID.CursedSkull
                 || npc.type == NPCID.Skeleton || npc.type == NPCID.AngryBonesBig || npc.type == NPCID.AngryBonesBigHelmet || npc.type == NPCID.AngryBonesBigMuscle)
             {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DeadlySentencing>(), 80, 1));
 
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HeavenlyPhysical>(), 80, 1));
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 50, 70, 100));
@@ -268,7 +269,7 @@ namespace JujutsuTerraria.Ancients
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<RestlessGambler>(), 5));
-                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<BloodEdge>(), 5));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<CursedEmblem>(), 5));
 
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<DEFire>(), 5));
 
@@ -341,6 +342,14 @@ namespace JujutsuTerraria.Ancients
 
                 npcLoot.Add(notExpertRule);
             }
+            if (npc.type == NPCID.Golem)
+            {
+                LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MissleFists>(), 4));
+
+                npcLoot.Add(notExpertRule);
+            }
             if (npc.type == NPCID.Plantera)
             {
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
@@ -380,6 +389,13 @@ namespace JujutsuTerraria.Ancients
 
 
             }
+            if (item.type == ItemID.GolemBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<MissleFists>(), 3));
+
+
+
+            }
             if (item.type == ItemID.PlanteraBossBag)
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AmplifiedShred>(), 4));
@@ -397,8 +413,8 @@ namespace JujutsuTerraria.Ancients
             if (item.type == ItemID.WallOfFleshBossBag)
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<RestlessGambler>(), 4));
-                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BloodEdge>(), 4));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DEFire>(), 4));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEmblem>(), 4));
 
 
             }

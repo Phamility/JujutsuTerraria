@@ -31,13 +31,13 @@ namespace JujutsuTerraria.Items.Techniques
         {
             Item.CloneDefaults(ItemID.Cutlass);
 
-            Item.damage = 60;
+            Item.damage = 47;
             Item.width = 120;
            // Item.mana = 8;
             Item.height = 120;
            // Item.healLife = -4;
-           Item.useTime = 60;
-           Item.useAnimation = 60;
+           Item.useTime = 40;
+           Item.useAnimation = 40;
            // Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
             Item.knockBack = 8;
             Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
@@ -88,13 +88,17 @@ namespace JujutsuTerraria.Items.Techniques
 
             }
         }
+
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {
             damage += ExampleDamagePlayer.ModPlayer(player).exampleDamageAdd;
             damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
         }
+ 
+
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
+
             if (crit == true)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
@@ -148,16 +152,7 @@ namespace JujutsuTerraria.Items.Techniques
 
             crit = player.GetModPlayer<MP>().ZoneChance;
         }
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-                .AddIngredient<CursedEnergy>(300)
-                              .AddIngredient(ItemID.SoulofNight, 6)
-
-                .AddTile<ShrineTile>()
-                .Register();
-
-        }
+     
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Get the vanilla damage tooltip

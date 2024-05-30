@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         {
             Item.CloneDefaults(ItemID.Cutlass);
 
-            Item.damage = 62;
+            Item.damage = 68;
             Item.width = 40;
            // Item.mana = 8;
             Item.height = 48;
@@ -53,8 +53,19 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         }
         public int positive;
 
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                                              .AddIngredient(ItemID.Cutlass)
 
-      
+                .AddIngredient<CursedEnergy>(300)
+                                .AddIngredient(ItemID.SoulofNight, 6)
+
+                .AddTile<ShrineTile>()
+                .Register();
+
+        }
+
         public override void UseAnimation(Player player)
         {
             int losslife;

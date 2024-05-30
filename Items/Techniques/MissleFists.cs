@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,61 +12,43 @@ using Terraria.ID;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Ancients;
-using Terraria.Utilities;
 using JujutsuTerraria.Tiles;
+using Terraria.Utilities;
 
 namespace JujutsuTerraria.Items.Techniques
 {
-    public class AmplifiedShred : ModItem
+    public class MissleFists : ModItem
 
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Amplified Shred");
-            Tooltip.SetDefault("Blast waves of amplified cursed energy");
+            DisplayName.SetDefault("Missle Fists");
+            Tooltip.SetDefault("Launch a barrage of giant fists!");
         }
-   
+  
         public override void SetDefaults()
         {
-            Item.CloneDefaults(ItemID.SnowmanCannon);
-            Item.useAmmo = AmmoID.None;
-            Item.damage = 42;
-            Item.width = 44;
-           // Item.mana = 8;
-            Item.height = 36;
-           // Item.healLife = -4;
-            Item.useTime = 6;
-            Item.useAnimation = 24;
-            Item.useStyle = ItemUseStyleID.Shoot;
-            Item.knockBack = 2;
-            Item.rare = ItemRarityID.LightPurple; // The color that the item's name will be in-game.
-            Item.DamageType = ModContent.GetInstance<CursedDamage>();
-            Item.UseSound = SoundID.Item47;
-            Item.value = Item.sellPrice(gold: 5); // How many coins the item is worth
+
+            Item.damage = 24;
+            Item.width = 38;
+            Item.height = 30;
             Cost = 5;
+
+            Item.useTime = 7;
+            Item.useAnimation = 7;
+            Item.noUseGraphic = true;
+
+            Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
+            Item.knockBack = 3;
+            Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
+            Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.noMelee = true;
-                  Item.shootSpeed = 4f;
-            Item.shoot = ModContent.ProjectileType<Shred>();
-      //     Item.useAmmo = AmmoID.Arrow;
+               Item.shootSpeed = 4f;
             Item.autoReuse = true;
-          //  Item.shoot = ModContent.ProjectileType<NueFriendlyFeather>();
+            Item.shoot = ModContent.ProjectileType<Fists>();
 
         }
         public static int positive;
-
-      
-  
-        public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
-        {
-            damage += ExampleDamagePlayer.ModPlayer(player).exampleDamageAdd;
-            damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
-  
-        }
-        public override void ModifyWeaponCrit(Player player, ref float crit)
-        {
-
-            crit = player.GetModPlayer<MP>().ZoneChance;
-        }
         public override void UpdateInventory(Player player)
         {
             Cost = 5;
@@ -91,11 +74,18 @@ namespace JujutsuTerraria.Items.Techniques
 
 
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                                              .AddIngredient(ItemID.TitanGlove)
 
+                .AddIngredient<CursedEnergy>(300)
+                                .AddIngredient(ItemID.SoulofLight, 6)
 
-        public int InventoryNumber;
-        public int Cost;
-        public int Reduction = 0;
+                .AddTile<ShrineTile>()
+                .Register();
+
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
 
@@ -118,55 +108,31 @@ namespace JujutsuTerraria.Items.Techniques
             tooltips.Remove(COCK);
             Player player = Main.LocalPlayer;
             TooltipLine NailCock;
-    
-         
-                 NailCock = new TooltipLine(Mod, "Ten Shadows: Cost", $"Blast waves of amplified cursed energy") { OverrideColor = Color.White };
 
-            
+
+            NailCock = new TooltipLine(Mod, "Ten Shadows: Cost", $"Launch a barrage of giant fists!") { OverrideColor = Color.White };
+
+
             TooltipLine BLACKFLASHCHANCE = new TooltipLine(Mod, "Ten Shadows: Cost", $"{player.GetModPlayer<MP>().ZoneChance}% black flash chance") { OverrideColor = Color.White };
             if (Item.favorited == true)
             {
 
                 tooltips.Insert(5, BLACKFLASHCHANCE);
-               // tooltips.RemoveAt(5);
-               // tooltips.Insert(5, NailCock);
+                // tooltips.RemoveAt(5);
+                // tooltips.Insert(5, NailCock);
 
             }
             else
             {
                 tooltips.Insert(3, BLACKFLASHCHANCE);
-               // tooltips.RemoveAt(3);
-              //  tooltips.Insert(4, NailCock);
+                // tooltips.RemoveAt(3);
+                //  tooltips.Insert(4, NailCock);
 
 
             }
 
         }
-        public override int ChoosePrefix(UnifiedRandom rand)
-        {
-            var prefixchooser = new WeightedRandom<int>();
-            prefixchooser.Add(PrefixID.Broken, 2);
-            prefixchooser.Add(PrefixID.Damaged, 2);
-            prefixchooser.Add(PrefixID.Slow, 2);
-            prefixchooser.Add(PrefixID.Annoying, 2);
-            prefixchooser.Add(PrefixID.Quick, 2);
-            prefixchooser.Add(PrefixID.Deadly, 2);
-            prefixchooser.Add(PrefixID.Demonic, 2);
-            prefixchooser.Add(PrefixID.Godly, 2);
-            prefixchooser.Add(PrefixID.Ruthless, 2);
-            prefixchooser.Add(PrefixID.Unpleasant, 2);
-            prefixchooser.Add(PrefixID.Hurtful, 2);
-
-            prefixchooser.Add(PrefixID.Rapid, 2);
-            prefixchooser.Add(PrefixID.Unreal, 2);
-            int choice = prefixchooser;
-            if ((Item.damage > 0) && Item.maxStack == 1)
-            {
-                return choice;
-            }
-            return -1;
-        }
-        int shotcount=0;
+        int shotcount = 0;
 
         public override bool? UseItem(Player player)
         {
@@ -205,13 +171,14 @@ namespace JujutsuTerraria.Items.Techniques
                             once = true;
 
                         }
-                    } else
+                    }
+                    else
                     {
                         shotcount++;
                     }
 
                 }
-               
+
             }
             return true;
 
@@ -239,7 +206,7 @@ namespace JujutsuTerraria.Items.Techniques
             {
                 Reduction = 0;
             }
-            if ( player.HasBuff<HeavenlyBuff>())
+            if (player.HasBuff<HeavenlyBuff>())
             {
 
                 Condition1 = false;
@@ -276,9 +243,35 @@ namespace JujutsuTerraria.Items.Techniques
             }
 
         }
+        public override int ChoosePrefix(UnifiedRandom rand)
+        {
+            var prefixchooser = new WeightedRandom<int>();
+            prefixchooser.Add(PrefixID.Broken, 2);
+            prefixchooser.Add(PrefixID.Damaged, 2);
+            prefixchooser.Add(PrefixID.Slow, 2);
+            prefixchooser.Add(PrefixID.Annoying, 2);
+            prefixchooser.Add(PrefixID.Quick, 2);
+            prefixchooser.Add(PrefixID.Deadly, 2);
+            prefixchooser.Add(PrefixID.Demonic, 2);
+            prefixchooser.Add(PrefixID.Godly, 2);
+            prefixchooser.Add(PrefixID.Ruthless, 2);
+            prefixchooser.Add(PrefixID.Unpleasant, 2);
+            prefixchooser.Add(PrefixID.Hurtful, 2);
+
+            prefixchooser.Add(PrefixID.Rapid, 2);
+            prefixchooser.Add(PrefixID.Unreal, 2);
+            int choice = prefixchooser;
+            if ((Item.damage > 0) && Item.maxStack == 1)
+            {
+                return choice;
+            }
+            return -1;
+        }
+        public int InventoryNumber;
+        public int Cost;
+        public int Reduction = 0;
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-      
             if (player.direction == 1)
             {
                 positive = 1;
@@ -288,21 +281,23 @@ namespace JujutsuTerraria.Items.Techniques
                 positive = -1;
 
             }
+            position.X = Main.MouseWorld.X;
+            position.Y = player.position.Y - 500;
 
-            int numberProjectiles = Main.rand.Next(1, 1);
+            int numberProjectiles = 3;
             for (int i = 0; i < numberProjectiles; i++)
             {
-                Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(10)); // 30 degree spread.
+                position.X = player.position.X + Main.rand.Next(-100, 100);
+                position.Y = player.position.Y + Main.rand.Next(-100, 100);
 
-                    Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X * 3, perturbedSpeed.Y * 3, ModContent.ProjectileType<Shred>(), ((damage)), 1, player.whoAmI);
-                
+                //Projectile.NewProjectile(Main.MouseWorld.X, player.position.Y - 800, 0f, 0f, ProjectileID.Bomb, damage, 4, player.whoAmI);
+                Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.
+
+                Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<Fists>(), ((damage)), 1, player.whoAmI);
             }
+
             return false;
-        }
-        public override Vector2? HoldoutOffset()
-        // HoldoutOffset has to return a Vector2 because it needs two values (an X and Y value) to move your flamethrower sprite. Think of it as moving a point on a cartesian plane.
-        {
-            return new Vector2(-8, -2); // If your own flamethrower is being held wrong, edit these values. You can test out holdout offsets using Modder's Toolkit.
+
         }
 
     }
