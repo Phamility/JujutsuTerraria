@@ -34,7 +34,8 @@ namespace JujutsuTerraria.NPCS
         public override bool PreDraw(SpriteBatch spriteBatch, NPC npc, ref BossBarDrawParams drawParams)
         {
             // Make the bar shake the less health the NPC has
-            float lifePercent = drawParams.LifePercentToShow / drawParams.LifePercentToShow;
+            float lifePercent = Life / LifeMax/* tModPorter Note: Removed. Suggest: Life / LifeMax */ / 
+                drawParams.LifePercentToShow/* tModPorter Note: Removed. Suggest: Life / LifeMax */;
             float shakeIntensity = Utils.Clamp(1f - lifePercent - 0.2f, 0f, 1f);
             drawParams.BarCenter.Y -= 20f;
             drawParams.BarCenter += Main.rand.NextVector2Circular(0.5f, 0.5f) * shakeIntensity * 15f;
