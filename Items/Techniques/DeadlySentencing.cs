@@ -107,7 +107,7 @@ namespace JujutsuTerraria.Items.Techniques
                 target.life += damageDone;
                 bool cock = false;
                 damageDone *= player.GetModPlayer<MP>().ZoneDamage;
-                if (damageDone > target.life && target.boss == true)
+                if (damageDone > target.life)
                 {
                     damageDone = target.life - Main.rand.Next(5, 30);
                     cock = true;
