@@ -27,7 +27,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Shred");
+            // DisplayName.SetDefault("Cursed Shred");
             Main.projFrames[Projectile.type] = 1;
             Main.projPet[Projectile.type] = false;
 
@@ -73,7 +73,7 @@ namespace JujutsuTerraria.Projectiles
             return true;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (target.type == NPCID.SkeletronHand || target.type == NPCID.QueenBee) { 
             }
@@ -82,12 +82,12 @@ namespace JujutsuTerraria.Projectiles
                 target.AddBuff(BuffID.ShadowFlame, 60 + 60 + 30);
             }
             Player player = Main.player[Projectile.owner];
-            if (crit)
+            if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -126,7 +126,7 @@ namespace JujutsuTerraria.Projectiles
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage * 2, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone * 2, true, false);
             }
             else
             {

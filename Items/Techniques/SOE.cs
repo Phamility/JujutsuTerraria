@@ -23,8 +23,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sword Of Extermination");
-            Tooltip.SetDefault("A specialized blade enveloped with positive energy\nHeals 3-7 health per swing");
+            // DisplayName.SetDefault("Sword Of Extermination");
+            // Tooltip.SetDefault("A specialized blade enveloped with positive energy\nHeals 3-7 health per swing");
         }
    
         public override void SetDefaults()
@@ -88,7 +88,7 @@ namespace JujutsuTerraria.Items.Techniques
             CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), Color.LimeGreen, cock, true, false);
 
         }
-        public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
+        public override void ModifyHitNPC(Player player, NPC target, ref NPC.HitModifiers modifiers)
         {
          
         }
@@ -110,14 +110,18 @@ namespace JujutsuTerraria.Items.Techniques
             damage += ExampleDamagePlayer.ModPlayer(player).exampleDamageAdd;
             damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
         }
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (crit == true)
+            if (hit.Crit
+                
+                
+                
+                )
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -156,7 +160,7 @@ namespace JujutsuTerraria.Items.Techniques
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false);
             }
         }
 

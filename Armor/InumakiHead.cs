@@ -18,8 +18,8 @@ namespace JujutsuTerraria.Armor
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Inumaki Toge");
-            Tooltip.SetDefault("12% increased cursed damage");
+            // DisplayName.SetDefault("Inumaki Toge");
+            // Tooltip.SetDefault("12% increased cursed damage");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
 
         }

@@ -15,8 +15,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mahout");
-            Description.SetDefault("A max elephant fights by your side!");
+            // DisplayName.SetDefault("Mahout");
+            // Description.SetDefault("A max elephant fights by your side!");
             Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
         }

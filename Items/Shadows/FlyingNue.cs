@@ -18,8 +18,8 @@ namespace JujutsuTerraria.Items.Shadows
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bird Silhouette");
-            Tooltip.SetDefault("Slightly increases movement speed and flight time\nFlight effects are amplified for Nue-type Wings!\n30 second duration");
+            // DisplayName.SetDefault("Bird Silhouette");
+            // Tooltip.SetDefault("Slightly increases movement speed and flight time\nFlight effects are amplified for Nue-type Wings!\n30 second duration");
             ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true; // This lets the player target anywhere on the whole screen while using a controller
             ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
 

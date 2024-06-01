@@ -9,13 +9,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 
@@ -31,8 +30,8 @@ namespace JujutsuTerraria.Items.Techniques.AEquip
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("Ice Formation");
-            Tooltip.SetDefault("Continuously form ice around you that will damage enemies");
+            // DisplayName.SetDefault("Ice Formation");
+            // Tooltip.SetDefault("Continuously form ice around you that will damage enemies");
         }
 
         public override void SetDefaults()

@@ -30,8 +30,8 @@ namespace JujutsuTerraria.Items.Materials
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Seeds");
-            Tooltip.SetDefault("Summons Nue");
+            // DisplayName.SetDefault("Cursed Seeds");
+            // Tooltip.SetDefault("Summons Nue");
             ItemID.Sets.SortingPriorityBossSpawns[Type] = 12; // This helps sort inventory know that this is a boss summoning Item.
 
             // If this would be for a vanilla boss that has no summon item, you would have to include this line here:
@@ -86,7 +86,7 @@ namespace JujutsuTerraria.Items.Materials
                 {
                     // If the player is in multiplayer, request a spawn
                     // This will only work if NPCID.Sets.MPAllowedEnemies[type] is true, which we set in MinionBossBody
-                    NetMessage.SendData(MessageID.SpawnBoss, number: player.whoAmI, number2: type);
+                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
                 }
             }
 

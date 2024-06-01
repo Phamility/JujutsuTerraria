@@ -8,13 +8,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Techniques.ARestrictions;
@@ -27,8 +26,8 @@ namespace JujutsuTerraria.Items.Techniques.ARestrictions
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Unbranded Binding Vow");
-            Tooltip.SetDefault("A new journey begins");
+            // DisplayName.SetDefault("Unbranded Binding Vow");
+            // Tooltip.SetDefault("A new journey begins");
 
 
 

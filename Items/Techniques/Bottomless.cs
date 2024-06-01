@@ -22,8 +22,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bottomless Well");
-            Tooltip.SetDefault("Conjure temporary winged toads to aid you in battle!");
+            // DisplayName.SetDefault("Bottomless Well");
+            // Tooltip.SetDefault("Conjure temporary winged toads to aid you in battle!");
         }
 
         public override void SetDefaults()

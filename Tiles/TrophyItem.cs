@@ -14,7 +14,7 @@ namespace JujutsuTerraria.Tiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Nue Trophy");
+            // DisplayName.SetDefault("Nue Trophy");
         }
         public override void SetDefaults()
         {

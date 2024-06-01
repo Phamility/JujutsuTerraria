@@ -20,8 +20,8 @@ namespace JujutsuTerraria.Misc2
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Honored One's Rabbit Silhouette");
-            Tooltip.SetDefault("Conjure a swarm of explosive bunnies!\nWhat a twist!");
+            // DisplayName.SetDefault("Honored One's Rabbit Silhouette");
+            // Tooltip.SetDefault("Conjure a swarm of explosive bunnies!\nWhat a twist!");
         }
         public override void AddRecipes()
         {

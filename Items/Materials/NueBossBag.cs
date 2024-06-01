@@ -17,8 +17,8 @@ namespace JujutsuTerraria.Items.Materials
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Treasure Bag (Nue)");
-            Tooltip.SetDefault("Right Click to open");
+            // DisplayName.SetDefault("Treasure Bag (Nue)");
+            // Tooltip.SetDefault("Right Click to open");
 
             // This set is one that every boss bag should have.
             // It will create a glowing effect around the item when dropped in the world.

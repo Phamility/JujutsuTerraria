@@ -21,7 +21,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Formed Ice");
+            // DisplayName.SetDefault("Formed Ice");
             Main.projFrames[Projectile.type] = 1;
             Main.projPet[Projectile.type] = false;
             // Sets the amount of frames this minion has on its spritesheet
@@ -126,7 +126,7 @@ namespace JujutsuTerraria.Projectiles
             //projectile.rotation = projectile.velocity.X * .5f;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             SoundEngine.PlaySound(SoundID.Item27, Projectile.position);
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;

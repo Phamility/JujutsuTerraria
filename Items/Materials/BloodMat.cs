@@ -8,13 +8,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Tiles;
@@ -25,8 +24,8 @@ namespace JujutsuTerraria.Items.Materials
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Converged Blood");
-            Tooltip.SetDefault("All that for a drop of blood.");
+            // DisplayName.SetDefault("Converged Blood");
+            // Tooltip.SetDefault("All that for a drop of blood.");
 
         }
 
@@ -45,7 +44,7 @@ namespace JujutsuTerraria.Items.Materials
                 .AddTile<ShrineTile>()
                .Register();
         }
-        public override void OnCreate(ItemCreationContext context)
+        public override void OnCreated(ItemCreationContext context)
         {
             Player player = Main.LocalPlayer;
             player.statLife -= 20;

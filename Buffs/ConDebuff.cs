@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Constructor's Limit");
-            Description.SetDefault("Unable to cast 'Construction'");
+            // DisplayName.SetDefault("Constructor's Limit");
+            // Description.SetDefault("Unable to cast 'Construction'");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff

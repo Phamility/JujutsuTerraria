@@ -18,13 +18,13 @@ namespace JujutsuTerraria.Misc2
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Vessel");
-            Description.SetDefault("Damaged increased");
+            // DisplayName.SetDefault("Vessel");
+            // Description.SetDefault("Damaged increased");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
         }
-        public override void ModifyBuffTip(ref string tip, ref int rare)
+        public override void ModifyBuffText(ref string buffName, ref string tip, ref int rare)
         {
             if (MP2.Quantified == 20) {
                 tip = ("You stand at the top.!\nDamaged increased by " + MP2.Quantified + "%");

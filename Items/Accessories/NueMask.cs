@@ -8,13 +8,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Tiles;
@@ -28,8 +27,8 @@ namespace JujutsuTerraria.Items.Accessories
         public override void SetStaticDefaults()
         {
             
-            DisplayName.SetDefault("Nue's Mask");
-            Tooltip.SetDefault("Boost the effects while in 'Zone' state");
+            // DisplayName.SetDefault("Nue's Mask");
+            // Tooltip.SetDefault("Boost the effects while in 'Zone' state");
         }
 
         public override void SetDefaults()

@@ -8,13 +8,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using rail;
@@ -31,8 +30,8 @@ namespace JujutsuTerraria.Items.Accessories.Eyes
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("The Eye of an Adventurer");
-            Tooltip.SetDefault("When equipped, grants the spelunker and hunter effect, highlighting treasures, ores, and enemies");
+            // DisplayName.SetDefault("The Eye of an Adventurer");
+            // Tooltip.SetDefault("When equipped, grants the spelunker and hunter effect, highlighting treasures, ores, and enemies");
         }
 
         public override void SetDefaults()

@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Amplified Shred");
-            Tooltip.SetDefault("Blast waves of amplified cursed energy");
+            // DisplayName.SetDefault("Amplified Shred");
+            // Tooltip.SetDefault("Blast waves of amplified cursed energy");
         }
    
         public override void SetDefaults()

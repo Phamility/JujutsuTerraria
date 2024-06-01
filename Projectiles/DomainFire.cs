@@ -33,7 +33,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Volanic Domain");
+            // DisplayName.SetDefault("Volanic Domain");
             Main.projFrames[Projectile.type] = 1;
            Main.projPet[Projectile.type] = false;
 
@@ -88,7 +88,7 @@ namespace JujutsuTerraria.Projectiles
             float radius = 522/2;
             return Projectile.Center.DistanceSQ(targetHitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale;
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             target.immune[Projectile.owner] = 5;
 
@@ -97,7 +97,7 @@ namespace JujutsuTerraria.Projectiles
         {
             return true;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             			target.immune[Projectile.owner] = 5;
 
@@ -105,7 +105,7 @@ namespace JujutsuTerraria.Projectiles
             target.AddBuff(BuffID.ShadowFlame, 60 * 10);
             TargetWhoAmI = target.whoAmI;
         }
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
             target.AddBuff(BuffID.Inferno, 60 * 10);        
         }

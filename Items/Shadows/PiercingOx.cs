@@ -24,8 +24,8 @@ namespace JujutsuTerraria.Items.Shadows
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ox Silhouette");
-            Tooltip.SetDefault("Conjure a piercing ox that charges through the screen!\nThe ox's charge causes enemies to be confused!");
+            // DisplayName.SetDefault("Ox Silhouette");
+            // Tooltip.SetDefault("Conjure a piercing ox that charges through the screen!\nThe ox's charge causes enemies to be confused!");
         }
         public override void AddRecipes()
         {

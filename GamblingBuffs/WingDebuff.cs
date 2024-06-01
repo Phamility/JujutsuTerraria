@@ -18,8 +18,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Failure's Wing Nullification");
-            Description.SetDefault("Reduce the effects of wings incredibly");
+            // DisplayName.SetDefault("Failure's Wing Nullification");
+            // Description.SetDefault("Reduce the effects of wings incredibly");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -30,8 +30,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Failure's Critical Chance");
-            Description.SetDefault("Decreases critical chance by 50%");
+            // DisplayName.SetDefault("Failure's Critical Chance");
+            // Description.SetDefault("Decreases critical chance by 50%");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -46,8 +46,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Failure's Damage");
-            Description.SetDefault("Decreases damage by 40%");
+            // DisplayName.SetDefault("Failure's Damage");
+            // Description.SetDefault("Decreases damage by 40%");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -62,8 +62,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Failure's Damage Reduction");
-            Description.SetDefault("Decreases defense by 40");
+            // DisplayName.SetDefault("Failure's Damage Reduction");
+            // Description.SetDefault("Decreases defense by 40");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -78,8 +78,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Failure's Life");
-            Description.SetDefault("Decreases max health by 250!");
+            // DisplayName.SetDefault("Failure's Life");
+            // Description.SetDefault("Decreases max health by 250!");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -94,8 +94,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Failure's Mana Efficiency");
-            Description.SetDefault("Increase mana costs by 50%");
+            // DisplayName.SetDefault("Failure's Mana Efficiency");
+            // Description.SetDefault("Increase mana costs by 50%");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -111,8 +111,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Failure's Summoning");
-            Description.SetDefault("Decrease max number of minions by 3");
+            // DisplayName.SetDefault("Failure's Summoning");
+            // Description.SetDefault("Decrease max number of minions by 3");
             Main.debuff[Type] = true;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff

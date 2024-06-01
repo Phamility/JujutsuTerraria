@@ -18,8 +18,8 @@ namespace JujutsuTerraria.Armor
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Itadori Yuji");
-            Tooltip.SetDefault("8% increased cursed damage");
+            // DisplayName.SetDefault("Itadori Yuji");
+            // Tooltip.SetDefault("8% increased cursed damage");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
 
         }

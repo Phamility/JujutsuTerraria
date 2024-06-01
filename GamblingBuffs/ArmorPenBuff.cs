@@ -18,8 +18,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Armor Penetration");
-            Description.SetDefault("Increases armor penetration by 30");
+            // DisplayName.SetDefault("Gambler's Armor Penetration");
+            // Description.SetDefault("Increases armor penetration by 30");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -35,8 +35,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Domain");
-            Description.SetDefault("Increases regeneration immensely");
+            // DisplayName.SetDefault("Gambler's Domain");
+            // Description.SetDefault("Increases regeneration immensely");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -51,8 +51,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Critical Chance");
-            Description.SetDefault("Increases critical chance by 45%");
+            // DisplayName.SetDefault("Gambler's Critical Chance");
+            // Description.SetDefault("Increases critical chance by 45%");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -67,8 +67,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Damage");
-            Description.SetDefault("Increases damage by 40%");
+            // DisplayName.SetDefault("Gambler's Damage");
+            // Description.SetDefault("Increases damage by 40%");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -83,8 +83,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Damage Reduction");
-            Description.SetDefault("Take 35% less damage");
+            // DisplayName.SetDefault("Gambler's Damage Reduction");
+            // Description.SetDefault("Take 35% less damage");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -99,8 +99,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Life");
-            Description.SetDefault("Increases max health by 250!");
+            // DisplayName.SetDefault("Gambler's Life");
+            // Description.SetDefault("Increases max health by 250!");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -115,8 +115,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Mana Efficiency");
-            Description.SetDefault("Reduce mana costs by 45%");
+            // DisplayName.SetDefault("Gambler's Mana Efficiency");
+            // Description.SetDefault("Reduce mana costs by 45%");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
@@ -132,8 +132,8 @@ namespace JujutsuTerraria.GamblingBuffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gambler's Summoning");
-            Description.SetDefault("Increases max number of minions by 4");
+            // DisplayName.SetDefault("Gambler's Summoning");
+            // Description.SetDefault("Increases max number of minions by 4");
             Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff

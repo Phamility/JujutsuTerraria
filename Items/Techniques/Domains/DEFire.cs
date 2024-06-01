@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques.Domains
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Coffin of the Iron Mountain");
-            Tooltip.SetDefault("Conjure the power of Hell.\nTemporarily provide Inferno");
+            // DisplayName.SetDefault("Coffin of the Iron Mountain");
+            // Tooltip.SetDefault("Conjure the power of Hell.\nTemporarily provide Inferno");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)

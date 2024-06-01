@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Construction");
-            Tooltip.SetDefault("5 second cooldown\nConjure 1 lead bar and 25 wood");
+            // DisplayName.SetDefault("Construction");
+            // Tooltip.SetDefault("5 second cooldown\nConjure 1 lead bar and 25 wood");
         }
         public override void AddRecipes()
         {

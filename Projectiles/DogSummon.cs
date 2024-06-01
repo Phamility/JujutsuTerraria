@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Divine Dog Summon");
+            // DisplayName.SetDefault("Divine Dog Summon");
 
             // Sets the amount of frames this minion has on its spritesheet
             Main.projFrames[Projectile.type] = 10;

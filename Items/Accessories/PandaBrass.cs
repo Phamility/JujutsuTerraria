@@ -8,13 +8,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Tiles;
@@ -29,8 +28,8 @@ namespace JujutsuTerraria.Items.Accessories
         public override void SetStaticDefaults()
         {
             
-            DisplayName.SetDefault("A Panda's Brass Knuckles");
-            Tooltip.SetDefault("Increases black flash damage");
+            // DisplayName.SetDefault("A Panda's Brass Knuckles");
+            // Tooltip.SetDefault("Increases black flash damage");
         }
 
         public override void SetDefaults()

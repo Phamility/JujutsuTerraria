@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
@@ -15,8 +16,6 @@ using Terraria.ID;
 using JujutsuTerraria.Tiles;
 
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using rail;
@@ -34,8 +33,8 @@ namespace JujutsuTerraria.Items.Techniques
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("Wrapped Cleaver");
-            Tooltip.SetDefault("When combined with Ratio, Wrapped Cleaver's black flash chance increases by 7%");
+            // DisplayName.SetDefault("Wrapped Cleaver");
+            // Tooltip.SetDefault("When combined with Ratio, Wrapped Cleaver's black flash chance increases by 7%");
         }
 
         public override void SetDefaults()
@@ -63,14 +62,14 @@ namespace JujutsuTerraria.Items.Techniques
             damage += ExampleDamagePlayer.ModPlayer(player).exampleDamageAdd;
             damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
         }
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (crit == true)
+            if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -109,10 +108,10 @@ namespace JujutsuTerraria.Items.Techniques
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false);
             }
         }
-        public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
+        public override void ModifyHitNPC(Player player, NPC target, ref NPC.HitModifiers modifiers)
         {
 
         }

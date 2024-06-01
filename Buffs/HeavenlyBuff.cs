@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Heavenly Restriction");
-            Description.SetDefault("Cursed, melee and ranged damage increased\nMovement speed increased\nDefense increased\nCan't use cursed energy, mana, or minions"); Main.debuff[Type] = true;
+            // DisplayName.SetDefault("Heavenly Restriction");
+            // Description.SetDefault("Cursed, melee and ranged damage increased\nMovement speed increased\nDefense increased\nCan't use cursed energy, mana, or minions"); Main.debuff[Type] = true;
 
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff

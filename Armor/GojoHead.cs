@@ -18,8 +18,8 @@ namespace JujutsuTerraria.Armor
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Gojo Satoru");
-            Tooltip.SetDefault("18% increased cursed damage");
+            // DisplayName.SetDefault("Gojo Satoru");
+            // Tooltip.SetDefault("18% increased cursed damage");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
 
         }

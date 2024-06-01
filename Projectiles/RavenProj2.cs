@@ -26,7 +26,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Crow2");
+            // DisplayName.SetDefault("Crow2");
             Main.projFrames[Projectile.type] = 4;
             Main.projPet[Projectile.type] = false;
 
@@ -104,18 +104,18 @@ namespace JujutsuTerraria.Projectiles
         }
 
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
         //    target.immune[ModContent.ProjectileType<Nail>()] = 10;
 
             Player player = Main.player[Projectile.owner];
-            if (crit)
+            if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -154,7 +154,7 @@ namespace JujutsuTerraria.Projectiles
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage * 2, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone * 2, true, false);
             }
             else
             {

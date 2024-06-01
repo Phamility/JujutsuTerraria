@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Country Girl's Hammer");
-            Tooltip.SetDefault("Fires 1-3 nails per swing");
+            // DisplayName.SetDefault("Country Girl's Hammer");
+            // Tooltip.SetDefault("Fires 1-3 nails per swing");
         }
    
         public override void SetDefaults()

@@ -37,8 +37,8 @@ namespace JujutsuTerraria.Armor
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Jujutsu Uniform - Legs");
-            Tooltip.SetDefault("Stats are increased as more bosses are defeated");
+            // DisplayName.SetDefault("Jujutsu Uniform - Legs");
+            // Tooltip.SetDefault("Stats are increased as more bosses are defeated");
         }
 
      

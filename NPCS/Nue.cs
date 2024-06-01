@@ -9,17 +9,16 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
+using Terraria.GameContent.UI.ResourceSets;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
-using IL.Terraria.GameContent.UI.ResourceSets;
 using JujutsuTerraria.Items.Accessories;
 using JujutsuTerraria.Items.Accessories.Eyes;
 using JujutsuTerraria.Ancients;
@@ -93,11 +92,11 @@ namespace JujutsuTerraria.NPCS
             }
         }
 
-        public override void ModifyHitByProjectile(Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitByProjectile(Projectile projectile, ref NPC.HitModifiers modifiers)
         {
             if(projectile.DamageType.CountsAsClass(ModContent.GetInstance<CursedDamage>()) != true)
             {
-                damage = 0;
+                projectile.damage = 0;
             }
 
 
@@ -124,7 +123,7 @@ namespace JujutsuTerraria.NPCS
             });
         }
 
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
             // Spawn confetti when this zombie is hit.
 
@@ -268,7 +267,7 @@ namespace JujutsuTerraria.NPCS
             }
         }
         
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             SoundEngine.PlaySound(SoundID.Item94, NPC.position);
 

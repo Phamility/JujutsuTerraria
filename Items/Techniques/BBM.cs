@@ -22,8 +22,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Black Bird Manipulation");
-            Tooltip.SetDefault("Hurl a crow at enemies, dealing a powerful blow!");
+            // DisplayName.SetDefault("Black Bird Manipulation");
+            // Tooltip.SetDefault("Hurl a crow at enemies, dealing a powerful blow!");
         }
   
         public override void SetDefaults()

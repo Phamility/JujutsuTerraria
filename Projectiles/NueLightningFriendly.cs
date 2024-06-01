@@ -20,7 +20,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Lightning Ball");
+            // DisplayName.SetDefault("Lightning Ball");
             // Sets the amount of frames this minion has on its spritesheet
             Main.projFrames[Projectile.type] = 4;
             // This is necessary for right-click targeting
@@ -115,7 +115,7 @@ namespace JujutsuTerraria.Projectiles
 
             //projectile.rotation = projectile.velocity.X * .5f;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             SoundEngine.PlaySound(SoundID.Item94, Projectile.position);
 

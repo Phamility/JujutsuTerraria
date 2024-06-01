@@ -25,7 +25,7 @@ namespace JujutsuTerraria.Projectiles
       //  public override string Texture => "Terraria/Projectile_" + ProjectileID.Flames;
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Serpent Venom Projectile"); // The English name of the projectile
+            // DisplayName.SetDefault("Serpent Venom Projectile"); // The English name of the projectile
         }
 
         public override void SetDefaults()
@@ -98,15 +98,15 @@ namespace JujutsuTerraria.Projectiles
             Projectile.ai[0] += 1f;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player player = Main.player[Projectile.owner];
-            if (crit)
+            if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -145,7 +145,7 @@ namespace JujutsuTerraria.Projectiles
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage * 2, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone * 2, true, false);
             }
             target.AddBuff(BuffID.Venom, 30 * 60); //Gives cursed flames to target for 4 seconds. (60 = 1 second, 240 = 4 seconds)
         }

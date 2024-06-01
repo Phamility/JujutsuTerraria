@@ -21,7 +21,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Nue's Lightning");
+            // DisplayName.SetDefault("Nue's Lightning");
             // Sets the amount of frames this minion has on its spritesheet
             Main.projFrames[Projectile.type] = 4;
             // This is necessary for right-click targeting
@@ -121,7 +121,7 @@ namespace JujutsuTerraria.Projectiles
             //projectile.rotation = projectile.velocity.X * .5f;
         }
 
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
 
             for (int i = 0; i < 10; i++)

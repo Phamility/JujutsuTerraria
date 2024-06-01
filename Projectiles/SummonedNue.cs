@@ -25,7 +25,7 @@ namespace JujutsuTerraria.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Nue Summon");
+            // DisplayName.SetDefault("Nue Summon");
 
             // Sets the amount of frames this minion has on its spritesheet
             Main.projFrames[Projectile.type] = 4;

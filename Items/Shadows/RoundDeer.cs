@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Items.Shadows
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Deer Silhouette");
-            Tooltip.SetDefault("Doesn't cause potion sickness\nCan't be used by quick heal\n12 second cooldown");
+            // DisplayName.SetDefault("Deer Silhouette");
+            // Tooltip.SetDefault("Doesn't cause potion sickness\nCan't be used by quick heal\n12 second cooldown");
         }
         public override void AddRecipes()
         {

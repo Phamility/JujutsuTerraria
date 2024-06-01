@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -17,9 +18,6 @@ using Terraria.GameContent.Bestiary;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
-
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using rail;
@@ -31,8 +29,8 @@ namespace JujutsuTerraria.Misc2
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Suspicious Looking Finger");
-            Tooltip.SetDefault("Permanately increases damage by 1%\nOnly 20 fingers can be consumed per character");
+            // DisplayName.SetDefault("Suspicious Looking Finger");
+            // Tooltip.SetDefault("Permanately increases damage by 1%\nOnly 20 fingers can be consumed per character");
 
             // This set is one that every boss bag should have.
             // It will create a glowing effect around the item when dropped in the world.

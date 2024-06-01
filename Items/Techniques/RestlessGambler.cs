@@ -20,8 +20,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Restless Gambler");
-            Tooltip.SetDefault("41 second cooldown\nUpon use, have a [c/FF33D6:50 / 50 chance] between a random powerful buff or harmful debuff lasting 41 seconds!\nIf the last roll was a buff, have a [c/33FF3D:65% chance] for a random buff, and a [c/FF0000:35% chance] for a random debuff!\n[c/FF33D6:Can only be used during bosses!]");
+            // DisplayName.SetDefault("Restless Gambler");
+            // Tooltip.SetDefault("41 second cooldown\nUpon use, have a [c/FF33D6:50 / 50 chance] between a random powerful buff or harmful debuff lasting 41 seconds!\nIf the last roll was a buff, have a [c/33FF3D:65% chance] for a random buff, and a [c/FF0000:35% chance] for a random debuff!\n[c/FF33D6:Can only be used during bosses!]");
         }
         public override void AddRecipes()
         {

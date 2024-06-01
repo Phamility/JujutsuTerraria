@@ -26,7 +26,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Speech Wave");
+            // DisplayName.SetDefault("Cursed Speech Wave");
             Main.projFrames[Projectile.type] = 1;
             Main.projPet[Projectile.type] = false;
 
@@ -72,7 +72,7 @@ namespace JujutsuTerraria.Projectiles
             return true;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (target.type == NPCID.SkeletronHand || target.type == NPCID.QueenBee) { 
             }

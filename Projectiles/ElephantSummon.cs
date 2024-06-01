@@ -29,7 +29,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Max Elephant Summon");
+            // DisplayName.SetDefault("Max Elephant Summon");
 
             // Sets the amount of frames this minion has on its spritesheet
        //     Main.projFrames[Projectile.type] = 10;

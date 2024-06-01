@@ -27,7 +27,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Piercing Ox");
+            // DisplayName.SetDefault("Piercing Ox");
             // Sets the amount of frames this minion has on its spritesheet
             Main.projFrames[Projectile.type] = 6;
             // This is necessary for right-click targeting
@@ -155,15 +155,15 @@ namespace JujutsuTerraria.Projectiles
         // Here, a method is provided for setting the above fields.
 
     
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player player = Main.player[Projectile.owner];
-            if (crit)
+            if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -202,7 +202,7 @@ namespace JujutsuTerraria.Projectiles
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage * 2, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone * 2, true, false);
             }
             SoundEngine.PlaySound(SoundID.NPCDeath43, Projectile.position);
             int buffType = BuffID.Confused;

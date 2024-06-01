@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Speech");
-            Tooltip.SetDefault("Unleash a shocking wave that immobilizes enemies for 2.5 seconds\n30 second cooldown");
+            // DisplayName.SetDefault("Cursed Speech");
+            // Tooltip.SetDefault("Unleash a shocking wave that immobilizes enemies for 2.5 seconds\n30 second cooldown");
         }
    
         public override void SetDefaults()

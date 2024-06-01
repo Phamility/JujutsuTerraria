@@ -20,8 +20,8 @@ namespace JujutsuTerraria.Items.Shadows
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tiger Silhouette");
-            Tooltip.SetDefault("Increases black flash chance by 1%\n1 minute duration");
+            // DisplayName.SetDefault("Tiger Silhouette");
+            // Tooltip.SetDefault("Increases black flash chance by 1%\n1 minute duration");
         }
         public override void AddRecipes()
         {

@@ -22,8 +22,8 @@ namespace JujutsuTerraria.Items.Techniques.Blood
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Blood Edge");
-            Tooltip.SetDefault("A lethal blade composed of its wielder's blood");
+            // DisplayName.SetDefault("Blood Edge");
+            // Tooltip.SetDefault("A lethal blade composed of its wielder's blood");
         }
    
         public override void SetDefaults()
@@ -105,14 +105,14 @@ namespace JujutsuTerraria.Items.Techniques.Blood
             damage += ExampleDamagePlayer.ModPlayer(player).exampleDamageAdd;
             damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
         }
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (crit == true)
+            if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -151,7 +151,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false);
             }
         }
 

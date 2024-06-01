@@ -8,13 +8,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
@@ -32,8 +31,8 @@ namespace JujutsuTerraria.Items.Accessories
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("Nue's Wings");
-            Tooltip.SetDefault("Allows flight and slow fall");
+            // DisplayName.SetDefault("Nue's Wings");
+            // Tooltip.SetDefault("Allows flight and slow fall");
             ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(17, 2f, 1f);
         }
 

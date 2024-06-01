@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques.Blood
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Flowing Red Scale: Stack");
-            Tooltip.SetDefault("Gain 25% cursed damage 2 minutes\nDuring this time, life regeneration is decreased");
+            // DisplayName.SetDefault("Flowing Red Scale: Stack");
+            // Tooltip.SetDefault("Gain 25% cursed damage 2 minutes\nDuring this time, life regeneration is decreased");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)

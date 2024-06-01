@@ -31,8 +31,8 @@ namespace JujutsuTerraria.Items.Shadows
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Wolf Silhouette");
-            Tooltip.SetDefault("Summons a pair of divine dogs to fight by your side\nOnly one pair of divine dogs can be summoned at a time\nOccupies zero minion slots\nDivine dogs' damage increases with each boss defeated, however, it cannot be changed!");
+            // DisplayName.SetDefault("Wolf Silhouette");
+            // Tooltip.SetDefault("Summons a pair of divine dogs to fight by your side\nOnly one pair of divine dogs can be summoned at a time\nOccupies zero minion slots\nDivine dogs' damage increases with each boss defeated, however, it cannot be changed!");
         }
 
         public override void AddRecipes()

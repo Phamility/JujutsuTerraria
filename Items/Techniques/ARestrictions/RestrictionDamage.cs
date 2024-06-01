@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
@@ -19,8 +20,6 @@ using JujutsuTerraria.Tiles;
 using Terraria.Utilities;
 
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using rail;
@@ -37,8 +36,8 @@ namespace JujutsuTerraria.Items.Techniques.ARestrictions;
             // Fly time: 180 ticks = 3 seconds
             // Fly speed: 9
             // Acceleration multiplier: 2.5
-            DisplayName.SetDefault("Binding Vow: Damage");
-            Tooltip.SetDefault("12% increased damage\nHowever, max health is reduced by 50");
+            // DisplayName.SetDefault("Binding Vow: Damage");
+            // Tooltip.SetDefault("12% increased damage\nHowever, max health is reduced by 50");
         }
 
         public override void SetDefaults()

@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Heavenly Restriction");
-            Description.SetDefault("Cursed, magic and summon damage increased by 18%\nReduced max health and defense"); Main.debuff[Type] = true;
+            // DisplayName.SetDefault("Cursed Heavenly Restriction");
+            // Description.SetDefault("Cursed, magic and summon damage increased by 18%\nReduced max health and defense"); Main.debuff[Type] = true;
 
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff

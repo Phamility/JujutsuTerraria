@@ -346,7 +346,6 @@ namespace JujutsuTerraria.Ancients
             {
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
-                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MissleFists>(), 4));
 
                 npcLoot.Add(notExpertRule);
             }
@@ -391,7 +390,6 @@ namespace JujutsuTerraria.Ancients
             }
             if (item.type == ItemID.GolemBossBag)
             {
-                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<MissleFists>(), 3));
 
 
 

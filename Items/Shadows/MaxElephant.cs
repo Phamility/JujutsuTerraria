@@ -31,8 +31,8 @@ namespace JujutsuTerraria.Items.Shadows
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Elephant Silhouette");
-            Tooltip.SetDefault("Summons a sentry\nSummons a max elephant to shoot water at your enemies!\nOnly one max elephant can be summoned at a time");
+            // DisplayName.SetDefault("Elephant Silhouette");
+            // Tooltip.SetDefault("Summons a sentry\nSummons a max elephant to shoot water at your enemies!\nOnly one max elephant can be summoned at a time");
         }
     
         public override void AddRecipes()

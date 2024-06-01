@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques.Domains
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Unlimited Void");
-            Tooltip.SetDefault("Conjure the power of the Void.");
+            // DisplayName.SetDefault("Unlimited Void");
+            // Tooltip.SetDefault("Conjure the power of the Void.");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)

@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Simple Domain");
+            // DisplayName.SetDefault("Simple Domain");
             Main.projFrames[Projectile.type] = 1;
            Main.projPet[Projectile.type] = false;
 
@@ -85,7 +85,7 @@ namespace JujutsuTerraria.Projectiles
             float radius = 250/2;
             return Projectile.Center.DistanceSQ(targetHitbox.ClosestPointInRect(Projectile.Center)) < radius * Projectile.scale * radius * Projectile.scale;
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             target.immune[Projectile.owner] = 5;
 

@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques.Domains
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Shining Sea of Flowers");
-            Tooltip.SetDefault("Conjure the power of the Jungle.\nTemporarily provide Dryad's Blessing");
+            // DisplayName.SetDefault("Shining Sea of Flowers");
+            // Tooltip.SetDefault("Conjure the power of the Jungle.\nTemporarily provide Dryad's Blessing");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)

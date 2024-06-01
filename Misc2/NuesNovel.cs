@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Misc2
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Nue's Novel");
-            Tooltip.SetDefault("Rain a barrage of feathers from the sky!");
+            // DisplayName.SetDefault("Nue's Novel");
+            // Tooltip.SetDefault("Rain a barrage of feathers from the sky!");
         }
         public override void AddRecipes()
         {

@@ -20,8 +20,8 @@ namespace JujutsuTerraria.Tiles
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Jujutsu Shrine");
-            Tooltip.SetDefault("Used for crafting items containing cursed energy");
+            // DisplayName.SetDefault("Jujutsu Shrine");
+            // Tooltip.SetDefault("Used for crafting items containing cursed energy");
         }
         public override void SetDefaults()
         {

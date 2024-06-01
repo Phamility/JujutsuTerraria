@@ -22,8 +22,8 @@ namespace JujutsuTerraria.Items.Techniques.Blood
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Piercing Blood");
-            Tooltip.SetDefault("Imbue your arrows with blood, increasing their power!");
+            // DisplayName.SetDefault("Piercing Blood");
+            // Tooltip.SetDefault("Imbue your arrows with blood, increasing their power!");
         }
 
         public override void SetDefaults()

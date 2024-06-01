@@ -18,8 +18,8 @@ namespace JujutsuTerraria.Armor
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Zenin Maki");
-            Tooltip.SetDefault("5% increased cursed damage");
+            // DisplayName.SetDefault("Zenin Maki");
+            // Tooltip.SetDefault("5% increased cursed damage");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
           // Don't draw the head at all. Used by Space Creature Mask
             // ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true; // Draw hair as if a hat was covering the top. Used by Wizards Hat

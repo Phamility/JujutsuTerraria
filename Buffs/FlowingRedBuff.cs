@@ -20,8 +20,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Flowing Red Scale");
-            Description.SetDefault("Increased cursed damage in exchange for a decrease life regen");
+            // DisplayName.SetDefault("Flowing Red Scale");
+            // Description.SetDefault("Increased cursed damage in exchange for a decrease life regen");
             //  Main.debuff[Type] = true;
             Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff

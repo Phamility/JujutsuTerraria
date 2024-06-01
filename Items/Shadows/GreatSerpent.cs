@@ -28,8 +28,8 @@ namespace JujutsuTerraria.Items.Shadows
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Serpent Silhouette");
-            Tooltip.SetDefault("Fire streams of poison that inflict venom!\nInflicted venom lasts 30 seconds");
+            // DisplayName.SetDefault("Serpent Silhouette");
+            // Tooltip.SetDefault("Fire streams of poison that inflict venom!\nInflicted venom lasts 30 seconds");
         }
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {

@@ -21,8 +21,8 @@ namespace JujutsuTerraria.Items.Techniques.Domains
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Simple Domain");
-            Tooltip.SetDefault("Briefly become invulnerable.\n1 minute cooldown");
+            // DisplayName.SetDefault("Simple Domain");
+            // Tooltip.SetDefault("Briefly become invulnerable.\n1 minute cooldown");
         }
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)

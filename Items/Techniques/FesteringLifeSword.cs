@@ -22,8 +22,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Festering Life Blade");
-            Tooltip.SetDefault("Fires spider eggs per swing\nA mix of life and death");
+            // DisplayName.SetDefault("Festering Life Blade");
+            // Tooltip.SetDefault("Fires spider eggs per swing\nA mix of life and death");
         }
    
         public override void SetDefaults()

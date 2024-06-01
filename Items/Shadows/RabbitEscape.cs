@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Items.Shadows
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Rabbit Silhouette");
-            Tooltip.SetDefault("Conjure a swarm of bunnies!");
+            // DisplayName.SetDefault("Rabbit Silhouette");
+            // Tooltip.SetDefault("Conjure a swarm of bunnies!");
         }
         public override void AddRecipes()
         {

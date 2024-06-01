@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Speech");
-            Description.SetDefault("Unable to move");
+            // DisplayName.SetDefault("Cursed Speech");
+            // Description.SetDefault("Unable to move");
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
         }

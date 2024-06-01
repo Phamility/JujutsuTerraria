@@ -23,7 +23,7 @@ namespace JujutsuTerraria.Projectiles
       //  public override string Texture => "Terraria/Projectile_" + ProjectileID.Flames;
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Max Elephant's Water"); // The English name of the projectile
+            // DisplayName.SetDefault("Max Elephant's Water"); // The English name of the projectile
         }
 
         public override void SetDefaults()

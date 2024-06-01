@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Nue's Wing Reinforcement");
-            Description.SetDefault("Increases movement speed and flight time!\nFlight effects are amplified for Nue-type Wings!");
+            // DisplayName.SetDefault("Nue's Wing Reinforcement");
+            // Description.SetDefault("Increases movement speed and flight time!\nFlight effects are amplified for Nue-type Wings!");
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
         }

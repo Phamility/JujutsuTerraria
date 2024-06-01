@@ -1,0 +1,802 @@
+DamageClasses.CursedDamage.DisplayName: Cursed Damage
+
+NPCs: {
+	Nue: {
+		DisplayName: Nue
+		BossChecklistIntegration.SpawnInfo: Use a [i:5572]
+	}
+}
+
+Buffs: {
+	BindingVowBuff: {
+		DisplayName: Barrier: Unleashed
+		Description: Damage increased by 15%
+	}
+
+	BindingVowDebuff: {
+		DisplayName: Barrier: Restrained
+		Description: Damaged reduced by 15%
+	}
+
+	CleaverBuff: {
+		DisplayName: Adult
+		Description: Wrapped Cleaver is immensely enhanced
+	}
+
+	ConDebuff: {
+		DisplayName: Constructor's Limit
+		Description: Unable to cast Construction
+	}
+
+	CursedBuff: {
+		DisplayName: Cursed Speech
+		Description: Unable to move
+	}
+
+	CursedDebuff: {
+		DisplayName: Sore Throat
+		Description: Unable to cast Cursed Speech
+	}
+
+	DeerDebuff: {
+		DisplayName: Round Deer's Restraint
+		Description: Unable to cast Deer Silhouette
+	}
+
+	DivineDogBuff: {
+		DisplayName: Wolf Tamer
+		Description: Two divine dogs fight by your side!
+	}
+
+	ElephantBuff: {
+		DisplayName: Mahout
+		Description: A max elephant fights by your side!
+	}
+
+	FlightBuff: {
+		DisplayName: Nue's Wing Reinforcement
+		Description:
+			'''
+			Increases movement speed and flight time!
+			Flight effects are amplified for Nue-type Wings!
+			'''
+	}
+
+	FlowingRedBuff: {
+		DisplayName: Flowing Red Scale
+		Description: Increased cursed damage in exchange for a decrease life regen
+	}
+
+	FlowingRedStackBuff: {
+		DisplayName: Flowing Red Scale: Stack
+		Description: Substantially increased cursed damage in exchange for a substantial decrease life regen
+	}
+
+	GamblingDebuff: {
+		DisplayName: Resting Gambler
+		Description: Unable to cast Restless Gambler
+	}
+
+	GeneralBuff: {
+		DisplayName: Adapt and Counter
+		Description:
+			'''
+			Reduces damage taken by 6%
+			Armor penetration is increased by 6
+			'''
+	}
+
+	HeavenlyBuff: {
+		DisplayName: Heavenly Restriction
+		Description:
+			'''
+			Cursed, melee and ranged damage increased
+			Movement speed increased
+			Defense increased
+			Can not use cursed energy, mana, or minions
+			'''
+	}
+
+	HeavenlyCursedBuff: {
+		DisplayName: Cursed Heavenly Restriction
+		Description:
+			'''
+			Cursed, magic and summon damage increased by 18%
+			Reduced max health and defense
+			'''
+	}
+
+	NueEyeBuff: {
+		DisplayName: Nue's Eye
+		Description: Reduces all cursed energy usages by 2
+	}
+
+	SimpleDebuff: {
+		DisplayName: Burnt Out
+		Description: Unable to cast Simple Domain
+	}
+
+	SixEyesBuff: {
+		DisplayName: Six Eyes
+		Description:
+			'''
+			All cursed energy usages are reduced down to 1
+			Reduces mana usage by 20%
+			3 defense
+			See a lot
+			'''
+	}
+
+	SummonNueBuff: {
+		DisplayName: Bird Whisperer
+		Description: Nue fights by your side!
+	}
+
+	TigerBuff: {
+		DisplayName: Mourning Tigers Blessing
+		Description: 1% increased black flash chance
+	}
+
+	TwinEyesBuff: {
+		DisplayName: Twin Eyes
+		Description: Reduces all cursed energy usages by 4
+	}
+
+	ZoneBuff: {
+		DisplayName: Zone
+		Description:
+			'''
+			10% increased cursed damage
+			1% increased black flash chance		  
+			'''
+	}
+
+	ArmorPenBuff: {
+		DisplayName: Gambler's Armor Penetration
+		Description: Increases armor penetration by 30
+	}
+
+	CritBuff: {
+		DisplayName: Gambler's Critical Chance
+		Description: Increases critical chance by 45%
+	}
+
+	CritDebuff: {
+		DisplayName: Failure's Critical Chance
+		Description: Decreases critical chance by 50%
+	}
+
+	DamageBuff: {
+		DisplayName: Gambler's Damage
+		Description: Increases damage by 40%
+	}
+
+	DamageDebuff: {
+		DisplayName: Failure's Damage
+		Description: Decreases damage by 40%
+	}
+
+	DefenseDebuff: {
+		DisplayName: Failure's Damage Reduction
+		Description: Decreases defense by 40
+	}
+
+	DRBuff: {
+		DisplayName: Gambler's Damage Reduction
+		Description: Take 35% less damage
+	}
+
+	HealthBuff: {
+		DisplayName: Gambler's Life
+		Description: Increases max health by 250!
+	}
+
+	HealthDebuff: {
+		DisplayName: Failure's Life
+		Description: Decreases max health by 250!
+	}
+
+	ManaCostsDebuff: {
+		DisplayName: Failure's Mana Efficiency
+		Description: Increase mana costs by 50%
+	}
+
+	ManaReducBuff: {
+		DisplayName: Gambler's Mana Efficiency
+		Description: Mods.JujutsuTerraria.Buffs.ManaReducBuff.Description
+	}
+
+	SummonBuff: {
+		DisplayName: Gambler's Summoning
+		Description: Increases max number of minions by 4
+	}
+
+	SummonDebuff: {
+		DisplayName: Failure's Summoning
+		Description: Decrease max number of minions by 3
+	}
+
+	WingDebuff: {
+		DisplayName: Failure's Wing Nullification
+		Description: Reduce the effects of wings incredibly
+	}
+
+	YangBuff: {
+		DisplayName: Gambler's Domain
+		Description: Increases regeneration immensely
+	}
+
+	SukunaBuff: {
+		DisplayName: Vessel
+		Description: Damaged increased
+	}
+}
+
+Items: {
+	GojoHead: {
+		DisplayName: Gojo Satoru
+		Tooltip: 18% Increased cursed damage
+	}
+
+	InumakiHead: {
+		DisplayName: Inumaki Toge
+		Tooltip: 12% increased cursed damage
+	}
+
+	MakiHead: {
+		DisplayName: Zenin Maki
+		Tooltip: 5% increased cursed damage
+	}
+
+	MegumiHead: {
+		DisplayName: Fushiguro Megumi
+		Tooltip: 1% increased cursed damage
+	}
+
+	MeiMeiHead: {
+		DisplayName: Mei Mei
+		Tooltip: 15% increased cursed damage
+	}
+
+	NobaraHead: {
+		DisplayName: Kugisaki Nobara
+		Tooltip: 3% increased cursed damage
+	}
+
+	UniformBody: {
+		DisplayName: Jujutsu Uniform - Body
+		Tooltip: Stats are increased as more bosses are defeated
+	}
+
+	UniformLegs: {
+		DisplayName: Jujutsu Uniform - Legs
+		Tooltip: Stats are increased as more bosses are defeated
+	}
+
+	YujiHead: {
+		DisplayName: Itadori Yuji
+		Tooltip: 8% increased cursed damage
+	}
+
+	EyeEye: {
+		DisplayName: The Eye of an Adventurer
+		Tooltip: When equipped, grants the spelunker and hunter effect, highlighting treasures, ores, and enemies
+	}
+
+	FishEye: {
+		DisplayName: The Fisher's Eye
+		Tooltip: When equipped, grants the sonar effect, revealing the name of the catch while fishing
+	}
+
+	NebulaEye: {
+		DisplayName: The Nebulated Eye
+		Tooltip: When equipped, increase mana by 60 and reduce mana usage by 15%
+	}
+
+	NueEye: {
+		DisplayName: The Eye of Nue
+		Tooltip: When equipped, reduce all cursed energy usages by 2
+	}
+
+	SixEyes: {
+		DisplayName: The Six Eyes
+		Tooltip: Throughout Heaven and Earth, I alone am the honored one!
+	}
+
+	TwinEyes: {
+		DisplayName: The Twin Eyes
+		Tooltip: When equipped, reduce all cursed energy usages by 4
+	}
+
+	HNueWings: {
+		DisplayName: Honored Nue's Wings
+		Tooltip: Fly across both Heaven and Earth
+	}
+
+	NueLucky: {
+		DisplayName: Nue's Lucky Feathers
+		Tooltip:
+			'''
+			1 defense
+			Increases max health by 20
+			Increases max mana by 20 
+			'''
+	}
+
+	NueMask: {
+		DisplayName: Nue's Mask
+		Tooltip: Boost the effects while in 'Zone' state
+	}
+
+	NueWings: {
+		DisplayName: Nue's Wings
+		Tooltip: Allows flight and slow fall
+	}
+
+	PandaBrass: {
+		DisplayName: A Panda's Brass Knuckles
+		Tooltip: Increases black flash damage
+	}
+
+	BloodMat: {
+		DisplayName: Converged Blood
+		Tooltip: All that for a drop of blood.
+	}
+
+	BoneAntler: {
+		DisplayName: Bony Antler
+		Tooltip: It is really poorly made.
+	}
+
+	CursedEnergy: {
+		DisplayName: Cursed Energy
+		Tooltip:
+			'''
+			With proper technique, it can be wielded
+			Cursed energy must be stacked accordingly to utilize certain weapons
+			'''
+	}
+
+	Horn: {
+		DisplayName: Horn
+		Tooltip: Pointy!
+	}
+
+	NueBossBag: {
+		DisplayName: Treasure Bag (Nue)
+		Tooltip: Right Click to open
+	}
+
+	NueFeather: {
+		DisplayName: Nue's Feather
+		Tooltip: A feather of an electric birb.
+	}
+
+	NueSummon: {
+		DisplayName: Cursed Seeds
+		Tooltip: Summons Nue
+	}
+
+	DivineDog: {
+		DisplayName: Wolf Silhouette
+		Tooltip:
+			'''
+			Summons a pair of divine dogs to fight by your side
+			Only one pair of divine dogs can be summoned at a time
+			Occupies zero minion slots
+			Divine dogs damage increases with each boss defeated, however, it cannot be changed!
+			'''
+	}
+
+	FlyingNue: {
+		DisplayName: Bird Silhouette
+		Tooltip:
+			'''
+			Slightly increases movement speed and flight time
+			Flight effects are amplified for Nue-type Wings!
+			30 second duration
+			'''
+	}
+
+	Gama: {
+		DisplayName: Toad Silhouette
+		Tooltip:
+			'''
+			Surround yourself with bubbles that inflict ichor and cursed inferno
+			Inflicted ichor and cursed inferno lasts 12 seconds
+			'''
+	}
+
+	General: {
+		DisplayName: General Wheel Silhouette
+		Tooltip: Players incredibly close by gain 6% damage reduction and 6 armor piercing
+	}
+
+	GreatSerpent: {
+		DisplayName: Serpent Silhouette
+		Tooltip:
+			'''
+			Fire streams of poison that inflict venom!
+			Inflicted venom lasts 30 seconds
+			'''
+	}
+
+	MaxElephant: {
+		DisplayName: Elephant Silhouette
+		Tooltip:
+			'''
+			Summons a sentry
+			Summons a max elephant to shoot water at your enemies!
+			Only one max elephant can be summoned at a time
+			'''
+	}
+
+	NobleTiger: {
+		DisplayName: Tiger Silhouette
+		Tooltip:
+			'''
+			Increases black flash chance by 1%
+			1 minute duration
+			'''
+	}
+
+	PiercingOx: {
+		DisplayName: Ox Silhouette
+		Tooltip:
+			'''
+			Conjure a piercing ox that charges through the screen!
+			The oxs charge causes enemies to be confused!
+			'''
+	}
+
+	RabbitEscape: {
+		DisplayName: Rabbit Silhouette
+		Tooltip: Conjure a swarm of bunnies!
+	}
+
+	RoundDeer: {
+		DisplayName: Deer Silhouette
+		Tooltip:
+			'''
+			Does not cause potion sickness
+			Can not be used by quick heal
+			12 second cooldown
+			'''
+	}
+
+	CursedEmblem: {
+		DisplayName: Jujutsu Emblem
+		Tooltip: 15% increased cursed damage
+	}
+
+	IceFormation: {
+		DisplayName: Ice Formation
+		Tooltip: Continuously form ice around you that will damage enemies
+	}
+
+	Miracle: {
+		DisplayName: Miracle
+		Tooltip: While below 60 health, gain an unfathomable increase in life regeneration
+	}
+
+	PainKiller: {
+		DisplayName: Pain Killer
+		Tooltip: While below 50 health, gain a significant increase in life regeneration
+	}
+
+	Ratio: {
+		DisplayName: Ratio
+		Tooltip:
+			'''
+			Increases cursed damage by 7%
+			Increases armor penetration by 3
+			Enhances Wrapped Cleaver
+			'''
+	}
+
+	AmplifiedShred: {
+		DisplayName: Amplified Shred
+		Tooltip: Blast waves of amplified cursed energy
+	}
+
+	HeavenlyPhysical: {
+		DisplayName: Heavenly Physical
+		Tooltip:
+			'''
+			However, you are unable to utilize cursed energy, mana, and minions
+			Counts as a binding vow
+			'''
+	}
+
+	RestrictionBoots: {
+		DisplayName: Binding Vow: Speed
+		Tooltip:
+			'''
+			12% movement speed
+			However, defense is reduced by 4
+			'''
+	}
+
+	RestrictionDamage: {
+		DisplayName: Binding Vow: Damage
+		Tooltip:
+			'''
+			12% increased damage
+			However, max health is reduced by 50
+			'''
+	}
+
+	RestrictionDefense: {
+		DisplayName: Binding Vow: Defense
+		Tooltip:
+			'''
+			4 defense
+			However, damage is reduced by 12%
+			'''
+	}
+
+	RestrictionHeart: {
+		DisplayName: Binding Vow: Health
+		Tooltip:
+			'''
+			50 max health
+			However, movement speed is reduced by 12%
+			'''
+	}
+
+	RestrictionMine: {
+		DisplayName: Binding Vow: Mine
+		Tooltip:
+			'''
+			Increased mining speed
+			However, damaged is reduced by 80%
+			'''
+	}
+
+	StandardBV: {
+		DisplayName: Unbranded Binding Vow
+		Tooltip: A new journey begins
+	}
+
+	BBM: {
+		DisplayName: B B M
+		Tooltip: Hurl a crow at enemies, dealing a powerful blow!
+	}
+
+	BlazingCourage: {
+		DisplayName: Blazing Courage
+		Tooltip:
+			'''
+			A quick blade that has a chance to inflict On fire and Oiled
+			Inflicted effects last 6 seconds
+			'''
+	}
+
+	BloodEdge: {
+		DisplayName: Blood Edge
+		Tooltip: A lethal blade composed of its wielders blood
+	}
+
+	FlowingRed: {
+		DisplayName: Flowing Red Scale
+		Tooltip:
+			'''
+			Gain 12% cursed damage for 2 minutes
+			During this time, life regeneration is slightly decreased
+			'''
+	}
+
+	FlowingRedStack: {
+		DisplayName: Flowing Red Scale: Stack
+		Tooltip:
+			'''
+			Gain 25% cursed damage 2 minutes
+			During this time, life regeneration is decreased
+			'''
+	}
+
+	PiercingBlood: {
+		DisplayName: Piercing Blood
+		Tooltip: Imbue your arrows with blood, increasing their power!
+	}
+
+	SlicingExorcism: {
+		DisplayName: Slicing Exorcism
+		Tooltip: Conjure a highly rotating disc of blood to slice your enemies!
+	}
+
+	Bottomless: {
+		DisplayName: Bottomless Well
+		Tooltip: Conjure temporary winged toads to aid you in battle!
+	}
+
+	Construction: {
+		DisplayName: Construction
+		Tooltip:
+			'''
+			5 second cooldown
+			Conjure 1 lead bar and 25 wood
+			'''
+	}
+
+	CountryHammer: {
+		DisplayName: Country Girl's Hammer
+		Tooltip: Fires 1-3 nails per swing
+	}
+
+	CursedSpeech: {
+		DisplayName: Cursed Speech
+		Tooltip:
+			'''
+			Unleash a shocking wave that immobilizes enemies for 2.5 seconds
+			30 second cooldown
+			'''
+	}
+
+	DeadlySentencing: {
+		DisplayName: Deadly Sentencing
+		Tooltip: A LARGE gavel
+	}
+
+	DEFire: {
+		DisplayName: Coffin of the Iron Mountain
+		Tooltip:
+			'''
+			Conjure the power of Hell.
+			Temporarily provide Inferno
+			'''
+	}
+
+	DEInfinity: {
+		DisplayName: Unlimited Void
+		Tooltip:
+			'''
+			Conjure the power of the Void.
+			Temporarily provide Nebula buffs
+			'''
+	}
+
+	DEJungle: {
+		DisplayName: Shining Sea of Flowers
+		Tooltip:
+			'''
+			Conjure the power of the Jungle.
+			Temporarily provide Dryad's Blessing
+			'''
+	}
+
+	DEOcean: {
+		DisplayName: Horizon of the Captivating Skandha
+		Tooltip:
+			'''
+			Conjure the power of the Ocean.
+			Temporarily provide Swiftness
+			'''
+	}
+
+	DESimple: {
+		DisplayName: Simple Domain
+		Tooltip:
+			'''
+			Briefly become invulnerable.
+			1 minute cooldown
+			'''
+	}
+
+	FesteringLifeSword: {
+		DisplayName: Festering Life Blade
+		Tooltip:
+			'''
+			Fires spider eggs per swing
+			A mix of life and death
+			'''
+	}
+
+	MissleFists: {
+		DisplayName: Missle Fists
+		Tooltip: Launch a barrage of fists!
+	}
+
+	RestlessGambler: {
+		DisplayName: Restless Gambler
+		Tooltip:
+			'''
+			41 second cooldown
+			Upon use, have a [c/FF33D6:50 / 50 chance] between a random powerful buff or harmful debuff lasting 41 seconds!
+			If the last roll was a buff, have a [c/33FF3D:65% chance] for a random buff, and a [c/FF0000:35% chance] for a random debuff!
+			[c/FF33D6:Can only be used during bosses!]
+			'''
+	}
+
+	SlaughterDemon: {
+		DisplayName: Slaughter Demon
+		Tooltip: A simple combat knife that has a chance to inflict Poison
+	}
+
+	SOE: {
+		DisplayName: Sword Of Extermination
+		Tooltip:
+			'''
+			A specialized blade enveloped with positive energy
+			Heals 3-7 health per swing
+			'''
+	}
+
+	WrappedCleaver: {
+		DisplayName: Wrapped Cleaver
+		Tooltip: When combined with Ratio, Wrapped Cleavers black flash chance increases by 7%
+	}
+
+	NuesNovel: {
+		DisplayName: Nue's Novel
+		Tooltip: Rain a barrage of feathers from the sky!
+	}
+
+	RabbitBombs: {
+		DisplayName: Honored One's Rabbit Silhouette
+		Tooltip:
+			'''
+			Conjure a swarm of explosive bunnies!
+			What a twist!
+			'''
+	}
+
+	SukunaFinger: {
+		DisplayName: Suspicious Looking Finger
+		Tooltip:
+			'''
+			Permanately increases damage by 1%
+			Only 20 fingers can be consumed per character
+			'''
+	}
+
+	BindingVow: {
+		DisplayName: Binding Barrier
+		Tooltip:
+			'''
+			Players within this tile's range have their damage increased by 15%
+			Players outside of this tile's range have their damage reduced by 15%
+			Only one barrier may be placed in the world
+			'''
+	}
+
+	Shrine: {
+		DisplayName: Jujutsu Shrine
+		Tooltip: Used for crafting items containing cursed energy
+	}
+
+	TrophyItem: {
+		DisplayName: Nue Trophy
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	BloodWheelProj.DisplayName: Blood Wheel Proj
+	BottomlessSummon.DisplayName: Bottomless Summon
+	CursedBubble.DisplayName: Cursed Bubble
+	DogSummon.DisplayName: Dog Summon
+	DogSummon2.DisplayName: Dog Summon2
+	DomainFire.DisplayName: Domain Fire
+	DomainInfinity.DisplayName: Domain Infinity
+	DomainJungle.DisplayName: Domain Jungle
+	DomainOcean.DisplayName: Domain Ocean
+	DomainSimple.DisplayName: Domain Simple
+	ElephantSummon.DisplayName: Elephant Summon
+	EWater.DisplayName: E Water
+	Fists.DisplayName: Fists
+	IceProj.DisplayName: Ice Proj
+	IchorBubble.DisplayName: Ichor Bubble
+	Nail.DisplayName: Nail
+	NueAggFeather.DisplayName: Nue Agg Feather
+	NueFriendlyFeather.DisplayName: Nue Friendly Feather
+	NueLightning.DisplayName: Nue Lightning
+	NueLightningFriendly.DisplayName: Nue Lightning Friendly
+	OxProjectile.DisplayName: Ox Projectile
+	PoisonFlame.DisplayName: Poison Flame
+	RavenProj.DisplayName: Raven Proj
+	RavenProj2.DisplayName: Raven Proj2
+	Shred.DisplayName: Shred
+	SpeechProj.DisplayName: Speech Proj
+	SummonedNue.DisplayName: Summoned Nue
+}

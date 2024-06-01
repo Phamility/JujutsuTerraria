@@ -24,8 +24,8 @@ namespace JujutsuTerraria.Items.Shadows
  
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Toad Silhouette");
-            Tooltip.SetDefault("Surround yourself with bubbles that inflict ichor and cursed inferno\nInflicted ichor and cursed inferno lasts 12 seconds");
+            // DisplayName.SetDefault("Toad Silhouette");
+            // Tooltip.SetDefault("Surround yourself with bubbles that inflict ichor and cursed inferno\nInflicted ichor and cursed inferno lasts 12 seconds");
         }
         public override void AddRecipes()
         {

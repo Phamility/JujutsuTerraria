@@ -16,6 +16,7 @@ using Terraria.Audio;
 using JujutsuTerraria.Tiles;
 using Terraria.Utilities;
 using System.Threading;
+using Terraria.WorldBuilding;
 
 namespace JujutsuTerraria.Projectiles
 {
@@ -73,16 +74,18 @@ namespace JujutsuTerraria.Projectiles
         {
             return true;
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        
+        
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player player = Main.player[Projectile.owner];
 
-            if (crit)
+            if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
-                damage *= player.GetModPlayer<MP>().ZoneDamage;
+                damageDone *= player.GetModPlayer<MP>().ZoneDamage;
 
                 CombatText.clearAll();
 
@@ -122,15 +125,9 @@ namespace JujutsuTerraria.Projectiles
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
                 Projectile.active = false;
-            }
-        }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            if (crit)
-            {
                 CombatText.clearAll();
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damage * 2, true, false);
+                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone * 2, true, false);
 
             }
 

@@ -18,8 +18,8 @@ namespace JujutsuTerraria.Armor
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("Kugisaki Nobara");
-            Tooltip.SetDefault("3% increased cursed damage");
+            // DisplayName.SetDefault("Kugisaki Nobara");
+            // Tooltip.SetDefault("3% increased cursed damage");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
 
         }

@@ -8,13 +8,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader.Utilities;
 using Terraria.Audio;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using IL.Terraria.GameContent.Personalities;
-using On.Terraria.GameContent.Personalities;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using JujutsuTerraria.Projectiles;
 
@@ -24,8 +23,8 @@ namespace JujutsuTerraria.Items.Materials
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Energy");
-            Tooltip.SetDefault("With proper technique, it can be wielded\nCursed energy must be stacked accordingly to utilize certain weapons");
+            // DisplayName.SetDefault("Cursed Energy");
+            // Tooltip.SetDefault("With proper technique, it can be wielded\nCursed energy must be stacked accordingly to utilize certain weapons");
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(45, 2));
 
             ItemID.Sets.AnimatesAsSoul[Item.type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation

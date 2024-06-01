@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Barrier: Restrained");
-            Description.SetDefault("Damaged reduced by 15%");
+            // DisplayName.SetDefault("Barrier: Restrained");
+            // Description.SetDefault("Damaged reduced by 15%");
             Main.debuff[Type] = true;
             Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff

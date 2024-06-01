@@ -11,8 +11,8 @@ namespace JujutsuTerraria.Items.Shadows
         public override void SetStaticDefaults()
         {
 
-            DisplayName.SetDefault("General Wheel Silhouette");
-            Tooltip.SetDefault("Players incredibly close by gain 6% damage reduction and 6 armor piercing");
+            // DisplayName.SetDefault("General Wheel Silhouette");
+            // Tooltip.SetDefault("Players incredibly close by gain 6% damage reduction and 6 armor piercing");
         }
         public override void SetDefaults()
         {

@@ -22,8 +22,8 @@ namespace JujutsuTerraria.Items.Techniques
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Missle Fists");
-            Tooltip.SetDefault("Launch a barrage of giant fists!");
+            // DisplayName.SetDefault("Missle Fists");
+            // Tooltip.SetDefault("Launch a barrage of giant fists!");
         }
   
         public override void SetDefaults()

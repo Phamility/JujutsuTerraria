@@ -19,8 +19,8 @@ namespace JujutsuTerraria.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mourning Tiger's Blessing");
-            Description.SetDefault("1% increased black flash chance");
+            // DisplayName.SetDefault("Mourning Tiger's Blessing");
+            // Description.SetDefault("1% increased black flash chance");
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = false; // The time remaining won't display on this buff
         }

@@ -22,8 +22,8 @@ namespace JujutsuTerraria.Items.Techniques.Blood
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Slicing Exorcism");
-            Tooltip.SetDefault("Conjure a highly rotating disc of blood to slice your enemies!");
+            // DisplayName.SetDefault("Slicing Exorcism");
+            // Tooltip.SetDefault("Conjure a highly rotating disc of blood to slice your enemies!");
         }
 
         public override void SetDefaults()
