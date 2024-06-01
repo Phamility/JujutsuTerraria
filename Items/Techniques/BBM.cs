@@ -29,7 +29,7 @@ namespace JujutsuTerraria.Items.Techniques
         public override void SetDefaults()
         {
 
-            Item.damage = 420;
+            Item.damage = 430;
             Item.width = 58;
             Item.height = 46;
             Cost = 20;
@@ -51,7 +51,7 @@ namespace JujutsuTerraria.Items.Techniques
         public static int positive;
         public override void UpdateInventory(Player player)
         {
-            Cost = 5;
+            Cost = 20;
 
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
@@ -132,7 +132,11 @@ namespace JujutsuTerraria.Items.Techniques
 
         }
         int shotcount = 0;
+        public override void ModifyWeaponCrit(Player player, ref float crit)
+        {
 
+            crit = player.GetModPlayer<MP>().ZoneChance;
+        }
         public override bool? UseItem(Player player)
         {
             bool once = false;
@@ -140,7 +144,7 @@ namespace JujutsuTerraria.Items.Techniques
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                 {
-                    if (shotcount >= 3)
+                    if (shotcount >= 0)
                     {
                         shotcount = 0;
                         if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
@@ -186,7 +190,7 @@ namespace JujutsuTerraria.Items.Techniques
         {
             bool Condition1;
             bool Condition2 = false;
-            Cost = 5;
+            Cost = 20   ;
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
             {
                 Reduction = Cost - 1;

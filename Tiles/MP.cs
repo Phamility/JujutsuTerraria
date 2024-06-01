@@ -14,7 +14,7 @@ using Terraria.Enums;
 using Terraria;
 using Terraria.ModLoader;
 using System.Numerics;
-using JujutsuTerraria.Items.Techniques;
+using JujutsuTerraria.Items.Techniques; 
 using System.Drawing.Imaging;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Ancients;
@@ -122,7 +122,7 @@ namespace JujutsuTerraria.Tiles
             //   Player.wingTimeMax += 30 * FlightBuff.Wearing;
             if (Player.HasBuff<FlightBuff>())
                 {
-                Player.wingTimeMax += 30;
+                Player.wingTimeMax += 20;
             }
             if (Player.HasBuff<WingDebuff>())
             {
@@ -147,7 +147,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
             return new[] {
                 new Item(ModContent.ItemType<DivineDog>()),
                 new Item(ModContent.ItemType<CursedEnergy>(), 100),
-                new Item(ModContent.ItemType<StandardBV>()),
+          //      new Item(ModContent.ItemType<StandardBV>()),
 
 
 
@@ -169,7 +169,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
                 UniformBody.UniformBodyDefense = 25;
                 UniformBody.CursedStatIncrease = 18;
 
-                UniformLegs.UniformLegsDefense = 13;
+                UniformLegs.UniformLegsDefense = 16;
                 UniformLegs.CursedStatIncrease = 11;
                 UniformLegs.BlackFlashBody = true;
 
@@ -177,10 +177,10 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
             else if (NPC.downedAncientCultist)
             {
                 DivineDog.MYDAMAGE = 48;
-                UniformBody.UniformBodyDefense = 20;
+                UniformBody.UniformBodyDefense = 22;
                 UniformBody.CursedStatIncrease = 16;
 
-                UniformLegs.UniformLegsDefense = 12;
+                UniformLegs.UniformLegsDefense = 15;
                 UniformLegs.CursedStatIncrease = 10;
                 UniformLegs.BlackFlashBody = true;
 
@@ -188,10 +188,10 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
             else if (NPC.downedEmpressOfLight)
             {
                 DivineDog.MYDAMAGE = 44;
-                UniformBody.UniformBodyDefense = 19;
+                UniformBody.UniformBodyDefense = 20;
                 UniformBody.CursedStatIncrease = 15;
 
-                UniformLegs.UniformLegsDefense = 11;
+                UniformLegs.UniformLegsDefense = 14;
                 UniformLegs.CursedStatIncrease = 9;
                 UniformLegs.BlackFlashBody = true;
 
@@ -202,7 +202,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
                 UniformBody.UniformBodyDefense = 19;
                 UniformBody.CursedStatIncrease = 15;
 
-                UniformLegs.UniformLegsDefense = 11;
+                UniformLegs.UniformLegsDefense = 13;
                 UniformLegs.CursedStatIncrease = 9;
                 UniformLegs.BlackFlashBody = true;
 
@@ -213,7 +213,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
                 UniformBody.UniformBodyDefense = 18;
                 UniformBody.CursedStatIncrease = 15;
 
-                UniformLegs.UniformLegsDefense = 11;
+                UniformLegs.UniformLegsDefense = 12;
                 UniformLegs.CursedStatIncrease = 9;
                 UniformLegs.BlackFlashBody = true;
 
@@ -225,7 +225,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
                 UniformBody.UniformBodyDefense = 17;
                 UniformBody.CursedStatIncrease = 14;
 
-                UniformLegs.UniformLegsDefense = 10;
+                UniformLegs.UniformLegsDefense = 11;
                 UniformLegs.CursedStatIncrease = 8;
                 UniformLegs.BlackFlashBody = true;
 
@@ -236,7 +236,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
                 UniformBody.UniformBodyDefense = 15;
                 UniformBody.CursedStatIncrease = 13;
 
-                UniformLegs.UniformLegsDefense = 9;
+                UniformLegs.UniformLegsDefense = 10;
                 UniformLegs.CursedStatIncrease = 7;
                 UniformLegs.BlackFlashBody = true;
 
@@ -247,7 +247,7 @@ if(Player.HasBuff<HeavenlyBuff>() == true)
                 UniformBody.UniformBodyDefense = 13;
                 UniformBody.CursedStatIncrease = 12;
 
-                UniformLegs.UniformLegsDefense = 8;
+                UniformLegs.UniformLegsDefense = 9;
                 UniformLegs.CursedStatIncrease = 6;
                 UniformLegs.BlackFlashBody = true;
 

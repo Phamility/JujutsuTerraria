@@ -121,8 +121,11 @@ Buffs: {
 		Description:
 			'''
 			All cursed energy usages are reduced down to 1
+			12% increased cursed damage
 			Reduces mana usage by 20%
 			3 defense
+			Increases black flash damage
+			Does not stack with Panda's Brass Knuckles
 			See a lot
 			'''
 	}
@@ -559,7 +562,7 @@ Items: {
 	}
 
 	BBM: {
-		DisplayName: B B M
+		DisplayName: Black Bird Manipulation
 		Tooltip: Hurl a crow at enemies, dealing a powerful blow!
 	}
 
@@ -590,7 +593,7 @@ Items: {
 		DisplayName: Flowing Red Scale: Stack
 		Tooltip:
 			'''
-			Gain 25% cursed damage 2 minutes
+			Gain 25% cursed damage for 2 minutes
 			During this time, life regeneration is decreased
 			'''
 	}

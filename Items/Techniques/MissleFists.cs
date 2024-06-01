@@ -48,6 +48,11 @@ namespace JujutsuTerraria.Items.Techniques
             Item.shoot = ModContent.ProjectileType<Fists>();
 
         }
+        public override void ModifyWeaponCrit(Player player, ref float crit)
+        {
+
+            crit = player.GetModPlayer<MP>().ZoneChance;
+        }
         public static int positive;
         public override void UpdateInventory(Player player)
         {

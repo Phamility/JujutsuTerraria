@@ -107,7 +107,7 @@ namespace JujutsuTerraria.Projectiles
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
-        //    target.immune[ModContent.ProjectileType<Nail>()] = 10;
+        //target.immune[ModContent.ProjectileType<Nail>()] = 10;
 
             Player player = Main.player[Projectile.owner];
             if (hit.Crit)
@@ -115,8 +115,15 @@ namespace JujutsuTerraria.Projectiles
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
+                target.life += damageDone;
+                bool cock = false;
                 damageDone *= player.GetModPlayer<MP>().ZoneDamage;
-
+                if (damageDone > target.life && target.boss == true)
+                {
+                    damageDone = target.life - Main.rand.Next(5, 30);
+                    cock = true;
+                }
+                target.life -= damageDone;
                 CombatText.clearAll();
 
                 for (int i = 0; i < 30; i++)
@@ -154,7 +161,7 @@ namespace JujutsuTerraria.Projectiles
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone * 2, true, false);
+                    if (cock == false) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
             else
             {

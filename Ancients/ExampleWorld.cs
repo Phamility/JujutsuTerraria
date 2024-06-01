@@ -26,6 +26,7 @@ namespace JujutsuTerraria.Ancients
         public int HowManyPicks;
         public int HowManyOceans;
         public int HowManySD;
+        public int HowManyBV;
 
 
         public override void PostWorldGen()
@@ -35,6 +36,8 @@ namespace JujutsuTerraria.Ancients
             HowManyPicks = 0;
             HowManyOceans = 0;
             HowManySD = 0;
+            HowManyBV = 0;
+
             for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
             {
 
@@ -138,6 +141,34 @@ namespace JujutsuTerraria.Ancients
                     if (Main.rand.Next(1, 101) <= 20 || HowManyPicks < 2)
                     {
                         HowManyPicks++;
+                        for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
+                            if (chest.item[inventoryIndex].type == 0)
+                            {
+
+                                chest.item[inventoryIndex].SetDefaults(itemsToPlaceInChests4[0]);
+                                chest.item[inventoryIndex].stack = IceFormationNum;
+
+                                break;
+                            }
+                    }
+                }
+
+
+            }
+            for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
+            {
+
+
+                Chest chest = Main.chest[chestIndex];
+                int[] itemsToPlaceInChests4 = { Mod.Find<ModItem>("StandardBV").Type };
+                // int IceFormationNum = Main.rand.Next(23, 51);
+                int IceFormationNum = 1;
+
+                if (chest != null && Main.tile[chest.x, chest.y].TileType == TileID.Containers && Main.tile[chest.x, chest.y].TileFrameX == 0 * 36)
+                {
+                    if (HowManyBV < 3)
+                    {
+                        HowManyBV++;
                         for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
                             if (chest.item[inventoryIndex].type == 0)
                             {

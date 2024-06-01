@@ -56,8 +56,8 @@ namespace JujutsuTerraria.Items.Accessories
             if (player.HasBuff<FlightBuff>())
             {
                 ascentWhenFalling = 0.50f; // Falling glide speed
-                ascentWhenRising = 0.075f; // Rising speed
-                maxCanAscendMultiplier = 1.25f;
+                ascentWhenRising = 0.065f; // Rising speed
+                maxCanAscendMultiplier = 1.15f;
                 maxAscentMultiplier = 1.75f;
                 constantAscend = 0.155f;
             }

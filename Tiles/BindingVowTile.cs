@@ -44,7 +44,7 @@ namespace JujutsuTerraria.Tiles
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             AmPlaced = false;
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, ModContent.ItemType<BindingVow>());
+            //Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, ModContent.ItemType<BindingVow>());
            
         }
 

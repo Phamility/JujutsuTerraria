@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         {
             Item.CloneDefaults(ItemID.PulseBow);
 
-            Item.damage = 40;
+            Item.damage = 60;
             Item.width = 28;
             // Item.mana = 8;
             Item.height = 30;
@@ -91,7 +91,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             int losslife;
-            losslife = Main.rand.Next(5, 8);
+            losslife = Main.rand.Next(4, 7);
             player.statLife -= losslife;
             if (player.statLife <= 0)
             {
@@ -129,7 +129,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
                 // Change the tooltip text
                 tt.Text = damageValue + " cursed damage";
             }
-            TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs 5-7 life per use") { OverrideColor = Color.Red };
+            TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs 4-6 life per use") { OverrideColor = Color.Red };
 
 
             tooltips.Insert(1, tooltip);

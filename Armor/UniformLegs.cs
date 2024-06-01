@@ -75,7 +75,7 @@ namespace JujutsuTerraria.Armor
         {
 
 
-            if (CursedStatIncrease >= 10)
+            if (CursedStatIncrease >= 11)
             {
                 Item.rare = ItemRarityID.Yellow;
             }

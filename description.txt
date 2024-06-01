@@ -1,4 +1,4 @@
-Jujutsu Terraria is a medium sized mod featuring an abundance of weapons, accessories, and concepts inspired by the series Jujutsu Kaisen! It introduces the shaman class, a class that revolves around burning through cursed energy, utilizing restrictions and exchanges, and juggling buffs to maximize damage!
+Jujutsu Terraria is a medium sized mod featuring an abundance of weapons, accessories, and concepts inspired by the series Jujutsu Kaisen! It introduces the shaman class, a class that revolves around burning through cursed energy, landing black flashes, utilizing restrictions and exchanges, and juggling buffs to maximize damage!
 
 A large chunk of the items in this mod use Jujutsu Kaisen's 'Cursed Techniques' and 'Cursed Tools' as a base. However, some things revolve around concepts in the fictional universe such as "Domain Expansions," "Heavenly Restriction," "Black Flash," "Sukuna's Fingers,"and "Binding Vows."
 
@@ -9,7 +9,7 @@ Features:
 1 Boss
 1 Permanent Consumable
 4 Domain Expansions
-5 Binding Vows
+6 Binding Vows
 7 Armor Set Bonuses
 17 New Accessories
 21 New Weapons

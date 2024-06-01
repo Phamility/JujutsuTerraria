@@ -296,7 +296,7 @@ Mods: {
 
 			StandardBV: {
 				DisplayName: Unbranded Binding Vow
-				Tooltip: A new journey begins
+				Tooltip: A  journey begins
 			}
 
 			BBM: {
@@ -623,7 +623,9 @@ Mods: {
 					All cursed energy usages are reduced down to 1
 					Reduces mana usage by 20%
 					3 defense
+					Increases black flash damage
 					See a lot
+					
 					  
 			}
 

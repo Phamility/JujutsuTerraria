@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System; 
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using rail;
 using JujutsuTerraria.Tiles;
+using JujutsuTerraria.Items.Techniques.AEquip;
 
 namespace JujutsuTerraria.Items.Accessories.Eyes
 {
@@ -61,7 +63,9 @@ namespace JujutsuTerraria.Items.Accessories.Eyes
                                 .AddIngredient<EyeEye>(1)
                                 .AddIngredient<TwinEyes>(1)
                                 .AddIngredient<NebulaEye>(1)
+                         .AddIngredient<PandaBrass>(1)
 
+                         .AddIngredient<CursedEmblem>(1)
 
 
 

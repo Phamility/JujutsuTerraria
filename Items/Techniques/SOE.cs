@@ -112,17 +112,20 @@ namespace JujutsuTerraria.Items.Techniques
         }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (hit.Crit
-                
-                
-                
-                )
+            if (hit.Crit   )
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
                 int pos;
                 int dustType;
+                target.life += damageDone;
+                bool cock = false;
                 damageDone *= player.GetModPlayer<MP>().ZoneDamage;
-
+                if (damageDone > target.life && target.boss == true)
+                {
+                    damageDone = target.life - Main.rand.Next(5, 30);
+                    cock = true;
+                }
+                target.life -= damageDone;
                 CombatText.clearAll();
 
                 for (int i = 0; i < 30; i++)
@@ -160,7 +163,7 @@ namespace JujutsuTerraria.Items.Techniques
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false);
+                if (cock == false) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
         }
 

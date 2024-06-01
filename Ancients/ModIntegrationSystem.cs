@@ -50,6 +50,7 @@ namespace JujutsuTerraria.Ancients
 
             // We can integrate with other mods here by following the same pattern. Some modders may prefer a ModSystem for each mod they integrate with, or some other design.
         }
+            private static readonly Version BossChecklistAPIVersion = new Version(1, 6); // Do not change this yourself.
 
 
         private void DoBossChecklistIntegration()
@@ -64,7 +65,7 @@ namespace JujutsuTerraria.Ancients
 
             // For some messages, mods might not have them at release, so we need to verify when the last iteration of the method variation was first added to the mod, in this case 1.3.1
             // Usually mods either provide that information themselves in some way, or it's found on the github through commit history/blame
-            if (bossChecklistMod.Version < new Version(1, 3, 1))
+            if (bossChecklistMod.Version < new Version(1, 6, 1))
             {
                 return;
             }

@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
+using JujutsuTerraria.Tiles;
+using JujutsuTerraria.Ancients;
 
 namespace JujutsuTerraria.Buffs
 {
@@ -34,9 +36,12 @@ namespace JujutsuTerraria.Buffs
             player.dangerSense = true;
 
             player.CanSeeInvisibleBlocks = true;
+            player.GetDamage<CursedDamage>() += 0.12f;
 
             player.statDefense += 3;
             player.manaCost -= .2f;
+            player.GetModPlayer<MP>().PandaBrassWorn = true;
+
 
         }
     }

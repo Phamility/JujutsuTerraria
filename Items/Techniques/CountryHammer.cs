@@ -62,7 +62,7 @@ namespace JujutsuTerraria.Items.Techniques
             damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
             if (player.GetModPlayer<MPArmors>().NobaraHeadOn == true)
             {
-                damage *= 1.45f;
+                damage *= 1.40f;
             }
         }
         public override void ModifyWeaponCrit(Player player, ref float crit)
