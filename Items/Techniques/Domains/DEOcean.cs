@@ -44,7 +44,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
             Item.useAmmo = AmmoID.None;
             Item.mana = 0;
             Item.damage = 15;
-            Cost = 5;
+            Cost = 4;
             Item.useTime = 60;
             Item.useAnimation = 60;
           Item.useStyle = ItemUseStyleID.HiddenAnimation; // How you use the item (swinging, holding out, etc.)
@@ -121,7 +121,7 @@ namespace JujutsuTerraria.Items.Techniques.Domains
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                 {
-                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
@@ -155,9 +155,9 @@ namespace JujutsuTerraria.Items.Techniques.Domains
         }
         public override void UpdateInventory(Player player)
         {
-            Cost = 5;
+            Cost = 4;
 
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }
@@ -189,8 +189,8 @@ namespace JujutsuTerraria.Items.Techniques.Domains
         { 
             bool Condition1;
             bool Condition2 = false;
-            Cost = 5;
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            Cost = 4;
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }

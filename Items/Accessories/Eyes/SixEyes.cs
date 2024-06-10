@@ -49,8 +49,10 @@ namespace JujutsuTerraria.Items.Accessories.Eyes
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.AddBuff(ModContent.BuffType<SixEyesBuff>(), 2);
-
+            if (player.HasBuff(ModContent.BuffType<JJKBuff>()) == false)
+            {
+                player.AddBuff(ModContent.BuffType<SixEyesBuff>(), 2);
+            }
      
 
         }

@@ -53,7 +53,7 @@ namespace JujutsuTerraria.Armor
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient<CursedEnergy>(500)
+                .AddIngredient<CursedEnergy>(400)
                               .AddIngredient(ItemID.BeetleHusk, 12)
 
                 .AddTile<ShrineTile>()

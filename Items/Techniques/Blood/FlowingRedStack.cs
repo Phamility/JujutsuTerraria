@@ -32,7 +32,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
 
-            TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs 100 life per use") { OverrideColor = Color.Red };
+            TooltipLine tooltip = new TooltipLine(Mod, "Ten Shadows: Cost", $"Costs 50 life per use") { OverrideColor = Color.Red };
 
             tooltips.Insert(1, tooltip);
         }
@@ -45,7 +45,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         public override void UseAnimation(Player player)
         {
             int losslife;
-            losslife = 100;
+            losslife = 50;
             player.statLife -= losslife;
             if (player.statLife <= 0)
             {

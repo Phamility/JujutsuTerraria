@@ -31,13 +31,13 @@ namespace JujutsuTerraria.Items.Techniques
         {
             Item.CloneDefaults(ItemID.Cutlass);
 
-            Item.damage = 47;
-            Item.width = 120;
+            Item.damage = 51;
+            Item.width = 240;
            // Item.mana = 8;
-            Item.height = 120;
+            Item.height = 240;
            // Item.healLife = -4;
-           Item.useTime = 40;
-           Item.useAnimation = 40;
+           Item.useTime = 30;
+           Item.useAnimation = 30;
            // Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
             Item.knockBack = 8;
             Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
@@ -150,7 +150,7 @@ namespace JujutsuTerraria.Items.Techniques
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                if (cock == false) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
+               if (damageDone >= 0) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
         }
 

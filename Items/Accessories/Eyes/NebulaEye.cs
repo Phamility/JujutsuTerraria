@@ -53,7 +53,7 @@ namespace JujutsuTerraria.Items.Accessories.Eyes
         public override void AddRecipes()
         {
             CreateRecipe()
-                                .AddIngredient<CursedEnergy>(500)
+                                .AddIngredient<CursedEnergy>(300)
 
 
                 .AddIngredient(ItemID.FragmentNebula, 8)

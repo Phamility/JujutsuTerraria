@@ -80,6 +80,8 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         {
             CreateRecipe()
                 .AddIngredient<CursedEnergy>(200)
+                                .AddIngredient<BloodMat>(20)
+
                                 .AddIngredient(ItemID.WaterBolt, 1)
 
                 .AddIngredient(ItemID.HellstoneBar, 10)

@@ -82,7 +82,7 @@ namespace JujutsuTerraria.Items.Techniques
         public override void UseAnimation(Player player)
         {
             int cock;
-            cock = Main.rand.Next(3, 8);
+            cock = Main.rand.Next(1, 25);
             player.statLife += cock;
             
             CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), Color.LimeGreen, cock, true, false);
@@ -163,7 +163,7 @@ namespace JujutsuTerraria.Items.Techniques
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                if (cock == false) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
+               if (damageDone >= 0) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
         }
 

@@ -23,7 +23,19 @@ namespace JujutsuTerraria.Buffs
         }
         public override void Update(Player player, ref int buffIndex)
         {
-            int damage = 11;
+            int damage;
+
+            if (player.HasBuff(ModContent.BuffType<JJKBuff>()) == true)
+            {
+                damage = 1300;
+            }
+            else
+            {
+
+
+            damage = 11; 
+            }
+            
             int type = ModContent.ProjectileType<SummonedNue>();
 
             if (player.ownedProjectileCounts[ModContent.ProjectileType<SummonedNue>()] <= 0)

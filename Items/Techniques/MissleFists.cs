@@ -58,7 +58,7 @@ namespace JujutsuTerraria.Items.Techniques
         {
             Cost = 5;
 
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }
@@ -149,7 +149,7 @@ namespace JujutsuTerraria.Items.Techniques
                     if (shotcount >= 3)
                     {
                         shotcount = 0;
-                        if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                        if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                         {
                             player.inventory[InventoryNumber].stack -= Cost - Reduction;
                             once = true;
@@ -193,7 +193,7 @@ namespace JujutsuTerraria.Items.Techniques
             bool Condition1;
             bool Condition2 = false;
             Cost = 5;
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }

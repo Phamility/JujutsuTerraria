@@ -164,20 +164,26 @@ namespace JujutsuTerraria.Ancients
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DeadlySentencing>(), 80, 1));
 
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HeavenlyPhysical>(), 80, 1));
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 50, 70, 100));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 25, 150, 250));
 
                 Accounted = true;
 
             }
-            if (npc.type == NPCID.BlueSlime || npc.type == NPCID.GreenSlime)
+            if (npc.type == NPCID.BlueSlime || npc.type == NPCID.GreenSlime || npc.type == NPCID.BlackSlime || npc.type == NPCID.BabySlime || npc.type == NPCID.RedSlime || npc.type == NPCID.YellowSlime)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 50, 30, 60));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 40, 100, 200));
+                Accounted = true;
+
+            }
+            if (npc.type == NPCID.JungleSlime || npc.type == NPCID.SpikedIceSlime || npc.type == NPCID.SpikedJungleSlime || npc.type == NPCID.IceSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 30, 150, 250));
                 Accounted = true;
 
             }
             if (npc.type == NPCID.Zombie || npc.type == NPCID.DemonEye)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 50, 30, 60));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 25, 100, 200));
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PainKiller>(), 100, 1));
 
                 Accounted = true;
@@ -185,13 +191,13 @@ namespace JujutsuTerraria.Ancients
             }
             if (npc.type == NPCID.BloodZombie || npc.type == NPCID.Drippler)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 25, 70, 100));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 5, 150, 250));
                 Accounted = true;
 
             }
             if (npc.type == NPCID.FaceMonster || npc.type == NPCID.EaterofSouls || npc.type == NPCID.Crimera)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 25, 70, 100));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 10, 150, 250));
                 Accounted = true;
 
             }
@@ -199,15 +205,23 @@ namespace JujutsuTerraria.Ancients
 
             if (npc.type == NPCID.PossessedArmor || npc.type == NPCID.WanderingEye)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedSpeech>(), 100));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedSpeech>(), 50));
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 25, 100, 150));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 10, 200, 300));
+                Accounted = true;
+
+            }
+            if (npc.type == NPCID.AngryNimbus || npc.type == NPCID.AnglerFish || npc.type == NPCID.Arapaima)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DeathSwarm>(), 50));
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 10, 200, 300));
                 Accounted = true;
 
             }
             if (npc.type == NPCID.Werewolf || npc.type == NPCID.DungeonSpirit || npc.type == NPCID.Demon)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 10, 100, 150));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 5, 200, 300));
                 Accounted = true;
 
             }
@@ -216,7 +230,7 @@ namespace JujutsuTerraria.Ancients
             {
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
-                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 1, 75, 100));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 1, 200, 400));
 
 
 
@@ -226,18 +240,12 @@ namespace JujutsuTerraria.Ancients
 
             if (Accounted == false)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 100, 30, 60));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 80, 150, 200));
 
             }
 
             //---------------CURSED ENERGY ^^^
 
-
-            if (npc.type == NPCID.BlueJellyfish || npc.type == NPCID.GreenJellyfish || npc.type == NPCID.PinkJellyfish)
-            {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FishEye>(), 50, 1));
-
-            }
             if (npc.type == NPCID.BlueJellyfish || npc.type == NPCID.GreenJellyfish || npc.type == NPCID.PinkJellyfish)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FishEye>(), 50, 1));
@@ -245,7 +253,7 @@ namespace JujutsuTerraria.Ancients
             }
             if (npc.type == NPCID.Demon || npc.type == NPCID.VoodooDemon)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Horn>(), 5));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Horn>(), 4));
 
             }
             if (npc.type == NPCID.MoonLordCore)
@@ -279,7 +287,7 @@ namespace JujutsuTerraria.Ancients
             {
                 LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
 
-                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<FlowingRed>(), 4));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<FlowingRed>(), 3));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<BlazingCourage>(), 3));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Bottomless>(), 3));
 
@@ -369,7 +377,7 @@ namespace JujutsuTerraria.Ancients
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
         {
             if (ItemID.Sets.BossBag[item.type]) {
-                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 1, 75, 125));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedEnergy>(), 1, 300, 500));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SukunaFinger>(), 10, 1));
 
             }
@@ -434,7 +442,7 @@ namespace JujutsuTerraria.Ancients
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<WrappedCleaver>(), 3));
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EyeEye>(), 3));
-                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PiercingBlood>(), 2));
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PiercingBlood>(), 3));
 
 
 

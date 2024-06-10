@@ -50,7 +50,7 @@ namespace JujutsuTerraria.Projectiles
             Projectile.width = 820;
   
             Projectile.usesIDStaticNPCImmunity = true;
-            Projectile.idStaticNPCHitCooldown = 10;
+            Projectile.idStaticNPCHitCooldown = 7;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
 
             Projectile.height = 820;
@@ -197,7 +197,7 @@ namespace JujutsuTerraria.Projectiles
                     {
                         if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                         {
-                            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                             {
                                 player.inventory[DEInfinity.InventoryNumber].stack -= DEInfinity.Cost - DEInfinity.Reduction;
                                 once = true;

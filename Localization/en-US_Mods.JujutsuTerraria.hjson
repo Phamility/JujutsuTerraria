@@ -106,6 +106,32 @@ Buffs: {
 			'''
 	}
 
+	JJKBuff: {
+		DisplayName: Jujutsu Kaisen
+		Description:
+			'''
+			All cursed energy usages are reduced down to 1
+			20% cursed damage
+			5 defense
+			5 armor penetration
+			Enhances zone effects
+			Increases black flash damage
+			Formulates damaging ice around you
+			Periodically become invulnerable
+			Immense regeneration when below 100 health
+			Reduces mana usage by 30%
+			Summon a powerful Nue to fight alongside you
+			See a lot
+			Does not stack with component accessories
+			The pinnacle of Jujutsu Sorcery
+			'''
+	}
+
+	LimitlessBuff: {
+		DisplayName: Honored One
+		Description: Granted only to the strongest.
+	}
+
 	NueEyeBuff: {
 		DisplayName: Nue's Eye
 		Description: Reduces all cursed energy usages by 2
@@ -316,6 +342,15 @@ Items: {
 		Tooltip: Fly across both Heaven and Earth
 	}
 
+	Limitless: {
+		DisplayName: Limitless
+		Tooltip:
+			'''
+			Every 10 seconds, become invulnerable for 2 seconds.
+			When combined with the Gojo Set Bonus, reduce the interval to every 4 seconds.
+			'''
+	}
+
 	NueLucky: {
 		DisplayName: Nue's Lucky Feathers
 		Tooltip:
@@ -495,6 +530,11 @@ Items: {
 			Increases armor penetration by 3
 			Enhances Wrapped Cleaver
 			'''
+	}
+
+	ZJujutsuKaisen: {
+		DisplayName: Jujutsu Kaisen
+		Tooltip: This truly was our Jujutsu Kaisen
 	}
 
 	AmplifiedShred: {
@@ -696,7 +736,7 @@ Items: {
 	}
 
 	MissleFists: {
-		DisplayName: Missle Fists
+		DisplayName: Missile Fists
 		Tooltip: Launch a barrage of fists!
 	}
 
@@ -721,13 +761,18 @@ Items: {
 		Tooltip:
 			'''
 			A specialized blade enveloped with positive energy
-			Heals 3-7 health per swing
+			Heals 1-25 health per swing
 			'''
 	}
 
 	WrappedCleaver: {
 		DisplayName: Wrapped Cleaver
-		Tooltip: When combined with Ratio, Wrapped Cleavers black flash chance increases by 7%
+		Tooltip: When combined with Ratio, Wrapped Cleaver's black flash chance increases by 7%
+	}
+
+	WrappedCleaver2: {
+		DisplayName: Record Holder
+		Tooltip: When combined with Ratio, Record Holder's black flash chance increases by 30%
 	}
 
 	NuesNovel: {
@@ -772,6 +817,11 @@ Items: {
 		DisplayName: Nue Trophy
 		Tooltip: ""
 	}
+
+	DeathSwarm: {
+		DisplayName: Death Swarm
+		Tooltip: Constantly summon a barrage of aquatic creatures that damage enemies
+	}
 }
 
 Projectiles: {
@@ -787,6 +837,8 @@ Projectiles: {
 	DomainSimple.DisplayName: Domain Simple
 	ElephantSummon.DisplayName: Elephant Summon
 	EWater.DisplayName: E Water
+	FishProj.DisplayName: Fish Proj
+	FishProj2.DisplayName: Fish Proj3
 	Fists.DisplayName: Fists
 	IceProj.DisplayName: Ice Proj
 	IchorBubble.DisplayName: Ichor Bubble
@@ -802,4 +854,14 @@ Projectiles: {
 	Shred.DisplayName: Shred
 	SpeechProj.DisplayName: Speech Proj
 	SummonedNue.DisplayName: Summoned Nue
+	FishProj3.DisplayName: Fish Proj3
+}
+
+Keybinds: {
+	"Quick Use ALL Buff Providers in Inventory.DisplayName": Quick Use ALL Buff Providers
+	"Quick Use Restless Gambler.DisplayName": Quick  Use  Restless  Gambler
+	"Quick Use Deer Silhouette.DisplayName": Quick  Use  Deer  Silhouette
+	"Quick Use Tiger Silhouette.DisplayName": Quick  Use  Tiger  Silhouette
+	"Quick Use Bird Silhouette.DisplayName": Quick  Use  Bird  Silhouette
+	"Quick Use Simple Domain.DisplayName": Quick  Use  Simple  Domain
 }

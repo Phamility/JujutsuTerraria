@@ -46,7 +46,7 @@ namespace JujutsuTerraria.Items.Shadows
         {
             Cost = 4;
 
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }
@@ -134,7 +134,7 @@ namespace JujutsuTerraria.Items.Shadows
                     if (shotcount >= 3)
                     {
                         shotcount = 0;
-                        if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                        if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                         {
                             player.inventory[InventoryNumber].stack -= Cost - Reduction;
                             once = true;
@@ -180,7 +180,7 @@ namespace JujutsuTerraria.Items.Shadows
         {
             bool Condition2 = false;
             Cost = 4;
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }
@@ -246,7 +246,7 @@ namespace JujutsuTerraria.Items.Shadows
             Item.damage = 48; // The item's damage.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.width = 30;
-            Cost = 5;
+            Cost = 4;
             Item.crit = 5;
             Item.height = 30;
             // A useTime of 4 with a useAnimation of 20 means this weapon will shoot out 5 jets of fire in one shot.

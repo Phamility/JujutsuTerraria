@@ -1,4 +1,4 @@
-Jujutsu Terraria is a medium sized mod featuring an abundance of weapons, accessories, and concepts inspired by the series Jujutsu Kaisen! It introduces the shaman class, a class that revolves around burning through cursed energy, landing black flashes, utilizing restrictions and exchanges, and juggling buffs to maximize damage!
+Jujutsu Terraria is a medium sized mod featuring an abundance of weapons, accessories, and concepts inspired by the series Jujutsu Kaisen! It introduces the Jujutsu Sorcerer class, a class that revolves around burning through cursed energy, landing black flashes, utilizing restrictions and exchanges, and juggling buffs to maximize damage!
 
 A large chunk of the items in this mod use Jujutsu Kaisen's 'Cursed Techniques' and 'Cursed Tools' as a base. However, some things revolve around concepts in the fictional universe such as "Domain Expansions," "Heavenly Restriction," "Black Flash," "Sukuna's Fingers,"and "Binding Vows."
 
@@ -11,8 +11,23 @@ Features:
 4 Domain Expansions
 6 Binding Vows
 7 Armor Set Bonuses
-17 New Accessories
-21 New Weapons
+19 New Accessories
+24 New Weapons
 
-P.S. This was pretty rushed and I tried balancing best I could!
+0.1.1 Notes:
+Hotfixes w/ Black flash
+
+0.1.2 Notes:
+Cursed energy is now easier to obtain
+Cursed energy costs are now lower
+Limitless, Jujutsu Kaisen, Death Swarm, and Record Holder was added
+Deadly Sentencing was significantlly buffed
+Max Elephant now despawns after 3 minutes
+Nue now takes damage from all sources instead of only cursed damage
+New Keybind active that quick uses for certain Buff Providers in one's inventory
+Few balancing changes
+
+Google Sheet on how to obtain / craft modded items:
+https://docs.google.com/spreadsheets/d/1QdsDDMZegD6Gy0t7YcxkiVUbps0ZPDaKQLg3v2IkgRA/
+ 
 

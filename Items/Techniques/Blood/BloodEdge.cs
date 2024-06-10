@@ -30,7 +30,7 @@ namespace JujutsuTerraria.Items.Techniques.Blood
         {
             Item.CloneDefaults(ItemID.Cutlass);
 
-            Item.damage = 95;
+            Item.damage = 75;
             Item.width = 40;
            // Item.mana = 8;
             Item.height = 48;
@@ -159,7 +159,8 @@ namespace JujutsuTerraria.Items.Techniques.Blood
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                if (cock == false) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
+               if (damageDone >= 0) {
+                    CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
         }
 

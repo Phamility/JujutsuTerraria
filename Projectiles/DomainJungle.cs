@@ -180,7 +180,7 @@ namespace JujutsuTerraria.Projectiles
                     {
                         if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                         {
-                            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                             {
                                 player.inventory[DEJungle.InventoryNumber].stack -= DEJungle.Cost - DEJungle.Reduction;
                                 once = true;

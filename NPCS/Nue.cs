@@ -61,7 +61,7 @@ namespace JujutsuTerraria.NPCS
            // NPC.scale = 2.5f;
             NPC.width = 228;
             NPC.height = 105;
-            NPC.damage = 10;
+            NPC.damage = 8;
             NPC.defense = 7;
             NPC.lifeMax = 750;
             NPC.buffImmune[BuffID.Confused] = true;
@@ -82,23 +82,25 @@ namespace JujutsuTerraria.NPCS
    
         public override bool? CanBeHitByItem(Player player, Item item)
         {
-            if (item.DamageType.CountsAsClass(ModContent.GetInstance<CursedDamage>()))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            /*  if (item.DamageType.CountsAsClass(ModContent.GetInstance<CursedDamage>()))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            */
+            return true;
         }
 
         public override void ModifyHitByProjectile(Projectile projectile, ref NPC.HitModifiers modifiers)
         {
-            if(projectile.DamageType.CountsAsClass(ModContent.GetInstance<CursedDamage>()) != true)
+       /*     if(projectile.DamageType.CountsAsClass(ModContent.GetInstance<CursedDamage>()) != true)
             {
                 projectile.damage = 0;
             }
-
+       */
 
         }
         /* public override float SpawnChance(NPCSpawnInfo spawnInfo)

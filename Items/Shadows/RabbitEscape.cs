@@ -37,7 +37,7 @@ namespace JujutsuTerraria.Items.Shadows
             //   Item.damage = 9;
             Item.width = 32;
             Item.height = 28;
-            Cost = 15 ;
+            Cost = 7 ;
 
             Item.useTime = 40;
             Item.useAnimation = 40;
@@ -73,35 +73,35 @@ namespace JujutsuTerraria.Items.Shadows
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.ExplosiveBunny);
                 }
-                else if (Main.rand.Next(1, 200) == 2)
+                else if (Main.rand.Next(1, 100) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GemBunnyEmerald);
                 }
-                else if (Main.rand.Next(1, 200) == 2)
+                else if (Main.rand.Next(1, 100) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GemBunnyAmethyst);
                 }
-                else if (Main.rand.Next(1, 200) == 2)
+                else if (Main.rand.Next(1, 100) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GemBunnySapphire);
                 }
-                else if (Main.rand.Next(1, 200) == 2)
+                else if (Main.rand.Next(1, 100) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GemBunnyTopaz);
                 }
-                else if (Main.rand.Next(1, 200) == 2)
+                else if (Main.rand.Next(1, 100) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GemBunnyRuby);
                 }
-                else if (Main.rand.Next(1, 200) == 2)
+                else if (Main.rand.Next(1, 100) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GemBunnyAmber);
                 }
-                else if (Main.rand.Next(1, 200) == 2)
+                else if (Main.rand.Next(1, 100) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GemBunnyDiamond);
                 }
-                else if (Main.rand.Next(1, 500) == 2)
+                else if (Main.rand.Next(1, 200) == 2)
                 {
                     NPC.NewNPC(source, (int)position.X, (int)position.Y, NPCID.GoldBunny);
                 }
@@ -117,9 +117,9 @@ namespace JujutsuTerraria.Items.Shadows
 
            public override void UpdateInventory(Player player)
         {
-            Cost = 15;
+            Cost = 7;
 
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }
@@ -153,7 +153,7 @@ namespace JujutsuTerraria.Items.Shadows
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                 {
-                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
@@ -193,8 +193,8 @@ namespace JujutsuTerraria.Items.Shadows
         public override bool CanUseItem(Player player)
         {
             bool Condition2 = false;
-            Cost = 15;
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            Cost = 7;
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }

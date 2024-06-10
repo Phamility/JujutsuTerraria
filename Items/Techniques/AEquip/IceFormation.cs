@@ -50,31 +50,34 @@ namespace JujutsuTerraria.Items.Techniques.AEquip
         private int damage;
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            timer++;
-            if (timer > 15)
+            if (player.HasBuff(ModContent.BuffType<JJKBuff>()) == false)
             {
-                Vector2 position = player.position - new Vector2(Main.rand.Next(-150, 150), Main.rand.Next(-150, 150));
-
-                var entitySource = player.GetSource_FromAI();
-                int type = ModContent.ProjectileType<IceProj>();
-                if (Main.expertMode == true)
+                timer++;
+                if (timer > 15)
                 {
-                    damage = 28;
+                    Vector2 position = player.position - new Vector2(Main.rand.Next(-150, 150), Main.rand.Next(-150, 150));
 
+                    var entitySource = player.GetSource_FromAI();
+                    int type = ModContent.ProjectileType<IceProj>();
+                    if (Main.expertMode == true)
+                    {
+                        damage = 28;
+
+                    }
+                    else
+                    {
+                        damage = 11;
+
+                    }
+
+
+
+                    Projectile.NewProjectile(entitySource, position, -Vector2.UnitY, type, damage, 0f, player.whoAmI);
+
+                    timer = 0;
                 }
-                else
-                {
-                    damage = 11;
 
-                }
-
-
-
-                Projectile.NewProjectile(entitySource, position, -Vector2.UnitY, type, damage, 0f, player.whoAmI);
-
-                timer = 0;
             }
-
         }
 
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

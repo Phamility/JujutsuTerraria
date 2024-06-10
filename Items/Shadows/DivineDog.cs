@@ -47,7 +47,7 @@ namespace JujutsuTerraria.Items.Shadows
 
         public override void SetDefaults()
         {
-            Cost = 10;
+            Cost = 8;
             Item.damage = MYDAMAGE;
             Item.width = 32;
             Item.height = 28;
@@ -101,7 +101,7 @@ namespace JujutsuTerraria.Items.Shadows
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                 {
-                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                     {
                         player.inventory[InventoryNumber].stack -= 1;
                         once = true;
@@ -135,9 +135,9 @@ namespace JujutsuTerraria.Items.Shadows
         }
         public override void UpdateInventory(Player player)
         {
-            Cost = 10;
+            Cost = 8;
 
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }
@@ -178,8 +178,8 @@ namespace JujutsuTerraria.Items.Shadows
         public override bool CanUseItem(Player player) {
             bool Condition1;
             bool Condition2 = false;
-            Cost = 10;
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            Cost = 8;
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }

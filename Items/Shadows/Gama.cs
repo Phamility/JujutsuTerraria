@@ -114,7 +114,7 @@ namespace JujutsuTerraria.Items.Shadows
         {
             Cost = 8;
 
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }
@@ -174,7 +174,7 @@ namespace JujutsuTerraria.Items.Shadows
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                 {
-                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+                    if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
@@ -215,7 +215,7 @@ namespace JujutsuTerraria.Items.Shadows
         {
             bool Condition2 = false;
             Cost = 8;
-            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()))
+            if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
             }

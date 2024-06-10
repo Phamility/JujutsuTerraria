@@ -72,7 +72,7 @@ namespace JujutsuTerraria.Items.Techniques
                 target.life += damageDone;
                 bool cock = false;
                 damageDone *= player.GetModPlayer<MP>().ZoneDamage;
-                if (damageDone > target.life )
+                if (damageDone > target.life)
                 {
                     damageDone = target.life - Main.rand.Next(5, 30);
                     cock = true;
@@ -115,7 +115,7 @@ namespace JujutsuTerraria.Items.Techniques
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                if (cock == false) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
+               if (damageDone >= 0) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
         }
         public override void ModifyHitNPC(Player player, NPC target, ref NPC.HitModifiers modifiers)

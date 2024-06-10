@@ -88,10 +88,13 @@ namespace JujutsuTerraria.Projectiles
 
         private int timerlife;
         private int fucker;
+        private int NewLife;
+
         // The AI of this minion is split into multiple methods to avoid bloat. This method just passes values between calls actual parts of the AI.
         public override void AI()
         {
 
+           
            // Projectile.velocity.Y += .25f;
 
             var entitySource = Projectile.GetSource_FromAI();
@@ -101,6 +104,11 @@ namespace JujutsuTerraria.Projectiles
             int damage = Projectile.damage;
             Player player = Main.player[Projectile.owner];
 
+            NewLife++;
+            if(NewLife >= 60 * 3)
+            {
+                Projectile.active = false;
+            }
 
             timerlife++;
             if(MaxElephant.positive == 1)
