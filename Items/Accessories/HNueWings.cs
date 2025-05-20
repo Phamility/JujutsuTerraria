@@ -24,6 +24,7 @@ namespace JujutsuTerraria.Items.Accessories
     [AutoloadEquip(EquipType.Wings)]
     public class HNueWings : ModItem
     {
+        //Hello
         // To see how this config option was added, see ExampleModConfig.cs
  
         public override void SetStaticDefaults()

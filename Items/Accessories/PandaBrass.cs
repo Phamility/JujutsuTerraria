@@ -24,7 +24,7 @@ namespace JujutsuTerraria.Items.Accessories
     public class PandaBrass : ModItem
     {
         // To see how this config option was added, see ExampleModConfig.cs
- 
+ //Testing Testing
         public override void SetStaticDefaults()
         {
             
