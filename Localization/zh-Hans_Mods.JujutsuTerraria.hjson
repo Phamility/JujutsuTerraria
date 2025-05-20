@@ -1,0 +1,805 @@
+DamageClasses.CursedDamage.DisplayName: 咒力伤害
+
+NPCs: {
+	Nue: {
+		DisplayName: 野狐
+		BossChecklistIntegration.SpawnInfo: 使用 [i:5572]
+	}
+}
+
+Buffs: {
+	BindingVowBuff: {
+		DisplayName: 领域：解放
+		Description: 伤害增加15%
+	}
+
+	BindingVowDebuff: {
+		DisplayName: 领域：束缚
+		Description: 伤害减少15%
+	}
+
+	CleaverBuff: {
+		DisplayName: 成年
+		Description: 裹布菜刀大幅增强
+	}
+
+	ConDebuff: {
+		DisplayName: 术士的界限
+		Description: 无法施展「构筑术」
+	}
+
+	CursedBuff: {
+		DisplayName: 咒言
+		Description: 无法移动
+	}
+
+	CursedDebuff: {
+		DisplayName: 喉咙痛
+		Description: 无法施展「咒言」
+	}
+
+	DeerDebuff: {
+		DisplayName: 圆鹿的束缚
+		Description: 无法施展「鹿之影」
+	}
+
+	DivineDogBuff: {
+		DisplayName: 驯狼者
+		Description: 两只神狗为你而战！
+	}
+
+	ElephantBuff: {
+		DisplayName: 马戏团驯象师
+		Description: 一头巨象为你而战！
+	}
+
+	FlightBuff: {
+		DisplayName: 野狐羽翼强化
+		Description:
+			'''
+			增加移动速度和飞行时间！  
+			野狐类翅膀的飞行效果得到增强！  
+			'''
+	}
+
+	FlowingRedBuff: {
+		DisplayName: 流动红鳞
+		Description: 以减少生命再生为代价，增加咒力伤害
+	}
+
+	FlowingRedStackBuff: {
+		DisplayName: 流动红鳞：堆叠
+		Description: 以大幅减少生命再生为代价，大幅增加咒力伤害
+	}
+
+	GamblingDebuff: {
+		DisplayName: 休憩的赌徒
+		Description: 无法施展「不安分的赌徒」
+	}
+
+	GeneralBuff: {
+		DisplayName: 适应与反击
+		Description:
+			'''
+			所受伤害减少6%  
+			护甲穿透增加6  
+			'''
+	}
+
+	HeavenlyBuff: {
+		DisplayName: 天与束缚
+		Description:
+			'''
+			咒力、近战和远程伤害增加  
+			移动速度增加  
+			防御增加  
+			无法使用咒力、魔力或召唤物  
+			'''
+	}
+
+	HeavenlyCursedBuff: {
+		DisplayName: 咒力天与束缚
+		Description:
+			'''
+			咒力、魔法和召唤伤害增加18%  
+			最大生命值和防御减少  
+			'''
+	}
+
+	NueEyeBuff: {
+		DisplayName: 野狐之眼
+		Description: 所有咒力消耗减少2
+	}
+
+	SimpleDebuff: {
+		DisplayName: 耗尽
+		Description: 无法施展「简易领域」
+	}
+
+	SixEyesBuff: {
+		DisplayName: 六眼
+		Description:
+			'''
+			所有咒力消耗减少至1  
+			咒力伤害增加12%  
+			魔力消耗减少20%  
+			防御增加3  
+			增加黑闪伤害  
+			不与熊猫的指虎叠加  
+			视野极佳  
+			'''
+	}
+
+	SummonNueBuff: {
+		DisplayName: 鸟语者
+		Description: 野狐为你而战！
+	}
+
+	TigerBuff: {
+		DisplayName: 悲虎的祝福
+		Description: 黑闪几率增加1%
+	}
+
+	TwinEyesBuff: {
+		DisplayName: 双目
+		Description: 所有咒力消耗减少4
+	}
+
+	ZoneBuff: {
+		DisplayName: 领域
+		Description:
+			'''
+			咒力伤害增加10%  
+			黑闪几率增加1%		    
+			'''
+	}
+
+	ArmorPenBuff: {
+		DisplayName: 赌徒的护甲穿透
+		Description: 护甲穿透增加30
+	}
+
+	CritBuff: {
+		DisplayName: 赌徒的暴击几率
+		Description: 暴击几率增加45%
+	}
+
+	CritDebuff: {
+		DisplayName: 失败的暴击几率
+		Description: 暴击几率减少50%
+	}
+
+	DamageBuff: {
+		DisplayName: 赌徒的伤害
+		Description: 伤害增加40%
+	}
+
+	DamageDebuff: {
+		DisplayName: 失败的伤害
+		Description: 伤害减少40%
+	}
+
+	DefenseDebuff: {
+		DisplayName: 失败的伤害减免
+		Description: 防御减少40
+	}
+
+	DRBuff: {
+		DisplayName: 赌徒的伤害减免
+		Description: 所受伤害减少35%
+	}
+
+	HealthBuff: {
+		DisplayName: 赌徒的生命
+		Description: 最大生命值增加250！
+	}
+
+	HealthDebuff: {
+		DisplayName: 失败的生命
+		Description: 最大生命值减少250！
+	}
+
+	ManaCostsDebuff: {
+		DisplayName: 失败的魔力效率
+		Description: 魔力消耗增加50%
+	}
+
+	ManaReducBuff: {
+		DisplayName: 赌徒的魔力效率
+		Description: Mods.JujutsuTerraria.Buffs.ManaReducBuff.Description
+	}
+
+	SummonBuff: {
+		DisplayName: 赌徒的召唤
+		Description: 最大召唤物数量增加4
+	}
+
+	SummonDebuff: {
+		DisplayName: 失败的召唤
+		Description: 最大召唤物数量减少3
+	}
+
+	WingDebuff: {
+		DisplayName: 失败的羽翼失效
+		Description: 大幅削弱翅膀的效果
+	}
+
+	YangBuff: {
+		DisplayName: 赌徒的领域
+		Description: 生命再生大幅增加
+	}
+
+	SukunaBuff: {
+		DisplayName: 容器
+		Description: 所受伤害增加
+	}
+}
+
+Items: {
+	GojoHead: {
+		DisplayName: 五条悟
+		Tooltip: 咒力伤害增加18%
+	}
+
+	InumakiHead: {
+		DisplayName: 狗卷棘
+		Tooltip: 咒力伤害增加12%
+	}
+
+	MakiHead: {
+		DisplayName: 禅院真希
+		Tooltip: 咒力伤害增加5%
+	}
+
+	MegumiHead: {
+		DisplayName: 伏黑惠
+		Tooltip: 咒力伤害增加1%
+	}
+
+	MeiMeiHead: {
+		DisplayName: 美美子
+		Tooltip: 咒力伤害增加15%
+	}
+
+	NobaraHead: {
+		DisplayName: 钉崎野蔷薇
+		Tooltip: 咒力伤害增加3%
+	}
+
+	UniformBody: {
+		DisplayName: 术师制服 - 上衣
+		Tooltip: 随着击败更多Boss，属性将得到提升
+	}
+
+	UniformLegs: {
+		DisplayName: 术师制服 - 裤子
+		Tooltip: 随着击败更多Boss，属性将得到提升
+	}
+
+	YujiHead: {
+		DisplayName: 虎杖悠仁
+		Tooltip: 咒力伤害增加8%
+	}
+
+	EyeEye: {
+		DisplayName: 冒险者之眼
+		Tooltip: 装备后，赋予探险家和猎人效果，高亮显示宝藏、矿石和敌人
+	}
+
+	FishEye: {
+		DisplayName: 渔夫之眼
+		Tooltip: 装备后，赋予声纳效果，揭示捕鱼时捕获物的名称
+	}
+
+	NebulaEye: {
+		DisplayName: 星云之眼
+		Tooltip: 装备后，魔力增加60，魔力消耗减少15%
+	}
+
+	NueEye: {
+		DisplayName: 野狐之眼
+		Tooltip: 装备后，所有咒力消耗减少2
+	}
+
+	SixEyes: {
+		DisplayName: 六眼
+		Tooltip: 天地之间，唯我独尊！
+	}
+
+	TwinEyes: {
+		DisplayName: 双目
+		Tooltip: 装备后，所有咒力消耗减少4
+	}
+
+	HNueWings: {
+		DisplayName: 荣誉野狐之翼
+		Tooltip: 飞越天地之间
+	}
+
+	NueLucky: {
+		DisplayName: 野狐的幸运羽毛
+		Tooltip:
+			'''
+			防御力+1  
+			最大生命值+20  
+			最大魔力+20  
+			'''
+	}
+
+	NueMask: {
+		DisplayName: 野狐的面具
+		Tooltip: 在“领域”状态下增强效果
+	}
+
+	NueWings: {
+		DisplayName: 野狐之翼
+		Tooltip: 允许飞行和缓慢下落
+	}
+
+	PandaBrass: {
+		DisplayName: 熊猫的指虎
+		Tooltip: 增加黑闪伤害
+	}
+
+	BloodMat: {
+		DisplayName: 融合之血
+		Tooltip: 一切只为了一滴血。
+	}
+
+	BoneAntler: {
+		DisplayName: 骨质鹿角
+		Tooltip: 做工真的很差。
+	}
+
+	CursedEnergy: {
+		DisplayName: 咒力
+		Tooltip:
+			'''
+			掌握正确技巧，即可运用自如  
+			必须堆叠咒力才能使用某些武器  
+			'''
+	}
+
+	Horn: {
+		DisplayName: 角
+		Tooltip: 尖尖的！
+	}
+
+	NueBossBag: {
+		DisplayName: 野狐宝藏袋
+		Tooltip: 右键打开
+	}
+
+	NueFeather: {
+		DisplayName: 野狐的羽毛
+		Tooltip: 一根带电小鸟的羽毛。
+	}
+
+	NueSummon: {
+		DisplayName: 诅咒种子
+		Tooltip: 召唤野狐
+	}
+
+	DivineDog: {
+		DisplayName: 狼之影
+		Tooltip:
+			'''
+			召唤一对神狗与你并肩作战  
+			一次只能召唤一对神狗  
+			不占用召唤物槽位  
+			神狗的伤害会随着击败的Boss数量增加而增加，但无法更改！  
+			'''
+	}
+
+	FlyingNue: {
+		DisplayName: 鸟之影
+		Tooltip:
+			'''
+			略微增加移动速度和飞行时间  
+			野狐类翅膀的飞行效果得到增强！  
+			持续30秒  
+			'''
+	}
+
+	Gama: {
+		DisplayName: 蟾蜍之影
+		Tooltip:
+			'''
+			围绕自身产生气泡，对敌人施加脓血和咒力地狱火  
+			脓血和咒力地狱火效果持续12秒  
+			'''
+	}
+
+	General: {
+		DisplayName: 将军轮之影
+		Tooltip: 附近的玩家获得6%伤害减免和6点护甲穿透
+	}
+
+	GreatSerpent: {
+		DisplayName: 蛇之影
+		Tooltip:
+			'''
+			发射毒流，施加毒液！  
+			毒液效果持续30秒  
+			'''
+	}
+
+	MaxElephant: {
+		DisplayName: 大象之影
+		Tooltip:
+			'''
+			召唤一个哨兵  
+			召唤一头巨象朝敌人发射水流！  
+			一次只能召唤一头巨象  
+			'''
+	}
+
+	NobleTiger: {
+		DisplayName: 虎之影
+		Tooltip:
+			'''
+			黑闪几率增加1%  
+			持续1分钟  
+			'''
+	}
+
+	PiercingOx: {
+		DisplayName: 牛之影
+		Tooltip:
+			'''
+			召唤一头冲刺的穿甲牛！  
+			牛的冲刺会使敌人陷入混乱！  
+			'''
+	}
+
+	RabbitEscape: {
+		DisplayName: 兔之影
+		Tooltip: 召唤一群兔子！
+	}
+
+	RoundDeer: {
+		DisplayName: 鹿之影
+		Tooltip:
+			'''
+			不会导致药水疾病  
+			无法使用快速治疗  
+			12秒冷却时间  
+			'''
+	}
+
+	CursedEmblem: {
+		DisplayName: 咒术师徽记
+		Tooltip: 咒力伤害增加15%
+	}
+
+	IceFormation: {
+		DisplayName: 寒冰结构
+		Tooltip: 在你周围持续形成冰块，对敌人造成伤害
+	}
+
+	Miracle: {
+		DisplayName: 奇迹
+		Tooltip: 生命值低于60时，生命再生大幅提升
+	}
+
+	PainKiller: {
+		DisplayName: 止痛剂
+		Tooltip: 生命值低于50时，生命再生显著提升
+	}
+
+	Ratio: {
+		DisplayName: 比率
+		Tooltip:
+			'''
+			咒力伤害增加7%  
+			护甲穿透增加3  
+			增强裹布菜刀  
+			'''
+	}
+
+	AmplifiedShred: {
+		DisplayName: 强化破碎
+		Tooltip: 发射增强的咒力冲击波
+	}
+
+	HeavenlyPhysical: {
+		DisplayName: 天与体术
+		Tooltip:
+			'''
+			但无法使用咒力、魔力和召唤物  
+			等同于束缚誓约  
+			'''
+	}
+
+	RestrictionBoots: {
+		DisplayName: 束缚誓约：速度
+		Tooltip:
+			'''
+			移动速度+12%  
+			但防御力减少4  
+			'''
+	}
+
+	RestrictionDamage: {
+		DisplayName: 束缚誓约：伤害
+		Tooltip:
+			'''
+			伤害增加12%  
+			但最大生命值减少50  
+			'''
+	}
+
+	RestrictionDefense: {
+		DisplayName: 束缚誓约：防御
+		Tooltip:
+			'''
+			防御力+4  
+			但伤害减少12%  
+			'''
+	}
+
+	RestrictionHeart: {
+		DisplayName: 束缚誓约：生命
+		Tooltip:
+			'''
+			最大生命值+50  
+			但移动速度减少12%  
+			'''
+	}
+
+	RestrictionMine: {
+		DisplayName: 束缚誓约：挖矿
+		Tooltip:
+			'''
+			挖矿速度增加  
+			但所受伤害减少80%  
+			'''
+	}
+
+	StandardBV: {
+		DisplayName: 无品牌束缚誓约
+		Tooltip: 新的旅程开始了
+	}
+
+	BBM: {
+		DisplayName: 黑鸟操控
+		Tooltip: 朝敌人扔出一只乌鸦，造成强力打击！
+	}
+
+	BlazingCourage: {
+		DisplayName: 炽热勇气
+		Tooltip:
+			'''
+			快速刀刃，有机会造成着火和润滑效果  
+			效果持续6秒  
+			'''
+	}
+
+	BloodEdge: {
+		DisplayName: 血刃
+		Tooltip: 由使用者血液组成的致命刀刃
+	}
+
+	FlowingRed: {
+		DisplayName: 流动红鳞
+		Tooltip:
+			'''
+			获得12%咒力伤害加成，持续2分钟  
+			在此期间，生命再生略微减少  
+			'''
+	}
+
+	FlowingRedStack: {
+		DisplayName: 流动红鳞：堆叠
+		Tooltip:
+			'''
+			获得25%咒力伤害加成，持续2分钟  
+			在此期间，生命再生减少  
+			'''
+	}
+
+	PiercingBlood: {
+		DisplayName: 穿透之血
+		Tooltip: 将你的箭矢浸满血液，增加其威力！
+	}
+
+	SlicingExorcism: {
+		DisplayName: 切割驱魔
+		Tooltip: 召唤一个高速旋转的血盘，切割你的敌人！
+	}
+
+	Bottomless: {
+		DisplayName: 无底之井
+		Tooltip: 召唤临时的翼蟾蜍助你一臂之力！
+	}
+
+	Construction: {
+		DisplayName: 构筑术
+		Tooltip:
+			'''
+			5秒冷却时间  
+			制造1根铅锭和25块木头  
+			'''
+	}
+
+	CountryHammer: {
+		DisplayName: 乡村女孩的锤子
+		Tooltip: 每次挥动发射1-3根钉子
+	}
+
+	CursedSpeech: {
+		DisplayName: 咒言
+		Tooltip:
+			'''
+			释放冲击波，使敌人定身2.5秒
+			冷却时间30秒
+			'''
+	}
+
+	DeadlySentencing: {
+		DisplayName: 死刑判决
+		Tooltip: 大型法槌
+	}
+
+	DEFire: {
+		DisplayName: 铁山棺椁
+		Tooltip:
+			'''
+			召唤地狱之力。  
+			暂时提供地狱火  
+			'''
+	}
+
+	DEInfinity: {
+		DisplayName: 无尽虚空
+		Tooltip:
+			'''
+			召唤虚空之力。  
+			暂时提供星云增益  
+			'''
+	}
+
+	DEJungle: {
+		DisplayName: 花海之辉
+		Tooltip:
+			'''
+			召唤丛林之力。  
+			暂时提供树妖的祝福  
+			'''
+	}
+
+	DEOcean: {
+		DisplayName: 迷人三昧之界
+		Tooltip:
+			'''
+			召唤海洋之力。  
+			暂时提供迅捷  
+			'''
+	}
+
+	DESimple: {
+		DisplayName: 简易领域
+		Tooltip:
+			'''
+			短暂变得无敌。  
+			冷却时间1分钟  
+			'''
+	}
+
+	FesteringLifeSword: {
+		DisplayName: 腐生之刃
+		Tooltip:
+			'''
+			每次挥动发射蜘蛛卵  
+			生与死的混合  
+			'''
+	}
+
+	MissleFists: {
+		DisplayName: 飞拳
+		Tooltip: 发射一连串的拳头！
+	}
+
+	RestlessGambler: {
+		DisplayName: 不安分的赌徒
+		Tooltip:
+			'''
+			冷却时间41秒  
+			使用时，有[c/FF33D6:50/50的几率]随机获得一个强力的增益或有害的减益，持续41秒！  
+			如果上一次是增益，有[c/33FF3D:65%的几率]获得随机增益，有[c/FF0000:35%的几率]获得随机减益！  
+			[c/FF33D6:只能在Boss战中使用！]  
+			'''
+	}
+
+	SlaughterDemon: {
+		DisplayName: 屠魔之刃
+		Tooltip: 一把简单的战斗匕首，有机会造成中毒
+	}
+
+	SOE: {
+		DisplayName: 灭却之刃
+		Tooltip:
+			'''
+			一把被正能量包裹的专用刀刃  
+			每次挥动回复3-7点生命值  
+			'''
+	}
+
+	WrappedCleaver: {
+		DisplayName: 裹布菜刀
+		Tooltip: 与比率结合使用时，裹布菜刀的黑闪几率增加7%
+	}
+
+	NuesNovel: {
+		DisplayName: 野狐的小说
+		Tooltip: 从天而降，降下一连串的羽毛！
+	}
+
+	RabbitBombs: {
+		DisplayName: 尊者的兔之影
+		Tooltip:
+			'''
+			召唤一群爆炸兔！  
+			真是意想不到！  
+			'''
+	}
+
+	SukunaFinger: {
+		DisplayName: 可疑的手指
+		Tooltip:
+			'''
+			永久增加1%伤害  
+			每个角色只能消耗20根手指  
+			'''
+	}
+
+	BindingVow: {
+		DisplayName: 束缚誓约
+		Tooltip:
+			'''
+			此方格范围内的玩家伤害增加15%  
+			此方格范围外的玩家伤害减少15%  
+			世界中只能放置一个誓约  
+			'''
+	}
+
+	Shrine: {
+		DisplayName: 咒术师神社
+		Tooltip: 用于制作含有咒力的物品
+	}
+
+	TrophyItem: {
+		DisplayName: 野狐奖杯
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	BloodWheelProj.DisplayName: 血轮投射物
+	BottomlessSummon.DisplayName: 无底召唤物
+	CursedBubble.DisplayName: 咒力泡泡
+	DogSummon.DisplayName: 狗召唤物
+	DogSummon2.DisplayName: 狗召唤物2
+	DomainFire.DisplayName: 领域之火
+	DomainInfinity.DisplayName: 领域之无垠
+	DomainJungle.DisplayName: 领域之丛林
+	DomainOcean.DisplayName: 领域之海洋
+	DomainSimple.DisplayName: 领域之简易
+	ElephantSummon.DisplayName: 大象召唤物
+	EWater.DisplayName: E水
+	Fists.DisplayName: 拳头
+	IceProj.DisplayName: 冰投射物
+	IchorBubble.DisplayName: 脓血泡泡
+	Nail.DisplayName: 钉子
+	NueAggFeather.DisplayName: 野狐侵略之羽
+	NueFriendlyFeather.DisplayName: 野狐友善之羽
+	NueLightning.DisplayName: 野狐闪电
+	NueLightningFriendly.DisplayName: 野狐友善闪电
+	OxProjectile.DisplayName: 牛投射物
+	PoisonFlame.DisplayName: 毒焰
+	RavenProj.DisplayName: 乌鸦投射物
+	RavenProj2.DisplayName: 乌鸦投射物2
+	Shred.DisplayName: 破碎
+	SpeechProj.DisplayName: 咒言投射物
+	SummonedNue.DisplayName: 召唤的野狐
+}
