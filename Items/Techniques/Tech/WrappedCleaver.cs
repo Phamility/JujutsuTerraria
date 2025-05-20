@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,9 @@ using JujutsuTerraria.Ancients;
 using Steamworks;
 using Terraria.Utilities;
 
-namespace JujutsuTerraria.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques.Tech
 {
-    public class WrappedCleaver2 : ModItem
+    public class WrappedCleaver : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -39,35 +40,23 @@ namespace JujutsuTerraria.Items.Techniques
 
         public override void SetDefaults()
         {
-            Item.width = 46; // The item texture's width.
-            Item.height = 38; // The item texture's height.
-            Item.scale = 1.06f;
+            Item.width = 42; // The item texture's width.
+            Item.height = 34; // The item texture's height.
+            Item.scale = 1.04f;
             Item.useStyle = ItemUseStyleID.Swing; // The useStyle of the Item.
             Item.useTime = 23; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
             Item.useAnimation = 23; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
             Item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button.
 
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
-            Item.damage = 300; // The damage your item deals.
+            Item.damage = 26; // The damage your item deals.
             Item.knockBack = 5; // The force of knockback of the weapon. Maximum is 20
             Item.crit = 7; // The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
-            Item.value = Item.buyPrice(gold: 5); // The value of the weapon in copper coins.
-            Item.rare = ItemRarityID.Yellow; // Give this item our custom rarity.
+            Item.value = Item.buyPrice(gold: 3); // The value of the weapon in copper coins.
+            Item.rare = ItemRarityID.Green; // Give this item our custom rarity.
             Item.UseSound = SoundID.Item1; // The sound when the weapon is being used.
         }
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-                .AddIngredient<CursedEnergy>(300)
-                                .AddIngredient(ItemID.SpookyWood, 300)
 
-                                .AddIngredient<WrappedCleaver>(1)
-
-
-                .AddTile<ShrineTile>()
-                .Register();
-
-        }
         public int PersonalBlackFlashAdd;
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {
@@ -138,7 +127,7 @@ namespace JujutsuTerraria.Items.Techniques
         {
             if (player.HasBuff<CleaverBuff>() == true)
             {
-                PersonalBlackFlashAdd = 30;
+                PersonalBlackFlashAdd = 7;
             }
             else
             {
@@ -195,7 +184,7 @@ namespace JujutsuTerraria.Items.Techniques
             prefixchooser.Add(PrefixID.Sharp, 2);
             prefixchooser.Add(PrefixID.Legendary, 2);
             int choice = prefixchooser;
-            if((Item.damage > 0) && Item.maxStack == 1)
+            if(Item.damage > 0 && Item.maxStack == 1)
             {
                 return choice;
             }

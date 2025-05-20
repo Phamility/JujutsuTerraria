@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,7 @@ using Terraria.Utilities;
 using Terraria.Audio;
 using JujutsuTerraria.Tiles;
 
-
-namespace JujutsuTerraria.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques.Tech
 {
     public class BlazingCourage : ModItem
 
@@ -73,7 +73,7 @@ namespace JujutsuTerraria.Items.Techniques
             prefixchooser.Add(PrefixID.Sharp, 2);
             prefixchooser.Add(PrefixID.Legendary, 2);
             int choice = prefixchooser;
-            if ((Item.damage > 0) && Item.maxStack == 1)
+            if (Item.damage > 0 && Item.maxStack == 1)
             {
                 return choice;
             }

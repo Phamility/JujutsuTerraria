@@ -30,6 +30,8 @@ Few balancing changes
 0.1.2.1 Notes:
 Finger consumed are no longer considered a debuff
 Minor tweaks to certain items
+1 New Weapon
+1 New Binding Vow
 
 Google Sheet on how to obtain / craft modded items:
 https://docs.google.com/spreadsheets/d/1QdsDDMZegD6Gy0t7YcxkiVUbps0ZPDaKQLg3v2IkgRA/

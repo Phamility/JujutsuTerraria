@@ -1,8 +1,8 @@
 ﻿using JujutsuTerraria.Buffs;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Items.Shadows;
-using JujutsuTerraria.Items.Techniques;
 using JujutsuTerraria.Items.Techniques.Domains;
+using JujutsuTerraria.Items.Techniques.Tech;
 using JujutsuTerraria.Projectiles;
 using Microsoft.Xna.Framework;
 using Terraria;

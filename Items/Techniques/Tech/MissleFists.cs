@@ -15,43 +15,48 @@ using JujutsuTerraria.Ancients;
 using JujutsuTerraria.Tiles;
 using Terraria.Utilities;
 
-namespace JujutsuTerraria.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques.Tech
 {
-    public class BBM : ModItem
+    public class MissleFists : ModItem
 
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Black Bird Manipulation");
-            // Tooltip.SetDefault("Hurl a crow at enemies, dealing a powerful blow!");
+            // DisplayName.SetDefault("Missle Fists");
+            // Tooltip.SetDefault("Launch a barrage of giant fists!");
         }
   
         public override void SetDefaults()
         {
 
-            Item.damage = 430;
-            Item.width = 58;
-            Item.height = 46;
-            Cost = 20;
+            Item.damage = 24;
+            Item.width = 38;
+            Item.height = 30;
+            Cost = 5;
 
-            Item.useTime = 30;
-            Item.useAnimation = 30;
-          //  Item.noUseGraphic = true;
+            Item.useTime = 7;
+            Item.useAnimation = 7;
+            Item.noUseGraphic = true;
 
-            Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
+            Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
             Item.knockBack = 3;
-            Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
+            Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             Item.noMelee = true;
                Item.shootSpeed = 4f;
             Item.autoReuse = true;
-            Item.shoot = ModContent.ProjectileType<RavenProj>();
+            Item.shoot = ModContent.ProjectileType<Fists>();
 
+        }
+        public override void ModifyWeaponCrit(Player player, ref float crit)
+        {
+
+            crit = player.GetModPlayer<MP>().ZoneChance;
         }
         public static int positive;
         public override void UpdateInventory(Player player)
         {
-            Cost = 20;
+            Cost = 5;
 
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
@@ -77,9 +82,10 @@ namespace JujutsuTerraria.Items.Techniques
         public override void AddRecipes()
         {
             CreateRecipe()
-                                              .AddIngredient(ItemID.RavenStaff)
+                                              .AddIngredient(ItemID.TitanGlove)
 
                 .AddIngredient<CursedEnergy>(300)
+                                .AddIngredient(ItemID.SoulofLight, 6)
 
                 .AddTile<ShrineTile>()
                 .Register();
@@ -132,11 +138,7 @@ namespace JujutsuTerraria.Items.Techniques
 
         }
         int shotcount = 0;
-        public override void ModifyWeaponCrit(Player player, ref float crit)
-        {
 
-            crit = player.GetModPlayer<MP>().ZoneChance;
-        }
         public override bool? UseItem(Player player)
         {
             bool once = false;
@@ -144,7 +146,7 @@ namespace JujutsuTerraria.Items.Techniques
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>() && once == false)
                 {
-                    if (shotcount >= 0)
+                    if (shotcount >= 3)
                     {
                         shotcount = 0;
                         if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
@@ -190,7 +192,7 @@ namespace JujutsuTerraria.Items.Techniques
         {
             bool Condition1;
             bool Condition2 = false;
-            Cost = 20   ;
+            Cost = 5;
             if (player.HasBuff(ModContent.BuffType<SixEyesBuff>()) || player.HasBuff(ModContent.BuffType<JJKBuff>()))
             {
                 Reduction = Cost - 1;
@@ -223,7 +225,7 @@ namespace JujutsuTerraria.Items.Techniques
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>())
                 {
-                    if ((player.inventory[i].stack >= Cost - Reduction) && Condition1 == true)
+                    if (player.inventory[i].stack >= Cost - Reduction && Condition1 == true)
                     {
                         InventoryNumber = i;
                         Condition2 = true;
@@ -236,7 +238,7 @@ namespace JujutsuTerraria.Items.Techniques
 
             }
 
-            if (Condition1 == true && (Condition2 == true))
+            if (Condition1 == true && Condition2 == true)
             {
                 return true;
             }
@@ -264,7 +266,7 @@ namespace JujutsuTerraria.Items.Techniques
             prefixchooser.Add(PrefixID.Rapid, 2);
             prefixchooser.Add(PrefixID.Unreal, 2);
             int choice = prefixchooser;
-            if ((Item.damage > 0) && Item.maxStack == 1)
+            if (Item.damage > 0 && Item.maxStack == 1)
             {
                 return choice;
             }
@@ -273,130 +275,9 @@ namespace JujutsuTerraria.Items.Techniques
         public int InventoryNumber;
         public int Cost;
         public int Reduction = 0;
-        private float PositionX;
-
-        private float PositionY;
-        private float SpeedX;
-        private float SpeedY;
-        private float SetNumber;
-       
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-           
-   
-                if ((player.GetModPlayer<MPArmors>().MeiMeiHeadOn))
-                {
-                    position.X = player.position.X;
-                    position.Y = player.position.Y;
-                    SetNumber = Main.rand.Next(1, 5);
-                    if (SetNumber == 1)
-                    {
-                        PositionX = player.position.X - 500;
-                        PositionY = player.position.Y - 500;
-                        SpeedX = 20;
-                        SpeedY = 20;
-                    }
-                    if (SetNumber == 2)
-                    {
-                        PositionX = player.position.X + 500;
-                        PositionY = player.position.Y - 500;
-                        SpeedX = -20;
-                        SpeedY = 20;
-                    }
-                    if (SetNumber == 3)
-                    {
-                        PositionX = player.position.X + 500;
-                        PositionY = player.position.Y + 500;
-                        SpeedX = -20;
-                        SpeedY = -20;
-                    }
-                    if (SetNumber == 4)
-                    {
-                        PositionX = player.position.X - 500;
-                        PositionY = player.position.Y + 500;
-                        SpeedX = 20;
-                        SpeedY = -20;
-                    }
-
-                    Projectile.NewProjectile(source, PositionX, PositionY, SpeedX, SpeedY, ModContent.ProjectileType<RavenProj2>(), ((damage)), 1, player.whoAmI);
-                if (Main.rand.Next(1, 3) == 2)
-                {
-                    position.X = player.position.X;
-                    position.Y = player.position.Y;
-                    SetNumber = Main.rand.Next(1, 5);
-                    if (SetNumber == 1)
-                    {
-                        PositionX = player.position.X - 500;
-                        PositionY = player.position.Y - 500;
-                        SpeedX = 20;
-                        SpeedY = 20;
-                    }
-                    if (SetNumber == 2)
-                    {
-                        PositionX = player.position.X + 500;
-                        PositionY = player.position.Y - 500;
-                        SpeedX = -20;
-                        SpeedY = 20;
-                    }
-                    if (SetNumber == 3)
-                    {
-                        PositionX = player.position.X + 500;
-                        PositionY = player.position.Y + 500;
-                        SpeedX = -20;
-                        SpeedY = -20;
-                    }
-                    if (SetNumber == 4)
-                    {
-                        PositionX = player.position.X - 500;
-                        PositionY = player.position.Y + 500;
-                        SpeedX = 20;
-                        SpeedY = -20;
-                    }
-
-                    Projectile.NewProjectile(source, PositionX, PositionY, SpeedX, SpeedY, ModContent.ProjectileType<RavenProj2>(), ((damage)), 1, player.whoAmI);
-                }
-                if (Main.rand.Next(1, 3) == 2)
-                {
-                    position.X = player.position.X;
-                    position.Y = player.position.Y;
-                    SetNumber = Main.rand.Next(1, 5);
-                    if (SetNumber == 1)
-                    {
-                        PositionX = player.position.X - 500;
-                        PositionY = player.position.Y - 500;
-                        SpeedX = 20;
-                        SpeedY = 20;
-                    }
-                    if (SetNumber == 2)
-                    {
-                        PositionX = player.position.X + 500;
-                        PositionY = player.position.Y - 500;
-                        SpeedX = -20;
-                        SpeedY = 20;
-                    }
-                    if (SetNumber == 3)
-                    {
-                        PositionX = player.position.X + 500;
-                        PositionY = player.position.Y + 500;
-                        SpeedX = -20;
-                        SpeedY = -20;
-                    }
-                    if (SetNumber == 4)
-                    {
-                        PositionX = player.position.X - 500;
-                        PositionY = player.position.Y + 500;
-                        SpeedX = 20;
-                        SpeedY = -20;
-                    }
-
-                    Projectile.NewProjectile(source, PositionX, PositionY, SpeedX, SpeedY, ModContent.ProjectileType<RavenProj2>(), ((damage)), 1, player.whoAmI);
-                }
-
-            }
-
-
-
-                if (player.direction == 1)
+            if (player.direction == 1)
             {
                 positive = 1;
             }
@@ -405,18 +286,19 @@ namespace JujutsuTerraria.Items.Techniques
                 positive = -1;
 
             }
-            position.X = player.position.X;
-            position.Y = player.position.Y;
+            position.X = Main.MouseWorld.X;
+            position.Y = player.position.Y - 500;
 
-            int numberProjectiles = 1;
+            int numberProjectiles = 3;
             for (int i = 0; i < numberProjectiles; i++)
             {
-               // position.Y = player.position.Y + Main.rand.Next(-700, -500);
+                position.X = player.position.X + Main.rand.Next(-100, 100);
+                position.Y = player.position.Y + Main.rand.Next(-100, 100);
 
                 //Projectile.NewProjectile(Main.MouseWorld.X, player.position.Y - 800, 0f, 0f, ProjectileID.Bomb, damage, 4, player.whoAmI);
-                Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(0)); // 30 degree spread.
+                Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.
 
-                Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<RavenProj>(), ((damage)), 1, player.whoAmI);
+                Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<Fists>(), damage, 1, player.whoAmI);
             }
 
             return false;

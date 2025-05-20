@@ -15,7 +15,7 @@ using JujutsuTerraria.Ancients;
 using JujutsuTerraria.Tiles;
 using Terraria.Utilities;
 
-namespace JujutsuTerraria.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques.Tech
 {
     public class Bottomless : ModItem
 
@@ -71,7 +71,7 @@ namespace JujutsuTerraria.Items.Techniques
             prefixchooser.Add(PrefixID.Rapid, 2);
             prefixchooser.Add(PrefixID.Unreal, 2);
             int choice = prefixchooser;
-            if ((Item.damage > 0) && Item.maxStack == 1)
+            if (Item.damage > 0 && Item.maxStack == 1)
             {
                 return choice;
             }
@@ -83,7 +83,7 @@ namespace JujutsuTerraria.Items.Techniques
 
             Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 15; //This gets the direction of the flame projectile, makes its length to 1 by normalizing it. It then multiplies it by 54 (the item width) to get the position of the tip of the flamethrower.
             position += muzzleOffset;
-            Projectile.NewProjectile(source, position.X, position.Y - 8, velocity.X, velocity.Y, ModContent.ProjectileType<BottomlessSummon>(), (damage), 1, player.whoAmI);
+            Projectile.NewProjectile(source, position.X, position.Y - 8, velocity.X, velocity.Y, ModContent.ProjectileType<BottomlessSummon>(), damage, 1, player.whoAmI);
 
 
             return false;
@@ -244,7 +244,7 @@ namespace JujutsuTerraria.Items.Techniques
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>())
                 {
-                    if ((player.inventory[i].stack >= Cost - Reduction) && Condition1 == true)
+                    if (player.inventory[i].stack >= Cost - Reduction && Condition1 == true)
                     {
                         InventoryNumber = i;
                         Condition2 = true;
@@ -257,7 +257,7 @@ namespace JujutsuTerraria.Items.Techniques
 
             }
 
-            if (Condition1 == true && (Condition2 == true))
+            if (Condition1 == true && Condition2 == true)
             {
                 return true;
             }

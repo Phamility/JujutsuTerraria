@@ -4,7 +4,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using System.Linq;
 using JujutsuTerraria.Items.Materials;
-using JujutsuTerraria.Items.Techniques;
 using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Accessories.Eyes;
 using JujutsuTerraria.Items.Techniques.Blood;
@@ -19,6 +18,7 @@ using JujutsuTerraria.Items.Techniques.Domains;
 using JujutsuTerraria.Items.Shadows;
 using JujutsuTerraria.Items.Techniques.AEquip;
 using JujutsuTerraria.Misc2;
+using JujutsuTerraria.Items.Techniques.Tech;
 
 namespace JujutsuTerraria.Ancients
 {

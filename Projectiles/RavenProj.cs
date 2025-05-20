@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using JujutsuTerraria.Ancients;
 using JujutsuTerraria.Items.Shadows;
-using JujutsuTerraria.Items.Techniques;
 using JujutsuTerraria.Tiles;
 using System.Security.Cryptography.X509Certificates;
+using JujutsuTerraria.Items.Techniques.Tech;
 
 namespace JujutsuTerraria.Projectiles
 {

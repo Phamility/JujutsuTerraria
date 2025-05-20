@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ using JujutsuTerraria.Projectiles;
 using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Tiles;
 
-namespace JujutsuTerraria.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques.Tech
 {
     public class Construction : ModItem
     {
@@ -183,7 +184,7 @@ namespace JujutsuTerraria.Items.Techniques
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>())
                 {
-                    if ((player.inventory[i].stack >= Cost - Reduction) && Condition1 == true)
+                    if (player.inventory[i].stack >= Cost - Reduction && Condition1 == true)
                     {
                         InventoryNumber = i;
                         Condition2 = true;
@@ -196,7 +197,7 @@ namespace JujutsuTerraria.Items.Techniques
 
             }
 
-            if (Condition1 == true && (Condition2 == true))
+            if (Condition1 == true && Condition2 == true)
             {
                 return true;
             }

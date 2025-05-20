@@ -20,14 +20,14 @@ using JujutsuTerraria.Items.Techniques.Tech;
 
 namespace JujutsuTerraria.Projectiles
 {
-    public class Nail : ModProjectile
+    public class MissleFistsMiniProj : ModProjectile
     {
         int rspeed;
         int yspeed;
 
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Nail");
+            // DisplayName.SetDefault("Fist");
             Main.projFrames[Projectile.type] = 1;
             Main.projPet[Projectile.type] = false;
 
@@ -38,18 +38,18 @@ namespace JujutsuTerraria.Projectiles
         private int lockedin;
         public sealed override void SetDefaults()
         {
-            xspeed = 6.5f * CountryHammer.positive;
-            Projectile.spriteDirection = CountryHammer.positive;
-            lockedin = CountryHammer.positive;
-            Projectile.width = 14;
+            xspeed = 6.5f * MissleFistsMini.positive;
+            Projectile.spriteDirection = MissleFistsMini.positive;
+            lockedin = MissleFistsMini.positive;
+            Projectile.width = 30;
             //projectile.aiStyle = 54;
             //aiType = NPCID.Raven;
 
             //projectile.velocity.X = -rspeed;
             //   Projectile.velocity.X = yspeed;
             Projectile.DamageType = ModContent.GetInstance<CursedDamage>();
-
-            Projectile.height = 16;
+     
+            Projectile.height = 38;
             // Makes the minion go through tiles freely
             Projectile.tileCollide = true;
             Projectile.ignoreWater = true;
@@ -59,18 +59,18 @@ namespace JujutsuTerraria.Projectiles
             // Only determines the damage type
             //	projectile.minion = true;
             // Amount of slots this minion occupies from the total minion slots available to the player (more on that later)
-
+            
             // Needed so the minion doesn't despawn on collision with enemies or tiles
             //  Projectile.timeLeft = 120; 
-            Projectile.Opacity = 1;
-            Projectile.aiStyle = 1;
-            AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+            Projectile.Opacity = 0;
+           Projectile.aiStyle = 1;
+           AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         }
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
             for (int i = 0; i < 5; i++)
             {
-                int dustType = DustID.Silver;
+                int dustType = DustID.Dirt;
                 var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, dustType);
 
                 dust.velocity.X += Main.rand.NextFloat(-0.3f, 0.3f);
@@ -100,7 +100,7 @@ namespace JujutsuTerraria.Projectiles
                 target.life += damageDone;
                 bool cock = false;
                 damageDone *= player.GetModPlayer<MP>().ZoneDamage;
-                if (damageDone > target.life)
+                if (damageDone > target.life )
                 {
                     damageDone = target.life - Main.rand.Next(5, 30);
                     cock = true;
@@ -143,8 +143,9 @@ namespace JujutsuTerraria.Projectiles
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                  if (damageDone >= 0) {  CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
+               if (damageDone >= 0) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
+
             else
             {
                 for (int i = 0; i < Main.rand.Next(1, 4); i++)
@@ -166,24 +167,50 @@ namespace JujutsuTerraria.Projectiles
         }
         float xspeed;
        private int timer = 0;
-        private bool once;
+        private bool once = false;
+        private bool once2 = false;
+        private bool once3 = false; 
+
         public override void AI()
         {
-
-
-            if (once == false)
+            Vector2 mousePosition = Main.MouseWorld;
+            float angle = (float)Math.Atan2(mousePosition.Y - Projectile.Center.Y, mousePosition.X - Projectile.Center.X);
+            if(once == false)
             {
+                Projectile.rotation = angle + MathHelper.PiOver2;
                 once = true;
-                Projectile.velocity.X *= 2;
-                Projectile.velocity.Y *= 2;
+            }
+            if (Projectile.Opacity <= 1)
+            {
+                if (once2 == false)
+                {
+
+
+                    Projectile.velocity.X *= .1f;
+                    Projectile.velocity.Y *= .1f;
+                    once2 = true;
+                }
+
+                Projectile.Opacity += .000001f;
+            }
+            if (Projectile.Opacity >= 1)
+            {
+                if (once3 == false)
+                {
+                    once3 = true;
+                    Projectile.velocity.X *= 35;
+                    Projectile.velocity.Y *= 35;
+                }
 
             }
+
+
             timer++;
                 if(timer > 120)
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    int dustType = DustID.Silver;
+                    int dustType = DustID.Dirt;
                     var dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, dustType);
 
                     dust.velocity.X += Main.rand.NextFloat(-0.3f, 0.3f);

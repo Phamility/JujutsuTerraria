@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,35 +16,34 @@ using Terraria.Utilities;
 using Terraria.Audio;
 using JujutsuTerraria.Tiles;
 
-
-namespace JujutsuTerraria.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques.Tech
 {
-    public class SlaughterDemon : ModItem
+    public class DeadlySentencing : ModItem
 
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Slaughter Demon");
-            // Tooltip.SetDefault("A simple combat knife that has a chance to inflict 'Poison'\nInflicted effects last 5 seconds");
+            // DisplayName.SetDefault("Deadly Sentencing");
+            // Tooltip.SetDefault("A LARGE gavel");
         }
    
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.Cutlass);
 
-            Item.damage = 8;
-            Item.width = 30;
+            Item.damage = 51;
+            Item.width = 240;
            // Item.mana = 8;
-            Item.height = 32;
+            Item.height = 240;
            // Item.healLife = -4;
-           Item.useTime = 25;
-           Item.useAnimation = 25;
+           Item.useTime = 30;
+           Item.useAnimation = 30;
            // Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
-            Item.knockBack = 3;
-            Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
+            Item.knockBack = 8;
+            Item.rare = ItemRarityID.LightRed; // The color that the item's name will be in-game.
             Item.DamageType = ModContent.GetInstance<CursedDamage>();
             //  Item.UseSound = SoundID.Item102;
-            Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
+            Item.value = Item.sellPrice(gold: 2); // How many coins the item is worth
 
             //  Item.noMelee = true;
             //      item.shootSpeed = 4f;
@@ -73,7 +73,7 @@ namespace JujutsuTerraria.Items.Techniques
             prefixchooser.Add(PrefixID.Sharp, 2);
             prefixchooser.Add(PrefixID.Legendary, 2);
             int choice = prefixchooser;
-            if ((Item.damage > 0) && Item.maxStack == 1)
+            if (Item.damage > 0 && Item.maxStack == 1)
             {
                 return choice;
             }
@@ -82,24 +82,23 @@ namespace JujutsuTerraria.Items.Techniques
 
         public override void ModifyHitNPC(Player player, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (Main.rand.Next(1, 4) == 2)
+            if (Main.rand.Next(1, 5) == 2)
             {
-                target.AddBuff(BuffID.Poisoned, 60 * 15);
-
-            }
-            if (Main.rand.Next(1, 4) == 2)
-            {
-                player.AddBuff(BuffID.Wrath, 60 * 15);
+                target.AddBuff(BuffID.BrokenArmor, 60 * 5);
 
             }
         }
+
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {
             damage += ExampleDamagePlayer.ModPlayer(player).exampleDamageAdd;
             damage *= ExampleDamagePlayer.ModPlayer(player).exampleDamageMult;
         }
+ 
+
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
+
             if (hit.Crit)
             {
                 SoundEngine.PlaySound(SoundID.NPCHit53, target.position);
@@ -108,7 +107,7 @@ namespace JujutsuTerraria.Items.Techniques
                 target.life += damageDone;
                 bool cock = false;
                 damageDone *= player.GetModPlayer<MP>().ZoneDamage;
-                if (damageDone > target.life )
+                if (damageDone > target.life)
                 {
                     damageDone = target.life - Main.rand.Next(5, 30);
                     cock = true;
@@ -151,7 +150,7 @@ namespace JujutsuTerraria.Items.Techniques
                 }
                 player.AddBuff(ModContent.BuffType<ZoneBuff>(), 60 * player.GetModPlayer<MP>().ZoneDuration);
 
-                  if (damageDone >= 0) {  CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
+               if (damageDone >= 0) { CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y, target.width, target.height), Color.DarkRed, damageDone, true, false); }
             }
         }
 
@@ -160,6 +159,7 @@ namespace JujutsuTerraria.Items.Techniques
 
             crit = player.GetModPlayer<MP>().ZoneChance;
         }
+     
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             // Get the vanilla damage tooltip

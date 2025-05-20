@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using JujutsuTerraria.Ancients;
 using JujutsuTerraria.Items.Shadows;
-using JujutsuTerraria.Items.Techniques;
 
 using Terraria.GameContent;
 using ReLogic.Content;
+using JujutsuTerraria.Items.Techniques.Tech;
 namespace JujutsuTerraria.Projectiles
 {
     public class SpeechProj : ModProjectile

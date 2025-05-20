@@ -16,6 +16,7 @@ namespace JujutsuTerraria.Ancients
                 checkItem.type == ModContent.ItemType<RestrictionBoots>() ||
                 checkItem.type == ModContent.ItemType<RestrictionHeart>() ||
                    checkItem.type == ModContent.ItemType<RestrictionMine>() ||
+                    checkItem.type == ModContent.ItemType<LightningSprite>() ||
                 checkItem.type == ModContent.ItemType<HeavenlyPhysical>()) // if is Wing, then can go in slot
                 return true;
 
@@ -29,6 +30,7 @@ namespace JujutsuTerraria.Ancients
                 item.type == ModContent.ItemType<RestrictionDamage>() ||
                 item.type == ModContent.ItemType<RestrictionBoots>() ||
                 item.type == ModContent.ItemType<RestrictionHeart>() ||
+                                item.type == ModContent.ItemType<LightningSprite>() ||
 
                 item.type == ModContent.ItemType<RestrictionMine>() ||
                 item.type == ModContent.ItemType<HeavenlyPhysical>()) // If is Wing, then we want to prioritize it to go in to our slot.

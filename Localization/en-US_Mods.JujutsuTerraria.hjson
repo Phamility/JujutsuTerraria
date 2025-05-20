@@ -13,6 +13,11 @@ Buffs: {
 		Description: Damage increased by 15%
 	}
 
+	LightningBuff: {
+		DisplayName: Supercharged
+		Description: Surrounded by Lightning Sprites
+	}
+
 	BindingVowDebuff: {
 		DisplayName: Barrier: Restrained
 		Description: Damaged reduced by 15%
@@ -560,6 +565,15 @@ Items: {
 			'''
 	}
 
+	LightningSprite: {
+		DisplayName: Binding Vow: Mythical Beast Amber I
+		Tooltip:
+			'''
+			Summon Supercharged Lightning Sprites that speed around you
+			However, defense is reduced by 3
+			'''
+	}
+
 	RestrictionDamage: {
 		DisplayName: Binding Vow: Damage
 		Tooltip:
@@ -736,8 +750,13 @@ Items: {
 	}
 
 	MissleFists: {
-		DisplayName: Missile Fists
+		DisplayName: Missile Fists II
 		Tooltip: Launch a barrage of fists!
+	}
+
+	MissleFistsMini: {
+		DisplayName: Missile Fists I
+		Tooltip: Launch a fist!
 	}
 
 	RestlessGambler: {
@@ -855,6 +874,9 @@ Projectiles: {
 	SpeechProj.DisplayName: Speech Proj
 	SummonedNue.DisplayName: Summoned Nue
 	FishProj3.DisplayName: Fish Proj3
+	MissleFistsMini.DisplayName: Missle Fists Mini
+	MissleFistsMiniProj.DisplayName: Missle Fists Mini Proj
+	LightningProj.DisplayName: Lightning Proj
 }
 
 Keybinds: {

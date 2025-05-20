@@ -1,4 +1,5 @@
-﻿using System; using JujutsuTerraria.Buffs;
+﻿using System;
+using JujutsuTerraria.Buffs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ using JujutsuTerraria.Items.Materials;
 using JujutsuTerraria.Tiles;
 using JujutsuTerraria.GamblingBuffs;
 
-namespace JujutsuTerraria.Items.Techniques
+namespace JujutsuTerraria.Items.Techniques.Tech
 {
     public class RestlessGambler : ModItem
     {
@@ -450,7 +451,7 @@ namespace JujutsuTerraria.Items.Techniques
             {
                 if (player.inventory[i].type == ModContent.ItemType<CursedEnergy>())
                 {
-                    if ((player.inventory[i].stack >= Cost - Reduction) && Condition1 == true)
+                    if (player.inventory[i].stack >= Cost - Reduction && Condition1 == true)
                     {
                         InventoryNumber = i;
                         return true;
