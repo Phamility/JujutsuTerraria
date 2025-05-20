@@ -27,6 +27,10 @@ Nue now takes damage from all sources instead of only cursed damage
 New Keybind active that quick uses for certain Buff Providers in one's inventory
 Few balancing changes
 
+0.1.2.1 Notes:
+Finger consumed are no longer considered a debuff
+Minor tweaks to certain items
+
 Google Sheet on how to obtain / craft modded items:
 https://docs.google.com/spreadsheets/d/1QdsDDMZegD6Gy0t7YcxkiVUbps0ZPDaKQLg3v2IkgRA/
  

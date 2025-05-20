@@ -50,7 +50,7 @@ namespace JujutsuTerraria.Armor
                 return;
 
             // Add equip textures
-            EquipLoader.AddEquipTexture(Mod, $"{Texture}_{EquipType.Body}", EquipType.Body, this);
+           // EquipLoader.AddEquipTexture(Mod, $"{Texture}_{EquipType.Body}", EquipType.Body, this);
 
         }
         private void EatShit()

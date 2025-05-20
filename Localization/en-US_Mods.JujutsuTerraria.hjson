@@ -432,7 +432,7 @@ Items: {
 			'''
 			Slightly increases movement speed and flight time
 			Flight effects are amplified for Nue-type Wings!
-			30 second duration
+			60 second duration
 			'''
 	}
 
@@ -753,7 +753,7 @@ Items: {
 
 	SlaughterDemon: {
 		DisplayName: Slaughter Demon
-		Tooltip: A simple combat knife that has a chance to inflict Poison
+		Tooltip: A simple combat knife that has a chance to inflict Poison and grant Wrath
 	}
 
 	SOE: {

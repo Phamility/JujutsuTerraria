@@ -20,7 +20,7 @@ namespace JujutsuTerraria.Misc2
         {
             // DisplayName.SetDefault("Vessel");
             // Description.SetDefault("Damaged increased");
-            Main.debuff[Type] = true;
+            Main.debuff[Type] = false;
             // Main.buffNoSave[Type] = true; // This buff won't save when you exit the world
             Main.buffNoTimeDisplay[Type] = true; // The time remaining won't display on this buff
         }

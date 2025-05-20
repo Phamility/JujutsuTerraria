@@ -82,9 +82,14 @@ namespace JujutsuTerraria.Items.Techniques
 
         public override void ModifyHitNPC(Player player, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (Main.rand.Next(1, 5) == 2)
+            if (Main.rand.Next(1, 4) == 2)
             {
-                target.AddBuff(BuffID.Poisoned, 60 * 5);
+                target.AddBuff(BuffID.Poisoned, 60 * 15);
+
+            }
+            if (Main.rand.Next(1, 4) == 2)
+            {
+                player.AddBuff(BuffID.Wrath, 60 * 15);
 
             }
         }

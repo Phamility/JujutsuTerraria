@@ -101,7 +101,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
 
 
                     }
@@ -109,7 +109,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
 
 
                     }
@@ -117,7 +117,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
 
 
                     }
@@ -125,7 +125,7 @@ namespace JujutsuTerraria.Items.Shadows
                     {
                         player.inventory[InventoryNumber].stack -= Cost - Reduction;
                         once = true;
-                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 30 * 60);
+                        player.AddBuff(ModContent.BuffType<FlightBuff>(), 60 * 60);
 
 
                     }
